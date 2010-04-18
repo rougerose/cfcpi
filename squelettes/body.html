@@ -1,0 +1,35 @@
+<div id="page" class="ombre005">
+	<div id="entete">
+		<INCLURE{fond=inclure/entete,env}>
+	</div><!-- / #entete -->
+	<div id="nav" class="clearfix">
+		<INCLURE{fond=inclure/barre-nav,env}>
+	</div><!-- / #nav -->
+	<div id="over">
+		[(#REM) 
+		#over permet a div#conteneur de deborder de div#page 
+		voir http://www.brunildo.org/test/OverflowR.html
+		]
+		<div id="conteneur" class="ombre005">
+			<div id="contenu">
+				<INCLURE{fond=contenu/#ENV{type},env}>
+				
+				<div id="navigation">
+					<INCLURE{fond=navigation/#ENV{type},env}>
+
+				</div><!-- / #navigation -->
+
+				<div id="extra">
+					<INCLURE{fond=extra/#ENV{type},env}>
+
+				</div><!-- / #extra -->
+			</div><!-- / #contenu -->
+		</div><!-- / #conteneur -->
+
+	</div><!-- / #over -->
+
+	<div id="pied">
+		<INCLURE{fond=inclure/pied,env}>
+	</div><!-- / #pied -->
+
+</div><!-- / #page -->

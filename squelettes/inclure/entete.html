@@ -1,0 +1,10 @@
+<div id="logo">
+    [(#ENV{composition}|=={sommaire}|?{
+        <h1[ style="background: url((#LOGO_SITE_SPIP|extraire_attribut{src})) no-repeat;"]>,
+        <a rel="start home" href="#URL_SITE_SPIP/" title="<:accueil_site:>"[ style="background: url((#LOGO_SITE_SPIP||extraire_attribut{src})) no-repeat;"]>
+    })][(#NOM_SITE_SPIP)]
+    [(#ENV{composition}|=={sommaire}|?{
+        </h1>,
+        </a>
+    })]
+</div>

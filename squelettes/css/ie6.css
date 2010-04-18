@@ -1,0 +1,24 @@
+/* ------------------------------------ */
+/*  Site : CFCPI                        */
+/*  URL : www.cfcpi.fr                  */
+/*  Auteur : christophe le drean        */
+/*  Date :                              */
+/*  Version : 2 (ie6)                   */
+/* ------------------------------------ */
+
+/* ------------------------------------ */
+/*  Table des matières                  */
+/* ------------------------------------ */
+/*  - Maquette des pages
+
+*/
+
+/* ------------------------------------ */
+/*  Maquette des pages                  */
+/* ------------------------------------ */
+#over {
+	/*	#over permet a div#conteneur de deborder de div#page 
+		voir http://www.brunildo.org/test/OverflowR.html */
+	position: relative;
+	height: 0;
+	margin-right: -70px; margin-bottom: 0; }
