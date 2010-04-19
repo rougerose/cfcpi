@@ -14,6 +14,9 @@
     - Maquette des pages
     - Liens (réglages général)
     - Typo générale
+    - Entete
+    - Menus
+    - Formulaires
     - Habillage : ombres
 
 */
@@ -80,6 +83,14 @@ blockquote, q { quotes: "" ""; }
 /*  Maquette des pages                  */
 /* ------------------------------------ */
 
+/* grille */
+/*	1 : 60		7 : 540		*/
+/*	2 : 140		8 : 620		*/
+/*	3 : 220		9 : 700		*/
+/*	4 : 300		10 : 780	*/
+/*	5 : 380		11 : 860	*/
+/*	6 : 460		12 : 940	*/
+
 body { 
 	background: #000 url(../img/body-background.jpg) repeat-x left top;
 	color: #000;
@@ -111,16 +122,16 @@ body {
             #contenu { margin-left: 20px; }
             
             	.contenu-principal {
-					width: 540px; }
+					width: 540px;
+					float: right; }
 
 /* ------------------------------------ */
 /*  Liens (réglages général)			*/
 /* ------------------------------------ */
-a {  }
+a { text-decoration: none; }
 a:visited { }
 a:hover { text-decoration: underline; outline: none; }
-a:active { outline: none; }
-a:active, a:focus { position: relative; top: 1px; }
+a:active, a:focus { position: relative; top: 1px; outline: none; }
 
 
 /* ------------------------------------ */
@@ -139,13 +150,27 @@ h1 { font-size: 30px; }
 /*  Entete								*/
 /* ------------------------------------ */
 
-#entete #logo h1, #entete #logo a {
+/* raccourcis */
+#raccourcis { position: absolute; top:-1.5em; left: 0; }
+	#raccourcis li {
+		font: 9px/11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+		float: left;
+		margin: .2em 0 0 5px; padding-left: 5px;
+		border-left: 1px solid #a4c700; }
+	#raccourcis li:first-child { border-left: 0; }
+		#raccourcis a { color: rgb(189,229,0); }
+		#raccourcis a:hover { color: rgb(210,255,0); }
+
+
+/* logo */
+#logo h1, #logo a {
 	text-indent: -9999px;
 	color: #fff; 
 	display: block;
 	height: 54px; width: 700px; }
 	
-#entete #logo a { top: 0; }
+#logo a { top: 0; }
 
 /* ------------------------------------ */
 /*  Menus								*/
@@ -207,9 +232,42 @@ h1 { font-size: 30px; }
 					background-image: none; }
 
 /* ------------------------------------ */
+/*  Formulaires							*/
+/* ------------------------------------ */
+
+/* paramètres communs */
+input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* recherche */
+#formulaire_recherche { position: absolute; top: -3.5em; right: 0; }
+	#formulaire_recherche label { display: none; }
+	#formulaire_recherche input {
+		background-color: #92b100;
+		border: 1px solid rgba(189,229,0,0.2) }
+	#formulaire_recherche input[type="text"] { 
+		color: rgb(210,255,0);
+		background: #92b100 url(../img/icone_recherche.png) no-repeat 1px -1px;
+		width: 15em; }
+	#formulaire_recherche input[type="submit"] { color: rgb(189,229,0); }
+	#formulaire_recherche input[type="text"]:focus { border-color: rgb(210,255,0); }
+	#formulaire_recherche input[type="submit"]:hover { 
+		color: rgb(210,255,0);
+		border-color: rgb(210,255,0); xborder-style: outset; }
+	#formulaire_recherche input[type="submit"]:active {
+		border-style: inset; outline: none; }
+
+/* ------------------------------------ */
 /*  Habillage : ombres                  */
 /* ------------------------------------ */
 .ombre005 {
 	box-shadow: 0 0 5px #333;
 	-webkit-box-shadow: 0 0 5px #333;
 	-moz-box-shadow: 0 0 5px #333; }
+	
+/* ------------------------------------ */
+/*  Divers								*/
+/* ------------------------------------ */
+
+/* surcharge css boutons admin */
+#spip-admin { margin-top: 4.5em; }
+	#spip-admin a { float: none; margin-bottom: .5em; }
