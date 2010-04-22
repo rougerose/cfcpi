@@ -44,7 +44,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 :focus {  }
 
 body {
-	xline-height: 1;
 	color: black;
 	background: white; }
 
@@ -80,7 +79,7 @@ blockquote, q { quotes: "" ""; }
 /* close commented backslash hack */
 
 /* ------------------------------------ */
-/*  Maquette des pages                  */
+/*  Maquette des pages					*/
 /* ------------------------------------ */
 
 /* grille */
@@ -90,6 +89,8 @@ blockquote, q { quotes: "" ""; }
 /*	4 : 300		10 : 780	*/
 /*	5 : 380		11 : 860	*/
 /*	6 : 460		12 : 940	*/
+
+/* règles communes */
 
 body { 
 	background: #000 url(../img/body-background.jpg) repeat-x left top;
@@ -111,7 +112,7 @@ body {
 		
 		#conteneur {
 			color: #000; background-color: #fff;
-            xmargin-top: 4.5em; margin-left: 60px; padding-top: 3em; 
+            xmargin-top: 4.5em; margin-left: 60px; padding-top: 2.8em; 
             width: 980px;
             position: relative;
             border-radius: 0 8px 8px 0;
@@ -119,11 +120,30 @@ body {
             -webkit-border-bottom-right-radius: 8px; 
             -moz-border-radius: 0 8px 8px 0; }
             
-            #contenu { margin-left: 20px; }
+            #contenu { 
+            	margin-right: 20px;
+            	float: right;
+            	width: 780px; }
+            	
+            	.titre { 
+            		float: right;
+            		width: 780px; }
             
-            	.contenu-principal {
-					width: 540px;
-					float: right; }
+            	.contenu_principal { width: 540px; }
+            	
+            		#hierarchie { clear: both; }
+            	
+            	#extra { 
+            		display: inline; float: right;
+            		width: 220px; }
+            
+            #navigation { 
+            	float: left;
+            	width: 160px; }
+
+/* règles spécifiques */
+.page_article .contenu_principal {
+	float: left; }
 
 /* ------------------------------------ */
 /*  Liens (réglages général)			*/
@@ -131,6 +151,7 @@ body {
 a { text-decoration: none; }
 a:visited { }
 a:hover { text-decoration: underline; outline: none; }
+a:active { background-color: #6800a7; }
 a:active, a:focus { position: relative; top: 1px; outline: none; }
 
 
@@ -142,16 +163,27 @@ html { font-size: 100.01%; /* pour IE */ }
 body { font: 0.75em/1.5 Georgia, "Times New Roman", Times, serif; /* corps : 12px/18px */ }
 
 /* Titraille */
-h1,h2,h3,h4,h5,h6 { font-family: "Museo Sans", Georgia, "Times New Roman", Times, serif; font-weight: normal; }
-h1 { font-size: 30px; }
+h1,h2,h3,h4,h5,h6,
+.surtitre, .soustitre { font-family: "Museo Sans", Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+h1 { font-size: 2.333em; line-height: .964em; margin: 0; }
 
+.titre h1 { color: #5c0092; }
+
+/* ------------------------------------ */
+/*  Contenu								*/
+/* ------------------------------------ */
+.titre { margin-bottom: 3em; }
+.titre .surtitre { 
+	color: #5c0092;
+	text-transform: uppercase; }
+.titre .soustitre { text-transform: uppercase; }
 
 /* ------------------------------------ */
 /*  Entete								*/
 /* ------------------------------------ */
 
 /* raccourcis */
-#raccourcis { position: absolute; top:-1.5em; left: 0; }
+#raccourcis { position: absolute; top:-1.5em; right: 0; }
 	#raccourcis li {
 		font: 9px/11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: uppercase;
@@ -164,13 +196,14 @@ h1 { font-size: 30px; }
 
 
 /* logo */
-#logo h1, #logo a {
-	text-indent: -9999px;
-	color: #fff; 
-	display: block;
-	height: 54px; width: 700px; }
+#logo { margin-left: 40px; }
+	#logo h1, #logo a {
+		text-indent: -9999px;
+		color: #fff; 
+		display: block;
+		height: 54px; width: 700px; }
 	
-#logo a { top: 0; }
+	#logo a { top: 0; }
 
 /* ------------------------------------ */
 /*  Menus								*/
@@ -185,7 +218,7 @@ h1 { font-size: 30px; }
 		position: relative; z-index: 999;
 		margin-right: 4px; padding: 0 4px 0; }
 	
-	#nav li.on { background: url(../img/navigation-hover-active-blanc.png) no-repeat center bottom; }
+	#nav li.on > a { background: url(../img/navigation-hover-active-blanc.png) no-repeat center bottom; }
 	
 	#nav li.over { 
 		background-color: #4f007e; }
@@ -228,8 +261,33 @@ h1 { font-size: 30px; }
 			#nav li span.over {
 				border: 1px solid #2c0046; border-color: #2c0046 #6800a7 #6800a7 #2c0046; }
 				
-	#nav li.over a:hover, #nav li li.on, #nav li li a:hover {
+	#nav li.over a:hover, #nav li li.on a, #nav li li a:hover {
 					background-image: none; }
+
+/* Menu local */
+#navigation { xmargin-top: 1.5em; }
+	#navigation ul {  }
+		#navigation li { 
+			font-family: "Museo Sans", Georgia, "Times New Roman", Times, serif; }
+		#navigation li.on { font-weight: normal; }
+			#navigation li a {
+				color: #bebebe;
+				display: block;
+				margin: 0 0 2px; padding-left: 10px; }
+				#navigation li a span {
+					display: block;
+					padding: 0 2px 2px;
+					border-bottom: 1px solid #eee; }
+				#navigation li a:hover {
+					text-decoration: none;
+					background: url(../img/navigation-locale-hover-active.png) no-repeat left center; }
+			#navigation li.on > a {
+				color: #5c0092;
+				background: url(../img/navigation-locale-hover-active.png) no-repeat left center; }
+				#navigation li.on > a span { border-bottom-color: #5c0092; }
+				#navigation li li > a { padding-left: 14px; }
+					#navigation li li li > a { padding-left: 18px; }
+						#navigation li li li li > a { padding-left: 22px; }
 
 /* ------------------------------------ */
 /*  Formulaires							*/
@@ -239,7 +297,7 @@ h1 { font-size: 30px; }
 input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* recherche */
-#formulaire_recherche { position: absolute; top: -3.5em; right: 0; }
+#formulaire_recherche { position: absolute; top: -3.9em; right: 0; }
 	#formulaire_recherche label { display: none; }
 	#formulaire_recherche input {
 		background-color: #92b100;
@@ -248,7 +306,7 @@ input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-se
 		color: rgb(210,255,0);
 		background: #92b100 url(../img/icone_recherche.png) no-repeat 1px -1px;
 		width: 15em; }
-	#formulaire_recherche input[type="submit"] { color: rgb(189,229,0); }
+	#formulaire_recherche input[type="submit"] { color: rgb(189,229,0); xheight: 19px; font-size: 10px; }
 	#formulaire_recherche input[type="text"]:focus { border-color: rgb(210,255,0); }
 	#formulaire_recherche input[type="submit"]:hover { 
 		color: rgb(210,255,0);
@@ -267,6 +325,9 @@ input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-se
 /* ------------------------------------ */
 /*  Divers								*/
 /* ------------------------------------ */
+
+/* accessibilité */
+.accessibilite { display:none; }
 
 /* surcharge css boutons admin */
 #spip-admin { margin-top: 4.5em; }
