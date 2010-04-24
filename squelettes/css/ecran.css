@@ -143,7 +143,7 @@ body {
 
 /* règles spécifiques */
 .page_article .contenu_principal {
-	float: left; }
+	float: left; xpadding-top: 1.5em; }
 
 /* ------------------------------------ */
 /*  Liens (réglages général)			*/
@@ -151,7 +151,7 @@ body {
 a { text-decoration: none; }
 a:visited { }
 a:hover { text-decoration: underline; outline: none; }
-a:active { background-color: #6800a7; }
+a:active {  }
 a:active, a:focus { position: relative; top: 1px; outline: none; }
 
 
@@ -163,20 +163,10 @@ html { font-size: 100.01%; /* pour IE */ }
 body { font: 0.75em/1.5 Georgia, "Times New Roman", Times, serif; /* corps : 12px/18px */ }
 
 /* Titraille */
-h1,h2,h3,h4,h5,h6,
-.surtitre, .soustitre { font-family: "Museo Sans", Georgia, "Times New Roman", Times, serif; font-weight: normal; }
-h1 { font-size: 2.333em; line-height: .964em; margin: 0; }
+h1,h2,h3,h4,h5,h6, #nav ul li, #navigation, .surtitre, .soustitre, #tabs  { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; }
+h1 { xfont-size: 2.333em; xline-height: .964em; margin: 0; }
 
 .titre h1 { color: #5c0092; }
-
-/* ------------------------------------ */
-/*  Contenu								*/
-/* ------------------------------------ */
-.titre { margin-bottom: 3em; }
-.titre .surtitre { 
-	color: #5c0092;
-	text-transform: uppercase; }
-.titre .soustitre { text-transform: uppercase; }
 
 /* ------------------------------------ */
 /*  Entete								*/
@@ -214,7 +204,6 @@ h1 { font-size: 2.333em; line-height: .964em; margin: 0; }
 	
 	#nav ul li { 
 		float: left;
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		position: relative; z-index: 999;
 		margin-right: 4px; padding: 0 4px 0; }
 	
@@ -226,7 +215,7 @@ h1 { font-size: 2.333em; line-height: .964em; margin: 0; }
 	#nav li span.dropdown {
     		cursor: pointer;
     		background: #2c0046 url(../img/ui-icons_888888_256x240.png) no-repeat -66px -17px;
-    		border: 1px solid #2c0046; xborder-color: #7000b3 #500080 #500080  #7000b3;
+    		border: 1px solid #2c0046;
     		height: 14px; width: 14px;
     		margin: 3px 0 0 3px; }
 		
@@ -267,8 +256,7 @@ h1 { font-size: 2.333em; line-height: .964em; margin: 0; }
 /* Menu local */
 #navigation { xmargin-top: 1.5em; }
 	#navigation ul {  }
-		#navigation li { 
-			font-family: "Museo Sans", Georgia, "Times New Roman", Times, serif; }
+		#navigation li {  }
 		#navigation li.on { font-weight: normal; }
 			#navigation li a {
 				color: #bebebe;
@@ -288,6 +276,66 @@ h1 { font-size: 2.333em; line-height: .964em; margin: 0; }
 				#navigation li li > a { padding-left: 14px; }
 					#navigation li li li > a { padding-left: 18px; }
 						#navigation li li li li > a { padding-left: 22px; }
+
+/* ------------------------------------ */
+/*  Contenu								*/
+/* ------------------------------------ */
+.titre { margin-bottom: 3em; }
+.titre .surtitre { 
+	color: #5c0092;
+	text-transform: uppercase; }
+.titre .soustitre { text-transform: uppercase; }
+
+
+/* UI-tabs (JQuery) */
+
+#tabs { margin-top: 1.5em; padding: 0; }
+
+#tabs .ui-tabs-nav {
+	border-bottom: 1px solid #2c0046;
+	margin: 0; padding: 0 0 0 5px; }
+	
+	.ui-tabs .ui-tabs-nav li {
+		font-size: 11px; line-height: 1.63em;
+		border: 1px solid #fff;
+		margin: 0 0 -1px 5px;
+		border-radius: 2px 0; 
+		-webkit-border-top-left-radius: 2px; 
+		-webkit-border-top-right-radius: 2px; 
+		-moz-border-radius: 2px 2px 0 0; }
+		
+	.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+		border-color: #5c0092;
+		background-color: #fff;
+		background-image: none; }
+	
+	li.ui-state-default {
+		background-color: #4f007e;
+		background: #4f007e url(../img/tabs-defaut-background.png) repeat-x left bottom; }
+	
+	.ui-tabs li.ui-state-hover {
+		background-color: #5c0092; background-image: none; }
+	
+		#tabs.ui-tabs .ui-tabs-nav li a {
+			color: #d082ff;
+			padding: 0 5px 0px; }
+		
+		#tabs li.ui-state-hover a:hover {
+			color: #fff; }
+			
+		#tabs.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+			color: #400065; }
+	
+	#tabs.ui-tabs .ui-tabs-panel {
+		border: 1px solid #2c0046; border-top-width: 0;
+		xpadding: 1.1em 9px 0; }
+		
+		#tabs .ui-tabs-panel dl {
+			border: 1px groove #ddd; border-width: 2px 0 0;
+			margin-bottom: 1.4em;
+			font-size: 11px; line-height: 1.63em; }
+
+
 
 /* ------------------------------------ */
 /*  Formulaires							*/

@@ -1,21 +1,38 @@
 <BOUCLE_extra_article(ARTICLES){id_article}>
-  [(#REM) Menu de navigation mots-cles ]
-  <B_mots>
-  <div class="liste mots">
-      <h2 class="h2"><:mots_clefs:></h2>
-      <ul class="liste-items">
-      <BOUCLE_mots(MOTS) {id_article} {par titre}>
-          <li class="item"><a href="#URL_MOT" rel="tag">#TITRE</a></li>
-      </BOUCLE_mots>
-      </ul>
-  </div>
-  </B_mots>
+	<BOUCLE_test_mots(MOTS){id_article}{par titre}>#SET{cpt_mots,#TOTAL_BOUCLE}</BOUCLE_test_mots>
+	<BOUCLE_test_documents(DOCUMENTS){id_article}{par num titre, titre}{vu=non}>#SET{cpt_documents,#TOTAL_BOUCLE}</BOUCLE_test_documents>
+#SET{cpt_total, #GET{cpt_mots}|plus{#GET{cpt_documents}}}
 
+<BOUCLE_test_total(CONDITION){si #GET{cpt_total}|>{0}}>
 <div id="tabs">
-	<ul>
-		
+	<ul class="clearfix">
+		<BOUCLE_test_mots2(CONDITION){si #GET{cpt_mots}|>{0}}>
+		<li><a href="#mots"><:mots_clefs:></a></li>
+		</BOUCLE_test_mots2>
+		<BOUCLE_test_documents2(CONDITION){si #GET{cpt_documents}|>{0}}>
+		<li><a href="#documents"><:titre_documents_joints:></a></li>
+		</BOUCLE_test_documents2>
 	</ul>
+	<B_liste_mots>
+	<div id="mots">
+		<BOUCLE_liste_mots(MOTS){id_article}{par titre}>
+		<dl>
+			<dt><a href="#URL_MOT" rel="tag">#TITRE</a></dt>
+		</dl>
+		</BOUCLE_liste_mots>
+	</div>
+	</B_liste_mots>
+	<B_liste_documents>
+	<div id="documents">
+		<BOUCLE_liste_documents(DOCUMENTS){id_article}{vu=non}{par num titre, titre}>
+		<dl>
+			<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT)]</dt>
+			<dd><p>[(#TITRE|sinon{document #ID_DOCUMENT})]</p></dd>
+		</dl>
+		</BOUCLE_liste_documents>
+	</div>
+	</B_liste_documents>
 </div>
-
+</BOUCLE_test_total>
 
 </BOUCLE_extra_article>
