@@ -143,7 +143,7 @@ body {
 
 /* règles spécifiques */
 .page_article .contenu_principal {
-	float: left; xpadding-top: 1.5em; }
+	float: left; }
 
 /* ------------------------------------ */
 /*  Liens (réglages général)			*/
@@ -164,7 +164,7 @@ body { font: 0.75em/1.5 Georgia, "Times New Roman", Times, serif; /* corps : 12p
 
 /* Titraille */
 h1,h2,h3,h4,h5,h6, #nav ul li, #navigation, .surtitre, .soustitre, .info-publi, #tabs  { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; }
-h1 { font-size: 2.333em; line-height: 1.285em/*.964em*/; margin: 0; }
+h1 { font-size: 2.333em; line-height: 1.285em; margin: 0; }
 
 .titre h1 { color: #4f007e; }
 
@@ -259,7 +259,7 @@ h1 { font-size: 2.333em; line-height: 1.285em/*.964em*/; margin: 0; }
 					background-image: none; }
 
 /* Menu local */
-#navigation { xmargin-top: 1.5em; }
+#navigation {  }
 	#navigation ul {  }
 		#navigation li {  }
 		#navigation li.on { font-weight: normal; }
@@ -301,7 +301,7 @@ h1 { font-size: 2.333em; line-height: 1.285em/*.964em*/; margin: 0; }
 	font-size: 14px; line-height: 1.2857em;
 	margin: 1.2857em 0 0 560px; }
 	
-	.info-publi abbr { color: #4f007e; #b07acb; }
+	.info-publi abbr { color: #4f007e; }
 
 /* UI-tabs (JQuery) */
 
@@ -311,7 +311,7 @@ h1 { font-size: 2.333em; line-height: 1.285em/*.964em*/; margin: 0; }
 .ui-tabs .ui-tabs-nav li { position: relative; float: left; border-bottom-width: 0 !important; margin: 0 .2em -1px 0; padding: 0; }
 .ui-tabs .ui-tabs-nav li a { float: left; text-decoration: none; padding: .5em 1em; }
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }
-.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { xcursor: text; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {  }
 .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
 .ui-tabs .ui-tabs-panel { padding: 1em 1.4em; display: block; border-width: 0; background: none; }
 .ui-tabs .ui-tabs-hide { display: none !important; }
@@ -357,7 +357,7 @@ h1 { font-size: 2.333em; line-height: 1.285em/*.964em*/; margin: 0; }
 
 	.ui-tabs .ui-tabs-panel {
 		background-color: #fff;
-		border: 1px solid #50206d; #6800a7; border-top-width: 0; border-bottom-width: 0; 
+		border: 1px solid #50206d; border-top-width: 0; border-bottom-width: 0; 
 		padding: 1.1em 5px 0 10px; margin: 0 2px }
 		
 		.ui-tabs-panel dl { 
@@ -368,10 +368,6 @@ h1 { font-size: 2.333em; line-height: 1.285em/*.964em*/; margin: 0; }
 				border-bottom: 1px solid #eee;
 				padding-top: .4em;
 				padding-bottom: .4em; }
-			
-			/*.ui-tabs-panel dt + dt {
-				border-top: 1px solid #eee;
-				padding-top: .4em; }*/
 			
 		.ui-tabs-panel dl.document {
 			border-bottom:	1px solid #eee;
@@ -414,11 +410,11 @@ input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-se
 		color: rgb(210,255,0);
 		background: #92b100 url(../img/icone_recherche.png) no-repeat 1px -1px;
 		width: 15em; }
-	#formulaire_recherche input[type="submit"] { color: rgb(189,229,0); xheight: 19px; font-size: 10px; }
+	#formulaire_recherche input[type="submit"] { color: rgb(189,229,0); font-size: 10px; }
 	#formulaire_recherche input[type="text"]:focus { border-color: rgb(210,255,0); }
 	#formulaire_recherche input[type="submit"]:hover { 
 		color: rgb(210,255,0);
-		border-color: rgb(210,255,0); xborder-style: outset; }
+		border-color: rgb(210,255,0); }
 	#formulaire_recherche input[type="submit"]:active {
 		border-style: inset; outline: none; }
 
