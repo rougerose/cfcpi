@@ -5,7 +5,9 @@
 	<h1 class="h1 #EDIT{titre}">#TITRE</h1>
 	[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 	
-	<p class="info-publi"><abbr class="published" title="[(#DATE|date_iso)]">[(#DATE|nom_jour) ][(#DATE|affdate)]</abbr>[, <span class="auteurs"><:par_auteur:> (#LESAUTEURS)</span>]</p>
+	<p class="info-publi">
+		<:publie_le:> <abbr class="published" title="[(#DATE|date_iso)]">[(#DATE|affdate)]</abbr>
+	</p>
 	[(#REM) Inclure le modele des liens de traductions ]
 	#MODELE{article_traductions}
 
