@@ -15,19 +15,22 @@
 	</ul>
 	<B_liste_mots>
 	<div id="mots">
-		<BOUCLE_liste_mots(MOTS){id_article}{par titre}>
 		<dl>
+			<BOUCLE_liste_mots(MOTS){id_article}{par titre}>
 			<dt><a href="#URL_MOT" rel="tag">#TITRE</a></dt>
+			</BOUCLE_liste_mots>
 		</dl>
-		</BOUCLE_liste_mots>
 	</div>
 	</B_liste_mots>
 	<B_liste_documents>
 	<div id="documents">
 		<BOUCLE_liste_documents(DOCUMENTS){id_article}{vu=non}{par num titre, titre}>
-		<dl>
+		<dl class="document clearfix">
 			<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT)]</dt>
-			<dd><p>[(#TITRE|sinon{document #ID_DOCUMENT})]</p></dd>
+			<dd>
+				<h3>[<a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:info_document:> #ID_DOCUMENT})]</a>]</h3>
+				<p>[(#DESCRIPTIF|PtoBR)] <span>#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)]</span></p>
+			</dd>
 		</dl>
 		</BOUCLE_liste_documents>
 	</div>

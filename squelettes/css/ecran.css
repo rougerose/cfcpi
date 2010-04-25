@@ -148,9 +148,9 @@ body {
 /* ------------------------------------ */
 /*  Liens (réglages général)			*/
 /* ------------------------------------ */
-a { text-decoration: none; }
+a { color: #a1001a; text-decoration: none; }
 a:visited { }
-a:hover { text-decoration: underline; outline: none; }
+a:hover { color: #6800a7; text-decoration: underline; outline: none; }
 a:active {  }
 a:active, a:focus { position: relative; top: 1px; outline: none; }
 
@@ -289,53 +289,90 @@ h1 { xfont-size: 2.333em; xline-height: .964em; margin: 0; }
 
 /* UI-tabs (JQuery) */
 
-#tabs { margin-top: 1.5em; padding: 0; }
+/* original */
+.ui-tabs { padding: .2em; zoom: 1; }
+.ui-tabs .ui-tabs-nav { list-style: none; position: relative; padding: .2em .2em 0; }
+.ui-tabs .ui-tabs-nav li { position: relative; float: left; border-bottom-width: 0 !important; margin: 0 .2em -1px 0; padding: 0; }
+.ui-tabs .ui-tabs-nav li a { float: left; text-decoration: none; padding: .5em 1em; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { xcursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { padding: 1em 1.4em; display: block; border-width: 0; background: none; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
 
-#tabs .ui-tabs-nav {
-	border-bottom: 1px solid #2c0046;
-	margin: 0; padding: 0 0 0 5px; }
+/* personnalisé */
+.ui-tabs { 
+	font-size: 11px; line-height: 1.6363;
+	padding: 0; margin-top: 1.6em; }
+
+	.ui-tabs .ui-tabs-nav {
+		border-bottom: 1px solid #6800a7;
+		padding: 0 0 0 5px; }
 	
-	.ui-tabs .ui-tabs-nav li {
-		font-size: 11px; line-height: 1.63em;
-		border: 1px solid #fff;
-		margin: 0 0 -1px 5px;
-		border-radius: 2px 0; 
-		-webkit-border-top-left-radius: 2px; 
-		-webkit-border-top-right-radius: 2px; 
-		-moz-border-radius: 2px 2px 0 0; }
+		.ui-tabs .ui-tabs-nav li {
+			border: 1px solid #fff;
+			border-radius: 2px 0; 
+			-webkit-border-top-left-radius: 2px; 
+			-webkit-border-top-right-radius: 2px; 
+			-moz-border-radius: 2px 2px 0 0; }
 		
-	.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
-		border-color: #5c0092;
-		background-color: #fff;
-		background-image: none; }
+		.ui-tabs .ui-tabs-nav li.ui-state-default {
+			background-color: #4f007e;
+			background: #4f007e url(../img/tabs-defaut-background.png) repeat-x left bottom; }
 	
-	li.ui-state-default {
-		background-color: #4f007e;
-		background: #4f007e url(../img/tabs-defaut-background.png) repeat-x left bottom; }
-	
-	.ui-tabs li.ui-state-hover {
-		background-color: #5c0092; background-image: none; }
-	
-		#tabs.ui-tabs .ui-tabs-nav li a {
-			color: #d082ff;
-			padding: 0 5px 0px; }
+		.ui-tabs .ui-tabs-nav li.ui-state-hover {
+			background-color: #6800a7; background-image: none; }
 		
-		#tabs li.ui-state-hover a:hover {
-			color: #fff; }
+		.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+			border-color: #6800a7;
+			background-color: #fff;
+			background-image: none; }
+	
+			.ui-tabs .ui-tabs-nav li a {
+				color: #fff;
+				padding: 0 5px .4em; }
+				
+			.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+				color: #5c0092; }
+
+	.ui-tabs .ui-tabs-panel {
+		border: 1px solid #6800a7; border-top-width: 0; 
+		padding: 1.1em 5px 0 10px; }
+		
+		.ui-tabs-panel dl { 
+			width: 203px;
+			margin-bottom: .7em; }
+		
+			.ui-tabs-panel dt {
+				padding-bottom: .4em; }
 			
-		#tabs.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
-			color: #400065; }
-	
-	#tabs.ui-tabs .ui-tabs-panel {
-		border: 1px solid #2c0046; border-top-width: 0;
-		xpadding: 1.1em 9px 0; }
-		
-		#tabs .ui-tabs-panel dl {
-			border: 1px groove #ddd; border-width: 2px 0 0;
-			margin-bottom: 1.4em;
-			font-size: 11px; line-height: 1.63em; }
-
-
+			.ui-tabs-panel dt + dt {
+				border-top: 1px solid #eee;
+				padding-top: .4em; }
+			
+		.ui-tabs-panel dl + dl {
+			border-top:	1px solid #eee;
+			padding-top: .7em; }
+			
+			.ui-tabs-panel dl.document dt {
+				float: left;
+				margin-right: 7px; margin-top: 2px; padding-bottom: 0; }
+				
+				.ui-tabs-panel dl.document dt a {
+					display: block;
+					border: 1px solid #eee; }
+				
+				.ui-tabs-panel dl.document dt a:hover {
+					background-color: #6800a7;
+					border-color: #6800a7; }
+			
+			.ui-tabs-panel dl.document dd {
+				color: #bebebe;
+				float: right;
+				width: 142px; }
+				
+			.ui-tabs-panel dl.document dd span {
+				border-top: 1px dotted #eee; }
 
 /* ------------------------------------ */
 /*  Formulaires							*/
