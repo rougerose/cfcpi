@@ -25,14 +25,13 @@
 		<h2 class="h2"><:info_ps:></h2>
 		<div class="#EDIT{ps} surlignable">(#PS|image_reduire{500,0})</div>
 	</div>]
-
+	<!--
+		TODO gérer le portfolio
+	-->
 	[(#REM) Gestion du portfolio et des documents ]
 	[(#INCLURE{fond=inclure/documents}{id_article})]
 
-	[(#REM) Petition :
-	La petition ayant une PAGINATION il faut absolument {env}
-	et pourquoi pas ajax
-	][(#PETITION|oui)<INCLURE{fond=inclure/petition}{id_article}{env}{ajax}>]
+	[(#PETITION|oui)<INCLURE{fond=inclure/petition_signatures}{id_article}{env}{ajax}>]
 
 	[<div class="notes surlignable"><h2 class="h2 pas_surlignable"><:info_notes:></h2>(#NOTES)</div>]
 

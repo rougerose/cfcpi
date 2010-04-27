@@ -36,7 +36,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'_rubriques' => 'rubriques',
 	
 	// S
+	'signature' => 'signature',
+	'signature_enregistree' => 'signature d&eacute;j&agrave; enregistr&eacute;e',
 	'signatures' => 'signatures',
+	'signatures_enregistrees' => 'signatures d&eacute;j&agrave; enregistr&eacute;es',
 	'signer_petition' => 'Signer la p&eacute;tition',
 	'_site_web' => 'site web',
 	'_sites_web' => 'sites web',

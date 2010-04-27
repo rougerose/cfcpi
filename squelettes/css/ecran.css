@@ -163,15 +163,15 @@ html { font-size: 100.01%; /* pour IE */ }
 body { font: 0.75em/1.5 Georgia, "Times New Roman", Times, serif; /* corps : 12px/18px */ }
 
 /* Titraille */
-h1,h2,h3,h4,h5,h6, #nav ul li, #navigation, .surtitre, .soustitre, .info-publi, #tabs  { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; }
-h1 { font-size: 2.333em; line-height: 1.285em; margin: 0; }
-
-.titre h1 { color: #4f007e; }
-
+h1,h2,h3,h4,h5,h6, #nav ul li, #navigation, .surtitre, .soustitre  { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; }
+h1 { font-size: 2.333em; /*28px */ line-height: 1.285em; margin: 0; }
+.a-cote h3 { font-size: 1.08em; /*14px*/ line-height: 1.38em; }
 .contenu_principal p {
-	font-size: 14px; line-height: 1.2857em;
+	font-size: 1.1667em; line-height: 1.2857em;
 	margin-bottom: 1.2857em;
 	text-align: justify; }
+
+p { margin-bottom: 1.5em; }
 
 /* ------------------------------------ */
 /*  Entete								*/
@@ -286,20 +286,24 @@ h1 { font-size: 2.333em; line-height: 1.285em; margin: 0; }
 /* ------------------------------------ */
 /*  Contenu								*/
 /* ------------------------------------ */
+/* Articles */
 .titre { margin-bottom: 3em; }
-.titre .surtitre, .titre .soustitre { 
-	color: #80c;
-	font-size: 14px; line-height: 1.2857em;
-	text-transform: uppercase; }
-.titre .soustitre { 
-	font-size: 15px;
-	text-transform: none; }
 
+	.titre h1 { color: #4f007e; }
 
-.info-publi {
-	color: #ccc;
-	font-size: 14px; line-height: 1.2857em;
-	margin: 1.2857em 0 0 560px; }
+	.titre .surtitre, .titre .soustitre { 
+		color: #80c;
+		font-size: 14px; line-height: 1.2857em;
+		text-transform: uppercase; }
+
+	.titre .soustitre { 
+		font-size: 15px;
+		text-transform: none; }
+
+	.info-publi {
+		color: #ccc;
+		font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+		margin: 1.5em 0 0 560px; }
 	
 	.info-publi abbr { color: #4f007e; }
 
@@ -318,7 +322,7 @@ h1 { font-size: 2.333em; line-height: 1.285em; margin: 0; }
 
 /* personnalisé */
 .ui-tabs { 
-	font-size: 11px; line-height: 1.6363;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding: 1.6em 0 0;
 	background: url(../img/background-rayures-noir_violet-degrade.png) repeat-x 0 -20px;
 	border-radius: 2px 0; 
@@ -390,15 +394,33 @@ h1 { font-size: 2.333em; line-height: 1.285em; margin: 0; }
 				float: right;
 				width: 138px; }
 				
+				.ui-tabs-panel dl.document dd h3 {
+					font-size: 12px; line-height: 18px; }
+				
 			.ui-tabs-panel dl.document dd span {
 				border-top: 1px dotted #eee; }
+
+/* Pétition */
+/* compteur signatures */
+p.signatures_compteur {
+	text-align: right;
+	margin: 0 0 .7em; }
+	
+	.signatures_compteur a {
+		color: #000;
+		font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: .83em; line-height: 1.8em; }
 
 /* ------------------------------------ */
 /*  Formulaires							*/
 /* ------------------------------------ */
 
 /* paramètres communs */
+fieldset {  }
 input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* surcharge spip_formulaires */
+.formulaire_spip .boutons { margin-bottom: 1.5em; }
 
 /* recherche */
 #formulaire_recherche { position: absolute; top: -3.9em; right: 0; }
@@ -417,6 +439,51 @@ input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-se
 		border-color: rgb(210,255,0); }
 	#formulaire_recherche input[type="submit"]:active {
 		border-style: inset; outline: none; }
+
+/* formulaire signature pétition */
+.petition {
+	background: url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
+	padding: 1.5em 2px 0;
+	border-radius: 2px 0; 
+	-webkit-border-top-left-radius: 2px; 
+	-webkit-border-top-right-radius: 2px; 
+	-moz-border-radius: 2px 2px 0 0; }
+	
+	.petition h3 {
+		color: #fff;
+		text-transform: uppercase;
+		margin: 0 5px 0; }
+	
+	.petition .formulaire_signature {
+		background-color: #fafafa;
+		border: 1px solid #800014; border-bottom-width: 0;
+		padding: 0 5px; }
+		
+		.petition form { border-bottom:	1px solid #eee; }
+		
+			.petition fieldset { 
+				margin: .7em 0 0; }
+				
+				.petition fieldset legend { 
+					font: 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+					color: #800014; background-color: transparent;
+					font-weight: bold; text-transform: uppercase;
+					border-bottom: 1px solid #800014; }
+				
+				.petition li {
+					opacity: .6; }
+				
+				.petition li.obligatoire {
+					opacity: 1; }
+				
+				.petition label {
+					font: 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+					color: #000; }
+					
+				.petition input.text, .petition textarea {
+					border: 2px solid #eaeaea; }
+				
+				.petition input:focus, .petition textarea:focus { border: 1px solid #990017; }
 
 /* ------------------------------------ */
 /*  Habillage : ombres                  */

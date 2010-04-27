@@ -1,4 +1,11 @@
 <BOUCLE_extra_article(ARTICLES){id_article}>
+[(#PETITION|oui)
+[<div class="petition ajax">
+	<h3><:signer_petition:></h3>
+	<INCLURE{fond=inclure/petition_compteur,id_article,env}>
+	(#FORMULAIRE_SIGNATURE)
+</div>]
+]
 	<BOUCLE_test_mots(MOTS){id_article}{par titre}>#SET{cpt_mots,#TOTAL_BOUCLE}</BOUCLE_test_mots>
 	<BOUCLE_test_documents(DOCUMENTS){id_article}{par num titre, titre}{vu=non}>#SET{cpt_documents,#TOTAL_BOUCLE}</BOUCLE_test_documents>
 #SET{cpt_total, #GET{cpt_mots}|plus{#GET{cpt_documents}}}
