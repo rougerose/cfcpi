@@ -1,6 +1,6 @@
 <BOUCLE_extra_article(ARTICLES){id_article}>
 [(#PETITION|oui)
-[<div class="petition ajax">
+[<div id="signer" class="petition ajax">
 	<h3><:signer_petition:></h3>
 	<INCLURE{fond=inclure/petition_compteur,id_article,env}>
 	(#FORMULAIRE_SIGNATURE)
@@ -13,22 +13,13 @@
 <BOUCLE_test_total(CONDITION){si #GET{cpt_total}|>{0}}>
 <div id="tabs">
 	<ul class="clearfix">
-		<BOUCLE_test_mots2(CONDITION){si #GET{cpt_mots}|>{0}}>
-		<li><a href="#mots"><:mots_clefs:></a></li>
-		</BOUCLE_test_mots2>
 		<BOUCLE_test_documents2(CONDITION){si #GET{cpt_documents}|>{0}}>
 		<li><a href="#documents"><:titre_documents_joints:></a></li>
 		</BOUCLE_test_documents2>
+		<BOUCLE_test_mots2(CONDITION){si #GET{cpt_mots}|>{0}}>
+		<li><a href="#mots"><:mots_clefs:></a></li>
+		</BOUCLE_test_mots2>
 	</ul>
-	<B_liste_mots>
-	<div id="mots">
-		<dl>
-			<BOUCLE_liste_mots(MOTS){id_article}{par titre}>
-			<dt><a href="#URL_MOT" rel="tag">#TITRE</a></dt>
-			</BOUCLE_liste_mots>
-		</dl>
-	</div>
-	</B_liste_mots>
 	<B_liste_documents>
 	<div id="documents">
 		<BOUCLE_liste_documents(DOCUMENTS){id_article}{vu=non}{par num titre, titre}>
@@ -42,6 +33,15 @@
 		</BOUCLE_liste_documents>
 	</div>
 	</B_liste_documents>
+	<B_liste_mots>
+	<div id="mots">
+		<dl>
+			<BOUCLE_liste_mots(MOTS){id_article}{par titre}>
+			<dt><a href="#URL_MOT" rel="tag">#TITRE</a></dt>
+			</BOUCLE_liste_mots>
+		</dl>
+	</div>
+	</B_liste_mots>
 </div>
 </BOUCLE_test_total>
 

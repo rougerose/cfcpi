@@ -156,9 +156,10 @@ a:active, a:focus { position: relative; top: 1px; outline: none; }
 
 
 /* ------------------------------------ */
-/*  Typo générale                       */
+/*  Typo								*/
 /* ------------------------------------ */
 
+/* générique */
 html { font-size: 100.01%; /* pour IE */ }
 body { font: 0.75em/1.5 Georgia, "Times New Roman", Times, serif; /* corps : 12px/18px */ }
 
@@ -166,12 +167,23 @@ body { font: 0.75em/1.5 Georgia, "Times New Roman", Times, serif; /* corps : 12p
 h1,h2,h3,h4,h5,h6, #nav ul li, #navigation, .surtitre, .soustitre  { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; }
 h1 { font-size: 2.333em; /*28px */ line-height: 1.285em; margin: 0; }
 .a-cote h3 { font-size: 1.08em; /*14px*/ line-height: 1.38em; }
+
+/* texte  */
+p { margin-bottom: 1.5em; }
+strong { font-weight: bold; }
+em { font-style: italic; }
+abbr, acronym { border-bottom: 1px dotted; cursor: help; }
+small { font-size: 0.90em; color: #666; }
+dfn { font-weight: bold; color: #666; }
+del { text-decoration: line-through; }
+ins { color: red !important; text-decoration: none; }
+sup, sub { font-size: .8em; font-variant: normal; }
+
+/* spécifique */
 .contenu_principal p {
 	font-size: 1.1667em; line-height: 1.2857em;
 	margin-bottom: 1.2857em;
 	text-align: justify; }
-
-p { margin-bottom: 1.5em; }
 
 /* ------------------------------------ */
 /*  Entete								*/
@@ -264,7 +276,7 @@ p { margin-bottom: 1.5em; }
 		#navigation li {  }
 		#navigation li.on { font-weight: normal; }
 			#navigation li a {
-				color: #bebebe;
+				color: #bababa;
 				display: block;
 				margin: 0 0 2px; padding-left: 10px; }
 				#navigation li a span {
@@ -289,12 +301,13 @@ p { margin-bottom: 1.5em; }
 /* Articles */
 .titre { margin-bottom: 3em; }
 
-	.titre h1 { color: #4f007e; }
+	.titre h1 { color: #BC1E20; line-height: 1em; margin-bottom: .2em; margin-top: .08em; }
 
 	.titre .surtitre, .titre .soustitre { 
-		color: #80c;
+		color: #600099;
 		font-size: 14px; line-height: 1.2857em;
-		text-transform: uppercase; }
+		text-transform: uppercase;
+		margin-bottom: 0; }
 
 	.titre .soustitre { 
 		font-size: 15px;
@@ -307,6 +320,19 @@ p { margin-bottom: 1.5em; }
 	
 	.info-publi abbr { color: #4f007e; }
 
+.chapo {  }
+	.chapo p { color: #4f007e; }
+
+.texte {  }
+	.texte xh2 { font-size: 1.5em; line-height: 1em; margin-bottom: .9em; }
+
+.ps { background-color: #f8f8f8; padding: .2em 5px 1.2857em; }
+	.ps h2 {
+		font-size: 1.5em; line-height: 1em;
+		color: #4f007e;
+		margin: .45em 0 .45em; }
+	.ps p {
+		margin-bottom: 0 ; }
 /* UI-tabs (JQuery) */
 
 /* original */
@@ -390,7 +416,7 @@ p { margin-bottom: 1.5em; }
 					border-color: #80c; }
 			
 			.ui-tabs-panel dl.document dd {
-				color: #bebebe;
+				color: #bababa;
 				float: right;
 				width: 138px; }
 				
@@ -401,15 +427,73 @@ p { margin-bottom: 1.5em; }
 				border-top: 1px dotted #eee; }
 
 /* Pétition */
-/* compteur signatures */
+	/* formulaire voir plus bas */
+	
+	/* compteur signatures */
 p.signatures_compteur {
 	text-align: right;
-	margin: 0 0 .7em; }
+	margin: .7em 1px 0 0; }
 	
-	.signatures_compteur a {
+	.signatures_compteur a.action { 
+		border-radius: 4px 0;
+		-webkit-border-top-left-radius: 4px; 
+		-webkit-border-top-right-radius: 4px; 
+		-moz-border-radius: 4px 4px 0 0; }
+
+/* lien "action" */
+a.action { 
+	font: 11px/18px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff; background-color: #690000;
+	padding: 3px;
+	border-radius: 4px;
+	-webkit-border: 4px;
+	-moz-border-radius: 4px; }
+
+a.action:hover { color: #9e00ed; background-color: #2c0046; }
+
+	/* signatures */
+#signatures { margin-top: 2em; margin-bottom: 2em; }
+	
+	#signatures h2 {
+		text-align: center;
+		font-size: 1.5em; line-height: 1em;
+		color: #4f007e; }
+	
+	#signatures p.signer {
+		text-align: right;
+		margin: 0 0 1em; }
+
+#signatures table.spip { 
+	font: .92em/1.6363em "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
+	border: 1px solid #eee; border-width: 1px 0;
+	margin: 0;
+	width: 100%; }
+	
+	#signatures table.spip tr.row_first {
+		background-color: #eee; }
+	
+	#signatures table.spip tr.row_even {
+		background-color: #fff; }
+	
+	#signatures table.spip tr.row_odd {
+		background-color: #eee; }
+		
+		#signatures table.spip th, #signatures table.spip td {
+			border: 1px solid #eee; border-width: 0 1px;}
+
+
+/* ------------------------------------ */
+/*  Pagination							*/
+/* ------------------------------------ */
+p.pagination { 
+	font: 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: right;
+	color: #999; }
+p.pagination.haut { margin: 0 0 .2857em; }
+p.pagination.bas { margin: .2857em 0 1em; }
+	p.pagination strong { 
 		color: #000;
-		font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: .83em; line-height: 1.8em; }
+		font-size: 12px; }
 
 /* ------------------------------------ */
 /*  Formulaires							*/

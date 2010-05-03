@@ -22,7 +22,7 @@
 	[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
 
 	[<div class="ps">
-		<h2 class="h2"><:info_ps:></h2>
+		<h2 class="h2"><:ps:></h2>
 		<div class="#EDIT{ps} surlignable">(#PS|image_reduire{500,0})</div>
 	</div>]
 	<!--
@@ -34,11 +34,6 @@
 	[(#PETITION|oui)<INCLURE{fond=inclure/petition_signatures}{id_article}{env}{ajax}>]
 
 	[<div class="notes surlignable"><h2 class="h2 pas_surlignable"><:info_notes:></h2>(#NOTES)</div>]
-
-	[(#REM) Forum de l'article ]
-	<a href="#forum" name="forum" id="forum"></a>
-	<INCLURE{fond=inclure/forum}{id_article} />
-	[<p class="repondre"><a href="(#PARAMETRES_FORUM|url_reponse_forum)" rel="noindex nofollow"><:repondre_article:></a></p>]
 
 	[(#REM) Fil d'Ariane ]
 	<p id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_article}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</p>

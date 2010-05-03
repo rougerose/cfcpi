@@ -29,6 +29,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// P
 	'page' => 'Page',
 	'par_motcle' => 'Par mot-cl&eacute;',
+	'petition' => 'P&eacute;tition',
+	'ps' => 'Post-scriptum',
 	'publie_le' => 'Publi&eacute; le',
 	
 	//R
