@@ -6,18 +6,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<title>test</title>
-	
+	<INCLURE{fond=inclure/head}>
 </head>
 
 <body>
-	<B_articles>
-	<p class='pagination'> #TRI{<,croissant} | #TRI{>,decroissant} | #TRI{titre,Titre} | #TRI{id_article} | #TRI{date}</p>
-	<ul>
-	<BOUCLE_articles(ARTICLES){tri titre,inverse}>
-	<li>#ID_ARTICLE, #TITRE, #DATE</li>
-	</BOUCLE_articles>
-	</ul>
-	</B_articles>
-
+	<INCLURE{fond=test1,env}>
 </body>
 </html>
