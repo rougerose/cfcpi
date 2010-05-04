@@ -1,0 +1,9 @@
+/*  ------------------------------------------
+/*  surcharge typographique pour les intertitres
+/*  ------------------------------------------ */
+/*	cette feuille de style vient surcharger 
+	celle activée par le plugin "intertitres hiérarchisés" */
+h3 {  } 
+h4 {  } 
+h5 {  } 
+h6 {  } 
