@@ -407,7 +407,7 @@ table.spip {
 .ui-tabs { 
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding: 1.6em 0 0;
-	background: url(../img/background-rayures-noir_violet-degrade.png) repeat-x 0 -20px;
+	background: #110019 url(../img/background-rayures-noir_violet-degrade.png) repeat-x left top;
 	border-radius: 2px 0; 
 	-webkit-border-top-left-radius: 2px; 
 	-webkit-border-top-right-radius: 2px; 
@@ -506,7 +506,7 @@ a.action {
 	-webkit-border: 4px;
 	-moz-border-radius: 4px; }
 
-a.action:hover { color: #9e00ed; background-color: #4d1e20; }
+a.action:hover { color: #b80000; background-color: #000; }
 
 	/* signatures */
 #signatures { margin-top: 54px; margin-bottom: 2em; }
@@ -558,7 +558,7 @@ input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-se
 
 /* formulaire signature pétition */
 .petition {
-	background: url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
+	background: #280000 url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
 	padding: 1.5em 2px 0;
 	border-radius: 2px 0; 
 	-webkit-border-top-left-radius: 2px; 
