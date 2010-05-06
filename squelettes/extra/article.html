@@ -6,43 +6,12 @@
 	(#FORMULAIRE_SIGNATURE)
 </div>]
 ]
-	<BOUCLE_test_mots(MOTS){id_article}{par titre}>#SET{cpt_mots,#TOTAL_BOUCLE}</BOUCLE_test_mots>
-	<BOUCLE_test_documents(DOCUMENTS){id_article}{par num titre, titre}{vu=non}>#SET{cpt_documents,#TOTAL_BOUCLE}</BOUCLE_test_documents>
+<BOUCLE_test_mots(MOTS){id_article}{par titre}>#SET{cpt_mots,#TOTAL_BOUCLE}</BOUCLE_test_mots>
+<BOUCLE_test_documents(DOCUMENTS){id_article}{par num titre, titre}{vu=non}>#SET{cpt_documents,#TOTAL_BOUCLE}</BOUCLE_test_documents>
 #SET{cpt_total, #GET{cpt_mots}|plus{#GET{cpt_documents}}}
 
 <BOUCLE_test_total(CONDITION){si #GET{cpt_total}|>{0}}>
-<div id="tabs">
-	<ul class="clearfix">
-		<BOUCLE_test_documents2(CONDITION){si #GET{cpt_documents}|>{0}}>
-		<li><a href="#documents"><:titre_documents_joints:></a></li>
-		</BOUCLE_test_documents2>
-		<BOUCLE_test_mots2(CONDITION){si #GET{cpt_mots}|>{0}}>
-		<li><a href="#mots"><:mots_clefs:></a></li>
-		</BOUCLE_test_mots2>
-	</ul>
-	<B_liste_documents>
-	<div id="documents">
-		<BOUCLE_liste_documents(DOCUMENTS){id_article}{vu=non}{par num titre, titre}>
-		<dl class="document clearfix">
-			<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT)]</dt>
-			<dd>
-				<h3>[<a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:info_document:> #ID_DOCUMENT})]</a>]</h3>
-				<p>[(#DESCRIPTIF|PtoBR)] <span>#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)]</span></p>
-			</dd>
-		</dl>
-		</BOUCLE_liste_documents>
-	</div>
-	</B_liste_documents>
-	<B_liste_mots>
-	<div id="mots">
-		<dl>
-			<BOUCLE_liste_mots(MOTS){id_article}{par titre}>
-			<dt><a href="#URL_MOT" rel="tag">#TITRE</a></dt>
-			</BOUCLE_liste_mots>
-		</dl>
-	</div>
-	</B_liste_mots>
-</div>
+#INCLURE{fond=inclure/tabs_documents_mots,id_article}
 </BOUCLE_test_total>
 
 </BOUCLE_extra_article>
