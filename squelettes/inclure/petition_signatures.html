@@ -18,7 +18,7 @@
 			</tr>
 		</thead>
 		<tbody>
-		<BOUCLE_signatures(SIGNATURES){id_article}{pagination #ENV{pagination, 20} }{!par #ENV{tri}}{par #ENV{tri_inverse}}{!par #ENV{tri,#ENV{tri_inverse}}|?{'',date_time}}>
+		<BOUCLE_signatures(SIGNATURES){id_article}{pagination #ENV{pagination, 2} }{!par #ENV{tri}}{par #ENV{tri_inverse}}{!par #ENV{tri,#ENV{tri_inverse}}|?{'',date_time}}>
 		<tr [class="(#COMPTEUR_BOUCLE|alterner{row_even,row_odd})]" id="id_signature#ID_SIGNATURE">
 			<td class="signature-date">[(#DATE|jour)][/(#DATE|mois)][/(#DATE|annee)]</td>
 			<td class="signature-nom"><span class="#EDIT{qui}">#NOM</span>[ <div class="small #EDIT{hyperlien}"><a href="(#URL_SITE)"[ title="(#NOM_SITE|attribut_html|couper{80})"] class="spip_out"><:site_web:></a></div>]</td>
