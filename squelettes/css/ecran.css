@@ -97,6 +97,8 @@ blockquote, q { quotes: "" ""; }
 /*	5 : 380		11 : 860	*/
 /*	6 : 460		12 : 940	*/
 
+.colonne { float: left; margin-right: 20px; }
+
 /* règles communes */
 
 body { 
@@ -138,7 +140,7 @@ body {
             
             	.contenu_principal { width: 540px; }
             	
-            		#hierarchie { clear: both; }
+            	#hierarchie { xclear: both; }
             	
             	#extra { 
             		display: inline; float: right;
@@ -149,7 +151,7 @@ body {
             	width: 160px; }
 
 /* règles spécifiques */
-.page_article .contenu_principal {
+.page_article .contenu_principal, .page_rubrique .contenu_principal {
 	float: left; }
 
 /* ------------------------------------ */
@@ -211,10 +213,10 @@ code, kbd, samp, pre, tt, var, .spip_code, .spip_cadre { color: #600099; font-fa
 .spip_cadre { background-color: #fafafa; border: 1px solid #eaeaea; padding: 2px; }
 
 /* listes */
-.contenu_principal ul, .contenu_principal ol { margin-bottom: 18px; padding-left: 2em; }
-.contenu_principal ul ul, .contenu_principal ol ol { margin-bottom: 0; }
-.contenu_principal ul li { list-style-type: disc; }
-.contenu_principal ul li li { list-style-type: circle; }
+ul.spip, ol.spip { margin-bottom: 18px; padding-left: 2em; }
+ul.spip ul, ol.spip ol { margin-bottom: 0; }
+ul.spip li { list-style-type: disc; }
+ul.spip li li { list-style-type: circle; }
 
 /* tableaux */
 table.spip {
@@ -355,6 +357,9 @@ table.spip {
 /* ------------------------------------ */
 /*  Contenu								*/
 /* ------------------------------------ */
+/* Règles générales */
+.info-publi { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 /* Articles */
 .titre { margin-bottom: 36px; }
 	
@@ -370,11 +375,11 @@ table.spip {
 		font-size: 18px; text-transform: none;
 		margin-top: 18px; margin-left: 30px; }
 
-	.info-publi {
-		color: #ccc; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	.titre .info-publi {
+		color: #ccc; 
 		margin: 18px 0 0 560px; }
 	
-	.info-publi abbr { color: #4f007e; }
+	.titre .info-publi abbr { color: #4f007e; }
 
 .chapo {  }
 	.chapo p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -389,6 +394,17 @@ table.spip {
 		border-top: 2px solid #000;
 		margin: 4px 0 9px; padding-top: 5px; }
 	.ps p, .notes p { font-size: 12px; text-align: left; }
+
+/* Rubriques */
+
+/* 	pour les rubriques ne contenant pas d'articles : 
+	on présente les articles des sous-rubriques
+	sur 2 colonnes.									*/
+.rubriques .hfeed .articles { width: 540px; }
+.rubriques .hfeed .colonne { width: 240px; }
+.rubriques .hfeed .item-1 { margin-right: 60px; clear: left; }
+.rubriques .hfeed .item-0 { margin-right: 0; }
+
 
 /* UI-tabs (JQuery) */
 
@@ -478,7 +494,8 @@ table.spip {
 				width: 138px; }
 				
 				.ui-tabs-panel dl.document dd h3 {
-					font-size: 12px; line-height: 18px; }
+					font-size: 12px; line-height: 18px;
+					margin: 0; }
 				
 			.ui-tabs-panel dl.document dd span {
 				border-top: 1px dotted #eee; }

@@ -5,61 +5,60 @@
 </div>
 <div class="contenu_principal">
 	[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
-</div>
-
-<B_articles>
-<div class="liste articles">
-	#ANCRE_PAGINATION
-	<h2 class="h2"><:articles_rubrique:></h2>
-	<ul class="liste-items">
-		<BOUCLE_articles(ARTICLES){id_rubrique} {!par date} {pagination 5}>
-		#INCLURE{fond=inclure/article-resume,id_article}
-		</BOUCLE_articles>
-	</ul>
-	[<p class="pagination">(#PAGINATION)</p>]
-</div>
-</B_articles>
-
-	[(#REM) Si aucun article, affiche un plan de la rubrique ]
-	<B_sous_rubriques>
-	<div class="menu rubriques">
-		<h2 class="h2"><:sous_rubriques:></h2>
-		<ul class="menu-liste">
-			<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
-			<li class="menu-entree">
-				<h2><a href="#URL_RUBRIQUE">[(#TITRE)]</a></h2>
-				<B_ss_rub_articles>
-				<ul class="hfeed">
-					<BOUCLE_ss_rub_articles(ARTICLES){id_rubrique}{!par date}{0,5}>
-					#INCLURE{fond=inclure/article-resume,id_article}
-					</BOUCLE_ss_rub_articles>
-				</ul>
-				</B_ss_rub_articles>
-
-				[(#REM) Une boucle recursive pour le mini plan]
-				<B_miniplan>
-				<ul class="menu-liste">
-					<BOUCLE_miniplan(RUBRIQUES) {id_parent} {par num titre, titre}>
-					<li class="menu-entree">
-						<a href="#URL_RUBRIQUE">[(#TITRE)]</a>
-						<BOUCLE_m2(BOUCLE_miniplan)></BOUCLE_m2>
-					</li>
-					</BOUCLE_miniplan>
-				</ul>
-				</B_miniplan>
-				
-				<//B_ss_rub_articles>
-
-			</li>
-			</BOUCLE_sous_rubriques>
+	
+	<B_articles>
+	<div class="liste articles">
+		#ANCRE_PAGINATION
+		<h2 class="h2"><:articles_rubrique:></h2>
+		<ul class="liste-items">
+			<BOUCLE_articles(ARTICLES){id_rubrique} {!par date} {pagination 5}>
+			#INCLURE{fond=inclure/article-resume,id_article}
+			</BOUCLE_articles>
 		</ul>
-		</div>
-	</B_sous_rubriques>
-<//B_articles>
+		[<p class="pagination">(#PAGINATION)</p>]
+	</div>
+	</B_articles>
 
-[<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
+		[(#REM) Si aucun article, affiche un plan de la rubrique ]
+		<B_sous_rubriques>
+		<div class="liste rubriques">
+			<h2 class="h2"><:sous_rubriques:></h2>
+			<ul class="menu-liste hfeed">
+				<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
+				<li class="menu-entree">
+					<h2><a href="#URL_RUBRIQUE">[(#TITRE)]</a></h2>
+					<B_ss_rub_articles>
+					<ul class="liste articles clearfix">
+						<BOUCLE_ss_rub_articles(ARTICLES){id_rubrique}{!par date}{0,6}>
+						[(#INCLURE{fond=inclure/article-resume,id_article,compteur=[(#COMPTEUR_BOUCLE|modulo{2})]})]
+						</BOUCLE_ss_rub_articles>
+					</ul>
+					</B_ss_rub_articles>
 
-[(#REM) Fil d'Ariane ]
-<p id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_rubrique}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</p>
+					[(#REM) Une boucle recursive pour le mini plan]
+					<B_miniplan>
+					<ul class="menu-liste">
+						<BOUCLE_miniplan(RUBRIQUES) {id_parent} {par num titre, titre}>
+						<li class="menu-entree">
+							<a href="#URL_RUBRIQUE">[(#TITRE)]</a>
+							<BOUCLE_m2(BOUCLE_miniplan)></BOUCLE_m2>
+						</li>
+						</BOUCLE_miniplan>
+					</ul>
+					</B_miniplan>
+
+					<//B_ss_rub_articles>
+
+				</li>
+				</BOUCLE_sous_rubriques>
+			</ul>
+			</div>
+		</B_sous_rubriques>
+	<//B_articles>
+
+	[<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
+	
+	
+</div>
 
 </BOUCLE_contenu_rubrique>
