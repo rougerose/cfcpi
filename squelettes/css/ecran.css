@@ -358,7 +358,7 @@ table.spip {
 /*  Contenu								*/
 /* ------------------------------------ */
 /* Règles générales */
-.info-publi { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.meta-publi, .info-publi { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* Articles */
 .titre { margin-bottom: 36px; }
@@ -395,7 +395,40 @@ table.spip {
 		margin: 4px 0 9px; padding-top: 5px; }
 	.ps p, .notes p { font-size: 12px; text-align: left; }
 
+
 /* Rubriques */
+h2.section {
+	color: #4F007E;
+	border-bottom: 2px solid #4f007e;
+	margin-bottom: 28px; padding-bottom: 6px; }
+.menu-entree h2 {
+	font-size: 20px;
+	border-bottom: 1px dotted #b80000;
+	margin-top: 18px; margin-bottom: 12px; padding-bottom: 6px; }
+	
+
+/* hfeed */
+.hentry {
+	border-bottom: 1px dotted #cacaca;
+	margin-bottom: 22px; padding-bottom: 5px; }
+
+	h3.entry-title {
+		font-size: 14px;
+		margin: 0 0 18px; }
+		h3.entry-title a { xcolor: #000; }
+	
+	.entry-content {  }	
+		.entry-content p {
+			text-align: left; }
+	
+	.meta-publi {  }
+		.meta-publi p {
+			font-size: 11px; line-height: 12px; text-align: left;
+			float: left;
+			border-right: 1px solid #cacaca;
+			margin-bottom: 9px; margin-right: 10px; padding-right: 10px; }
+		.meta-publi p:last-child { border-right: 0; }
+
 
 /* 	pour les rubriques ne contenant pas d'articles : 
 	on présente les articles des sous-rubriques
@@ -535,9 +568,9 @@ a.action:hover { color: #b80000; background-color: #000; }
 /*  Pagination							*/
 /* ------------------------------------ */
 p.pagination { 
-	font: 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 12px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align: right;
-	color: #999; }
+	color: #4f007e; }
 p.pagination.haut { margin: 0 0 .2857em; }
 p.pagination.bas { margin: .2857em 0 1em; }
 	p.pagination strong { 
@@ -599,7 +632,7 @@ input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-se
 				
 				.petition fieldset legend { 
 					font: 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-					color: #bc1e20;/* #800014;*/ background-color: transparent;
+					color: #bc1e20; background-color: transparent;
 					font-weight: bold; text-transform: uppercase;
 					border-bottom: 1px solid #bc1e20; }
 				
