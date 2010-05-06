@@ -1,4 +1,5 @@
 <BOUCLE_secteur(RUBRIQUES){id_rubrique}>#SET{secteur,#ID_SECTEUR}</BOUCLE_secteur>
+[(#REM) on est dans la rubrique Qui sommes-nous ? ]
 <BOUCLE_test_secteur_8(CONDITION){si #GET{secteur}|=={8}|oui}>
 <B_articles_rubrique>
 <h2 class="accessibilite"><:meme_rubrique:></h2>
@@ -11,6 +12,6 @@
 </BOUCLE_test_secteur_8>
 
 <BOUCLE_test_autres_secteurs(CONDITION){si #GET{secteur}|!=={8}|oui}>
-#INCLURE{fond=inclure/rubriques,id_rubrique}
+#INCLURE{fond=inclure/navigation_secondaire_rubriques,id_rubrique}
 </BOUCLE_test_autres_secteurs>
 

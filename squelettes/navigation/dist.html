@@ -1,2 +1,17 @@
 [(#REM) Menu de navigation par rubriques ]
-<INCLURE{fond=inclure/rubriques}{id_rubrique}>
+<BOUCLE_secteur(RUBRIQUES){id_rubrique}>#SET{secteur,#ID_SECTEUR}</BOUCLE_secteur>
+[(#REM) on est dans la rubrique Qui sommes-nous ? ]
+<BOUCLE_test_secteur_8(CONDITION){si #GET{secteur}|=={8}|oui}>
+<B_articles_rubrique>
+<h2 class="accessibilite"><:meme_rubrique:></h2>
+<ul class="menu_liste">
+	<BOUCLE_articles_rubrique(ARTICLES){id_rubrique}{par num titre}>
+	<li class="menu_entree[ (#EXPOSE)]"><a href="#URL_ARTICLE">#TITRE</a></li>
+	</BOUCLE_articles_rubrique>
+</ul>
+</B_articles_rubrique>
+</BOUCLE_test_secteur_8>
+
+<BOUCLE_test_autres_secteurs(CONDITION){si #GET{secteur}|!=={8}|oui}>
+#INCLURE{fond=inclure/navigation_secondaire_rubriques,id_rubrique}
+</BOUCLE_test_autres_secteurs>
