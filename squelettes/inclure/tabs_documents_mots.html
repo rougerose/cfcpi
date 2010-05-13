@@ -22,11 +22,11 @@
 	</B_liste_documents>
 	<B_liste_mots>
 	<div id="mots">
-		<dl>
+		<ul class="mots">
 			<BOUCLE_liste_mots(MOTS){id_article?}{id_rubrique?}{par titre}>
-			<dt><a href="#URL_MOT" rel="tag">#TITRE</a></dt>
+			<li><h3><a href="#URL_MOT" rel="tag">#TITRE</a></h3></li>
 			</BOUCLE_liste_mots>
-		</dl>
+		</ul>
 	</div>
 	</B_liste_mots>
 </div>

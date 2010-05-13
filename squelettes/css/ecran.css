@@ -506,6 +506,9 @@ h2.section {
 						color: #600099; font-weight: bold;
 						display: block; float: left;
 						margin-left: -5em; width: 5em; }
+/* rubrique #extra */
+
+
 						 
 /* UI-tabs (JQuery) */
 
@@ -564,11 +567,11 @@ h2.section {
 		border: 1px solid #50206d; border-top-width: 0; border-bottom-width: 0; 
 		padding: 1.1em 5px 0 10px; margin: 0 2px }
 		
-		.ui-tabs-panel dl { 
+		.ui-tabs-panel dl, .ui-tabs-panel ul { 
 			width: 199px;
 			margin-bottom: .7em; }
 		
-			.ui-tabs-panel dt {
+			.ui-tabs-panel dt, .ui-tabs-panel li {
 				border-bottom: 1px solid #eee;
 				padding-top: .4em;
 				padding-bottom: .4em; }
@@ -594,7 +597,7 @@ h2.section {
 				float: right;
 				width: 138px; }
 				
-				.ui-tabs-panel dl.document dd h3 {
+				.ui-tabs-panel dl.document dd h3, .ui-tabs-panel ul.mots li h3 {
 					font-size: 12px; line-height: 18px;
 					margin: 0; }
 				
