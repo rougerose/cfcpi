@@ -160,8 +160,9 @@ body {
 a { color: #b80000; text-decoration: none; }
 a:visited { color: #b80000; }
 a:hover, a.spip_out:hover, a.spip_glossaire:hover { color: #000; text-decoration: underline; outline: none; }
-a:active {  }
-a:active, a:focus { position: relative; top: 1px; outline: none; }
+a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
+a:active { outline: none; }
+
 
 a.spip_out, a.spip_glossaire {
 	background: url(../img/spip_out.png) no-repeat right center;
@@ -398,14 +399,15 @@ table.spip {
 
 /* Rubriques */
 h2.section {
-	color: #4F007E;
+	color: #4f007e;
 	border-bottom: 2px solid #4f007e;
 	margin-bottom: 28px; padding-bottom: 6px; }
 .menu-entree h2 {
 	font-size: 20px;
-	border-bottom: 1px dotted #b80000;
+	border-bottom: 1px dotted #4f007e;
 	margin-top: 18px; margin-bottom: 12px; padding-bottom: 6px; }
-	
+	.menu-entree h2 a { color: #4f007e; }
+	.menu-entree p.descriptif { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* hfeed */
 .hentry {
@@ -433,12 +435,78 @@ h2.section {
 /* 	pour les rubriques ne contenant pas d'articles : 
 	on présente les articles des sous-rubriques
 	sur 2 colonnes.									*/
-.rubriques .hfeed .articles { width: 540px; }
+.rubriques .hfeed .articles { width: 540px; margin-bottom: 54px; }
 .rubriques .hfeed .colonne { width: 240px; }
 .rubriques .hfeed .item-1 { margin-right: 60px; clear: left; }
 .rubriques .hfeed .item-0 { margin-right: 0; }
 
+/*	lien vers tous les articles d'une sous-rubrique */
+.rubriques .liste .articles-tous {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right;
+	font-size: 12px;
+	clear: both;
+	width: 540px; }
 
+/* Agenda */
+	/* navigation temporelle */
+#agenda-nav {
+	margin: 36px 0 18px; padding: 10px 0 8px;
+	border: 1px solid #8234b1; border-width: 2px 0 1px; }
+	#agenda-nav ul { text-align: center; }
+		#agenda-nav li {
+			font: 12px/18px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
+			display: inline; clear: none;
+			margin-right: 10px; }
+		#agenda-nav li:last-child { margin-right: 0; }
+			#agenda-nav a {
+				 }
+			#agenda-nav form { display: inline; }
+				#agenda-nav select {
+					width: 15em; }
+				#agenda-nav p {
+					display: inline; clear: none; 
+					margin: 0;  }
+	
+	/* contenu agenda */
+.vcalendar {  }
+	.vevent {
+		border-bottom: 1px solid #8234b1;
+		margin: 0 0 22px 0; padding-bottom: 5px; }
+		.vevent dt {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: center; 
+			background-color: #8234b1; color: #fff;
+			float: left;
+			padding: 5px;
+			border-radius: 4px; 
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			box-shadow: 0 0 5px rgba(72,0,114,0.3);
+	-webkit-box-shadow: 0 0 5px rgba(72,0,114,0.3);
+	-moz-box-shadow: 0 0 5px rgba(72,0,114,0.3); }
+			.vevent dt .jour {
+				font-size: 36px; line-height: 30px;
+				padding: ; }
+			.vevent dt .mois-annee {
+				font-size: 11px; font-weight: bold; line-height: 18px;
+				background-color: #600099;
+				margin-top: 5px; padding: 2px 5px;
+				display: block;
+				box-shadow: 0 0 5px #333;
+				-webkit-box-shadow: 0 0 5px #333;
+				-moz-box-shadow: 0 0 4px #333; }
+			.vevent dt .sep.first { display: none; }
+			.vevent dd { margin-left: 6em; }
+				.vevent dd h3 { margin: 36px 0 9px 0; }
+				.vevent dd .infos {
+						font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+						font-size: 12px; line-height: 12px;
+						border-bottom: 1px solid #8234b1;
+						margin: 0 0 9px; padding: 0 0 9px 5em; } 
+					.vevent dd .label {
+						color: #600099; font-weight: bold;
+						display: block; float: left;
+						margin-left: -5em; width: 5em; }
+						 
 /* UI-tabs (JQuery) */
 
 /* original */
@@ -547,17 +615,6 @@ p.signatures_compteur {
 		-webkit-border-top-right-radius: 4px; 
 		-moz-border-radius: 4px 4px 0 0; }
 
-/* lien "action" */
-a.action { 
-	font: 12px/18px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #fff; background-color: #78001a;
-	padding: 3px;
-	border-radius: 4px;
-	-webkit-border: 4px;
-	-moz-border-radius: 4px; }
-
-a.action:hover { color: #c00; background-color: #000; }
-
 	/* signatures */
 #signatures { margin-top: 54px; margin-bottom: 2em; }
 	#signatures p.signer {
@@ -662,10 +719,40 @@ input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-se
 	box-shadow: 0 0 5px #333;
 	-webkit-box-shadow: 0 0 5px #333;
 	-moz-box-shadow: 0 0 5px #333; }
+
 	
 /* ------------------------------------ */
 /*  Divers								*/
 /* ------------------------------------ */
+
+/* lien "action" */
+a.action { 
+	font: 12px/18px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff; background-color: #78001a;
+	padding: 3px;
+	border-radius: 4px;
+	-webkit-border: 4px;
+	-moz-border-radius: 4px; }
+a.action:hover { color: #c00; background-color: #000; }
+
+/* texte d'infos */
+.info {
+	background-color: rgba(72,0,114,0.89);
+	color: #fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 18px auto; padding: 0 5px;
+	width: 80%;
+	border-radius: 4px;
+	-webkit-border: 4px;
+	-moz-border-radius: 4px;
+	box-shadow: 0 0 5px rgba(72,0,114,0.3);
+	-webkit-box-shadow: 0 0 5px rgba(72,0,114,0.3);
+	-moz-box-shadow: 0 0 5px rgba(72,0,114,0.3); }
+	.info p {
+		xtext-align: center; 
+		background: url(../img/icone-information-32x32.png) no-repeat 0 center;
+		padding: 13px 15px 15px 42px ; }
+
 
 /* accessibilité */
 .accessibilite { display:none; }

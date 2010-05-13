@@ -20,28 +20,17 @@
 			<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
 			<li class="menu-entree">
 				<h2><a href="#URL_RUBRIQUE">[(#TITRE)]</a></h2>
+				[<p class="descriptif">(#INTRODUCTION|couper{200}) <a href="#URL_RUBRIQUE"><:lire_la_suite:></a></p>]
 				<B_ss_rub_articles>
 				<ul class="liste articles clearfix">
 					<BOUCLE_ss_rub_articles(ARTICLES){id_rubrique}{!par date}{0,6}>
 					[(#INCLURE{fond=inclure/article-resume,id_article,compteur=[(#COMPTEUR_BOUCLE|modulo{2})]})]
 					</BOUCLE_ss_rub_articles>
+					<BOUCLE_ss_rub_articles_supplementaires(ARTICLES){id_rubrique}{!par date}{6,1}>
+					<li class="articles-tous"><a href="#URL_RUBRIQUE"><:tous_articles_in_rubrique:> #_sous_rubriques:TITRE &#x2192;</a></li>
+					</BOUCLE_ss_rub_articles_supplementaires>
 				</ul>
 				</B_ss_rub_articles>
-
-				[(#REM) Une boucle recursive pour le mini plan]
-				<B_miniplan>
-				<ul class="menu-liste">
-					<BOUCLE_miniplan(RUBRIQUES) {id_parent} {par num titre, titre}>
-					<li class="menu-entree">
-						<a href="#URL_RUBRIQUE">[(#TITRE)]</a>
-						<BOUCLE_m2(BOUCLE_miniplan)></BOUCLE_m2>
-					</li>
-					</BOUCLE_miniplan>
-				</ul>
-				</B_miniplan>
-
-				<//B_ss_rub_articles>
-
 			</li>
 			</BOUCLE_sous_rubriques>
 		</ul>
