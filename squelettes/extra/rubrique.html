@@ -5,3 +5,14 @@
 <BOUCLE_test_total(CONDITION){si #GET{cpt_total}|>{0}}>
 #INCLURE{fond=inclure/tabs_documents_mots,id_rubrique}
 </BOUCLE_test_total>
+
+[(#REM) dernières actualités ]
+[(#REM) test : est-on dans la rubrique actualités ? ]
+[(#ENV{id_rubrique}|!={9}|oui)
+<INCLURE{fond=inclure/rubrique_extra-actualites,env}>
+]
+
+[(#REM) dates à venir dans l'agenda ]
+[(#ENV{id_rubrique}|!={14}|oui)
+<INCLURE{fond=inclure/rubrique_extra-agenda,env}>
+]

@@ -1,14 +1,19 @@
 <?php
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// A
+	'_actualites' => 'actualit&eacute;s',
 	'afficher_texte_complet' => 'Afficher le texte complet',
 	'agenda_periode_vide' => 'Il n&#x27;y a pas d&#x27;entr&eacute;e dans notre agenda &agrave; cette date.',
 	'_article' => 'article',
 	'_articles' => 'articles',
 	'article_in_rubrique' => 'Article publi&eacute; dans la rubrique',
 	'_au' => 'au',
+	
 	// D
+	'dans_l' => 'Dans l&#x27;', // pour le titre "Dans l'agenda de la CFCPI"
+	'de_la_cfcpi' => 'de la CFCPI',
 	'dernieres_actualites' => 'Derni&egrave;res actualit&eacute;s',
+	'dernieres' => 'Derni&egrave;res',
 	'_du' => 'du',
 
 	// E

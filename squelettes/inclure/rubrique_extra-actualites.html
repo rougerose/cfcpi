@@ -1,0 +1,10 @@
+<BOUCLE_rubrique_actualites(RUBRIQUES){id_rubrique=9}>
+<B_articles>
+<div id="actus" class="liste">
+	<h2><:dernieres:> <a href="#URL_RUBRIQUE">#TITRE</a></h2>
+	<BOUCLE_articles(ARTICLES){id_rubrique}{0,3}{!par date}>
+	#INCLURE{fond=inclure/article-resume,id_article}
+	</BOUCLE_articles>
+</div>
+</B_articles>
+</BOUCLE_rubrique_actualites>

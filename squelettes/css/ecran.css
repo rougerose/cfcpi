@@ -400,8 +400,8 @@ table.spip {
 /* Rubriques */
 h2.section {
 	color: #4f007e;
-	border-bottom: 2px solid #4f007e;
-	margin-bottom: 28px; padding-bottom: 6px; }
+	border: 2px solid #4f007e; border-width: 2px 0 1px;
+	margin-bottom: 28px; padding: 6px 0; }
 .menu-entree h2 {
 	font-size: 20px;
 	border-bottom: 1px dotted #4f007e;
@@ -472,7 +472,7 @@ h2.section {
 	.vevent {
 		border-bottom: 1px solid #8234b1;
 		margin: 0 0 22px 0; padding-bottom: 5px; }
-		.vevent dt {
+		.vevent dt, #extra .liste dt {
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: center; 
 			background-color: #8234b1; color: #fff;
 			float: left;
@@ -481,12 +481,11 @@ h2.section {
 			-webkit-border-radius: 4px;
 			-moz-border-radius: 4px;
 			box-shadow: 0 0 5px rgba(72,0,114,0.3);
-	-webkit-box-shadow: 0 0 5px rgba(72,0,114,0.3);
-	-moz-box-shadow: 0 0 5px rgba(72,0,114,0.3); }
+			-webkit-box-shadow: 0 0 5px rgba(72,0,114,0.3);
+			-moz-box-shadow: 0 0 5px rgba(72,0,114,0.3); }
 			.vevent dt .jour {
-				font-size: 36px; line-height: 30px;
-				padding: ; }
-			.vevent dt .mois-annee {
+				font-size: 36px; line-height: 30px; }
+			.vevent dt .mois-annee, #extra .liste dt .mois-annee {
 				font-size: 11px; font-weight: bold; line-height: 18px;
 				background-color: #600099;
 				margin-top: 5px; padding: 2px 5px;
@@ -494,7 +493,7 @@ h2.section {
 				box-shadow: 0 0 5px #333;
 				-webkit-box-shadow: 0 0 5px #333;
 				-moz-box-shadow: 0 0 4px #333; }
-			.vevent dt .sep.first { display: none; }
+			.vevent dt .sep.first, #extra .liste dt .sep.first { display: none; }
 			.vevent dd { margin-left: 6em; }
 				.vevent dd h3 { margin: 36px 0 9px 0; }
 				.vevent dd .infos {
@@ -506,22 +505,48 @@ h2.section {
 						color: #600099; font-weight: bold;
 						display: block; float: left;
 						margin-left: -5em; width: 5em; }
-/* rubrique #extra */
-
-
+/* #extra rubriques */
+/* listes (actu, agenda, etc.) */
+#extra .liste { margin-bottom: 46px; }
+	#extra .liste h2 {
+		font-size: 14px;
+		border: 2px solid #4f007e; border-width: 2px 0 1px;
+		margin: 0 0 10px; padding: 8px 0 8px; }
+	
+	/* actu */
+	#extra .liste li.hentry {
+		list-style-type: none;
+		margin-bottom: 12px; padding-bottom: 0px; }
+		#extra .liste h3.entry-title {
+			font-size: 12px;
+			margin-bottom: 6px; }
+		#extra .liste .entry-content { display: none; }
+	
+	/* agenda */
+	/* voir également section "contenu agenda" plus haut */
+	#extra .liste dl {
+		border-bottom: 1px dotted #ccc;
+		margin-bottom: 9px; padding-bottom: 6px;}
+		#extra .liste dt { padding: 2px 3px; }
+			#extra .liste dt .jour { font-size: 18px; line-height: 18px; }
+			#extra .liste dt .mois-annee {
+				font-size: 9px; line-height: 10px;
+				margin: 2px 0 2px; padding: 0 2px; }
+		#extra .liste dd { margin-left: 4.25em; }
+			#extra .liste dd h3 { font-size: 12px; margin: 0; }
 						 
 /* UI-tabs (JQuery) */
 
 /* original */
 .ui-tabs { padding: .2em; zoom: 1; }
-.ui-tabs .ui-tabs-nav { list-style: none; position: relative; padding: .2em .2em 0; }
-.ui-tabs .ui-tabs-nav li { position: relative; float: left; border-bottom-width: 0 !important; margin: 0 .2em -1px 0; padding: 0; }
-.ui-tabs .ui-tabs-nav li a { float: left; text-decoration: none; padding: .5em 1em; }
-.ui-tabs .ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }
-.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {  }
-.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
-.ui-tabs .ui-tabs-panel { padding: 1em 1.4em; display: block; border-width: 0; background: none; }
-.ui-tabs .ui-tabs-hide { display: none !important; }
+	.ui-tabs-nav { list-style: none; position: relative; padding: .2em .2em 0; }
+		.ui-tabs-nav li { position: relative; float: left; border-bottom-width: 0 !important; margin: 0 .2em -1px 0; padding: 0; }
+			.ui-tabs-nav li a { float: left; text-decoration: none; padding: .5em 1em; }
+		.ui-tabs-nav li.ui-tabs-selected { padding-bottom: 1px; border-bottom-width: 0; }
+			.ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {  }
+		.ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+	.ui-tabs-panel { padding: 1em 1.4em; display: block; border-width: 0; background: none; }
+	.ui-tabs-hide { display: none !important; }
 
 /* personnalisé */
 .ui-tabs { 
@@ -533,33 +558,37 @@ h2.section {
 	-webkit-border-top-right-radius: 2px; 
 	-moz-border-radius: 2px 2px 0 0; }
 
-	.ui-tabs .ui-tabs-nav {
+	.ui-tabs-nav {
 		border-bottom: 1px solid #50206d;
 		margin: 0 2px; padding: 0 0 0 5px; }
 	
-		.ui-tabs .ui-tabs-nav li {
+		.ui-tabs-nav li {
 			border: 1px solid #50206d;
 			border-radius: 2px 0; 
 			-webkit-border-top-left-radius: 2px; 
 			-webkit-border-top-right-radius: 2px; 
 			-moz-border-radius: 2px 2px 0 0; }
 		
-		.ui-tabs .ui-tabs-nav li.ui-state-default {
+		.ui-tabs-nav li.ui-state-default {
 			background: #600099 url(../img/tabs-defaut-background.png) repeat-x left bottom;}
 	
-		.ui-tabs .ui-tabs-nav li.ui-state-hover {
+		.ui-tabs-nav li.ui-state-hover {
 			background-color: #8234b1; background-image: none; }
 		
-		.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+		.ui-tabs-nav li.ui-tabs-selected {
 			border-color: #50206d;
 			background-color: #fff;
 			background-image: none; }
-	
-			.ui-tabs .ui-tabs-nav li a {
+			
+			.ui-tabs-nav li h2 {
+				font-size: 12px;
+				margin: 0; }
+			
+			.ui-tabs-nav li a {
 				color: #fff;
 				padding: 0 5px .4em; }
 				
-			.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+			.ui-tabs-nav li.ui-tabs-selected a {
 				color: #4f007e; }
 
 	.ui-tabs .ui-tabs-panel {
