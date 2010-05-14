@@ -471,8 +471,7 @@ h2.section {
 .vcalendar {  }
 .page_article .vcalendar { margin-bottom: 36px; }
 	.page_rubrique .vevent {
-		border-bottom: 1px solid #600099;
-		margin: 0 0 22px 0; padding-bottom: 5px; }
+		margin: 0 0 18px 0; }
 	.page_article .vevent { margin: 0 0 18px; }
 		.page_rubrique .vevent dt, #extra .liste dt {
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: center; 
