@@ -1,0 +1,19 @@
+[(#REM) Rubriques liees au mot-cle ]
+<B_rubriques>
+<div class="liste rubriques">
+	#ANCRE_PAGINATION
+	<h2 class="section"><:rubriques:></h2>
+	[<p class="pagination haut">(#PAGINATION{page})</p>]
+	<ul class="liste-items">
+		<BOUCLE_rubriques(RUBRIQUES){id_mot}{par titre}{pagination}>
+		<li class="item"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+		</BOUCLE_rubriques>
+	</ul>
+	[<p class="pagination bas">(#PAGINATION{page})</p>]
+</div>
+</B_rubriques>
+<div class="liste rubriques">
+	<h2 class="section"><:rubriques:></h2>
+	<p>pas de rubriques</p>
+</div>
+<//B_rubriques>
