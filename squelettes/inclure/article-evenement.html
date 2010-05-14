@@ -1,0 +1,43 @@
+<BOUCLE_evenement(EVENEMENTS){id_evenement}>
+<dl id="id-#ID_EVENEMENT" class="vevent">
+	<dt class="summary #EDIT{titre}">#TITRE</dt>
+	<dd>
+		[(#DATE_DEBUT|jour|=={[(#DATE_FIN|jour)]}|oui)
+		<p class="date infos">
+			<span class="label"><:quand:></span> <:_le:> <span class="dtstart"><span class="value" title="[(#DATE_DEBUT|affdate{c})]"></span>[(#DATE_DEBUT|affdate)]
+			[(#HORAIRE|=={oui}|oui)
+			[(#REM) mêmes heures ? ]
+			[(#DATE_DEBUT|=={[(#DATE_FIN)]}|oui) à [(#DATE_DEBUT|heures)]h[(#DATE_DEBUT|minutes)]]]</span>
+			[(#HORAIRE|=={oui}|oui)
+			[(#REM) heures différentes ? ]
+			[<span class="dtend">(#DATE_DEBUT|=={[(#DATE_FIN)]}|non) de [(#DATE_DEBUT|heures)]h[(#DATE_DEBUT|minutes)] à [<span class="value" title="[(#DATE_FIN|affdate{c})]"></span>(#DATE_FIN|heures)]h[(#DATE_FIN|heures)]</span>]]
+		</p>
+		]
+		[(#DATE_DEBUT|jour|=={[(#DATE_FIN|jour)]}|non)
+		<p class="date infos">
+			<span class="label"><:quand:></span> <:_du:> <span class="dtstart"><span class="value" title="[(#DATE_DEBUT|affdate{c})]"></span>[(#DATE_DEBUT|affdate)]
+			[(#HORAIRE|=={oui}|oui)[(#DATE_DEBUT|heures)]h[(#DATE_DEBUT|minutes)]]</span>
+			<:_au:> [<span class="dtend"><span class="value" title="[(#DATE_FIN|affdate{c})]"></span>(#DATE_FIN|affdate)
+			[(#HORAIRE|=={oui}|oui)[(#DATE_FIN|heures)]h[(#DATE_FIN|minutes)]]</span>
+			]
+		</p>
+		]
+		[<p class="location infos">
+			<span class="label"><:ou:></span> 
+			<span [ class="(#EDIT{lieu})"]>(#LIEU|PtoBR)</span>
+			[<br /><span[ class="(#EDIT{adresse})"]>(#ADRESSE|PtoBR)</span>]
+		</p>]
+		[(#LIEU|=={''}|oui)
+		[<p class="location infos">
+			<span class="label"><:ou:></span> 
+			<span[ class="(#EDIT{adresse})"]>
+			(#ADRESSE|PtoBR)
+		</span>
+	</p>]
+	]
+	[<div class="description #EDIT{descriptif}">
+		<p class="infos"><span class="label"><:informations:></span> (#DESCRIPTIF|PtoBR)</p>
+	</div>]
+</dd>
+</dl>
+</BOUCLE_evenement>

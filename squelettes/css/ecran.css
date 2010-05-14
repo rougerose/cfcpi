@@ -348,9 +348,9 @@ table.spip {
 					text-decoration: none;
 					background: url(../img/navigation-locale-hover-active.png) no-repeat left center; }
 			#navigation li.on > a {
-				color: #4f007e;
+				color: #600099;
 				background: url(../img/navigation-locale-hover-active.png) no-repeat left center; }
-				#navigation li.on > a span { border-bottom-color: #4f007e; }
+				#navigation li.on > a span { border-bottom-color: #600099; }
 				#navigation li li > a { padding-left: 14px; }
 					#navigation li li li > a { padding-left: 18px; }
 						#navigation li li li li > a { padding-left: 22px; }
@@ -380,7 +380,7 @@ table.spip {
 		color: #ccc; 
 		margin: 18px 0 0 560px; }
 	
-	.titre .info-publi abbr { color: #4f007e; }
+	.titre .info-publi abbr { color: #600099; border-bottom: none; }
 
 .chapo {  }
 	.chapo p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -392,26 +392,26 @@ table.spip {
 .ps, .notes { margin: 36px 0 0 auto; width: 70%; }
 	.ps h2, .notes h2 {
 		font-size: 18px; line-height: 18px;
-		border-top: 2px solid #000;
+		border-top: 2px solid #600099;
 		margin: 4px 0 9px; padding-top: 5px; }
 	.ps p, .notes p { font-size: 12px; text-align: left; }
 
 
 /* Rubriques */
 h2.section {
-	color: #4f007e;
-	border: 2px solid #4f007e; border-width: 2px 0 1px;
+	color: #600099;
+	border: 2px solid #600099; border-width: 2px 0 1px;
 	margin-bottom: 28px; padding: 6px 0; }
 .menu-entree h2 {
 	font-size: 20px;
-	border-bottom: 1px dotted #4f007e;
+	border-bottom: 1px dotted #600099;
 	margin-top: 18px; margin-bottom: 12px; padding-bottom: 6px; }
-	.menu-entree h2 a { color: #4f007e; }
+	.menu-entree h2 a { color: #600099; }
 	.menu-entree p.descriptif { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* hfeed */
 .hentry {
-	border-bottom: 1px dotted #cacaca;
+	border-bottom: 1px dotted #ccc;
 	margin-bottom: 22px; padding-bottom: 5px; }
 
 	h3.entry-title {
@@ -427,7 +427,7 @@ h2.section {
 		.meta-publi p {
 			font-size: 11px; line-height: 12px; text-align: left;
 			float: left;
-			border-right: 1px solid #cacaca;
+			border-right: 1px solid #ccc;
 			margin-bottom: 9px; margin-right: 10px; padding-right: 10px; }
 		.meta-publi p:last-child { border-right: 0; }
 
@@ -451,7 +451,7 @@ h2.section {
 	/* navigation temporelle */
 #agenda-nav {
 	margin: 36px 0 18px; padding: 10px 0 8px;
-	border: 1px solid #8234b1; border-width: 2px 0 1px; }
+	border: 1px solid #600099; border-width: 2px 0 1px; }
 	#agenda-nav ul { text-align: center; }
 		#agenda-nav li {
 			font: 12px/18px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -469,10 +469,12 @@ h2.section {
 	
 	/* contenu agenda */
 .vcalendar {  }
-	.vevent {
-		border-bottom: 1px solid #8234b1;
+.page_article .vcalendar { margin-bottom: 36px; }
+	.page_rubrique .vevent {
+		border-bottom: 1px solid #600099;
 		margin: 0 0 22px 0; padding-bottom: 5px; }
-		.vevent dt, #extra .liste dt {
+	.page_article .vevent { margin: 0 0 18px; }
+		.page_rubrique .vevent dt, #extra .liste dt {
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: center; 
 			background-color: #8234b1; color: #fff;
 			float: left;
@@ -483,6 +485,11 @@ h2.section {
 			box-shadow: 0 0 5px rgba(72,0,114,0.3);
 			-webkit-box-shadow: 0 0 5px rgba(72,0,114,0.3);
 			-moz-box-shadow: 0 0 5px rgba(72,0,114,0.3); }
+		.page_article .vevent dt {
+			font: bold 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+			color: #b80000;
+			border-bottom: 1px dotted #ccc;
+			margin: 0 0 9px; padding-bottom: 9px; }
 			.vevent dt .jour {
 				font-size: 36px; line-height: 30px; }
 			.vevent dt .mois-annee, #extra .liste dt .mois-annee {
@@ -494,23 +501,23 @@ h2.section {
 				-webkit-box-shadow: 0 0 5px #333;
 				-moz-box-shadow: 0 0 4px #333; }
 			.vevent dt .sep.first, #extra .liste dt .sep.first { display: none; }
-			.vevent dd { margin-left: 6em; }
+			.page_rubrique .vevent dd { margin-left: 6em; }
+			.page_article .vevent dd {  }
 				.vevent dd h3 { margin: 36px 0 9px 0; }
 				.vevent dd .infos {
-						font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-						font-size: 12px; line-height: 12px;
-						border-bottom: 1px dotted #8234b1;
-						margin: 0 0 9px; padding: 0 0 9px 5em; } 
+						font: 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+						border-bottom: 1px dotted #ccc;
+						margin: 0 0 9px; padding: 0 0 9px 7em; } 
 					.vevent dd .label {
 						color: #600099; font-weight: bold;
 						display: block; float: left;
-						margin-left: -5em; width: 5em; }
+						margin-left: -7em; width: 7em; }
 /* #extra rubriques */
 /* listes (actu, agenda, etc.) */
 #extra .liste { margin-bottom: 46px; }
 	#extra .liste h2 {
 		font-size: 14px;
-		border: 2px solid #4f007e; border-width: 2px 0 1px;
+		border: 2px solid #600099; border-width: 2px 0 1px;
 		margin: 0 0 10px; padding: 8px 0 8px; }
 	
 	/* actu */
@@ -551,7 +558,7 @@ h2.section {
 /* personnalisé */
 .ui-tabs { 
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding: 1.6em 0 0;
+	margin-bottom: 46px; padding: 1.6em 0 0;
 	background: #110019 url(../img/background-rayures-noir_violet-degrade.png) repeat-x left top;
 	border-radius: 2px 0; 
 	-webkit-border-top-left-radius: 2px; 
