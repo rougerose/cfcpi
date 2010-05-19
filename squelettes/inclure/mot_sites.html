@@ -2,18 +2,26 @@
 <B_sites>
 <div class="liste sites">
 	#ANCRE_PAGINATION
-	<h2 class="h2"><:sites_web:></h2>
+	<h2 class="section"><:sites_web:></h2>
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<ul class="liste-items">
 		<BOUCLE_sites(SITES){id_mot}{par nom_site}{pagination 5}>
-		<li class="item"><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]">#NOM_SITE</a></li>
+		<li id="site-#ID_SYNDIC" class="item">
+			<h3 class="title"><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]">#NOM_SITE</a></h3>
+			[<div class="introduction"><p>(#DESCRIPTIF|couper{200})</p></div>]
+			<div class="meta-publi clearfix">
+				<p class="lire-suite"><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]"><:lire_la_suite:></a></p>
+			</div>
+		</li>
 		</BOUCLE_sites>
 	</ul>
 	[<p class="pagination bas">(#PAGINATION{page})</p>]
 </div>
 </B_sites>
 <div class="liste sites">
-	<h2 class="h2"><:sites_web:></h2>
-	<p>pas de sites</p>
+	<h2 class="section"><:sites_web:></h2>
+	<div class="info resultat-vide">
+		<p><:mot_pas_de_site:></p>
+	</div>
 </div>
 <//B_sites>

@@ -7,6 +7,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'_article' => 'article',
 	'_articles' => 'articles',
 	'article_in_rubrique' => 'Article publi&eacute; dans la rubrique',
+	'_articles_lies' => 'articles li&eacute;s',
+	'articles_lies' => 'Articles li&eacute;s',
 	'_au' => 'au',
 	
 	// D
@@ -36,6 +38,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'map' => 'Plan du site',
 	'mois_precedent' => 'Mois pr&eacute;c&eacute;dent',
 	'mois_suivant'=> 'Mois suivant',
+	'mot_pas_d_article' => 'Aucun article n&#x27;est li&eacute; &agrave; ce mot-cl&eacute;',
+	'mot_pas_de_rubrique' => 'Aucune rubrique n&#x27;est li&eacute;e &agrave; ce mot-cl&eacute;',
+	'mot_pas_de_site' => 'Aucun site n&#x27;est li&eacute; &agrave; ce mot-cl&eacute;',
 
 	// N
 	'navigation' => 'Navigation',

@@ -1,12 +1,19 @@
 [(#REM) Rubriques liees au mot-cle ]
+#CACHE{0}
 <B_rubriques>
 <div class="liste rubriques">
 	#ANCRE_PAGINATION
-	<h2 class="section"><:rubriques:></h2>
+	<h2 class="section">[(#GRAND_TOTAL|=={1}|?{test})]<:rubriques:></h2>
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<ul class="liste-items">
 		<BOUCLE_rubriques(RUBRIQUES){id_mot}{par titre}{pagination}>
-		<li class="item"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+		<li id="rubrique-#ID_RUBRIQUE" class="item">
+			<h3 class="title"><a href="#URL_RUBRIQUE">#TITRE</a></h3>
+			[<div class="introduction"><p>(#DESCRIPTIF|couper{200})</p></div>]
+			<div class="meta-publi clearfix">
+				<p class="lire-suite"><a href="#URL_RUBRIQUE"><:lire_la_suite:></a></p>
+			</div>
+		</li>
 		</BOUCLE_rubriques>
 	</ul>
 	[<p class="pagination bas">(#PAGINATION{page})</p>]
@@ -14,6 +21,8 @@
 </B_rubriques>
 <div class="liste rubriques">
 	<h2 class="section"><:rubriques:></h2>
-	<p>pas de rubriques</p>
+	<div class="info resultat-vide">
+		<p><:mot_pas_de_rubrique:></p>
+	</div>
 </div>
 <//B_rubriques>

@@ -134,9 +134,7 @@ body {
             	float: right;
             	width: 780px; }
             	
-            	.titre { 
-            		float: right;
-            		width: 780px; }
+            	.titre { width: 780px; }
             
             	.contenu_principal { width: 540px; }
             	
@@ -401,13 +399,13 @@ table.spip {
 h2.section {
 	color: #600099;
 	border: 2px solid #600099; border-width: 2px 0 1px;
-	margin-bottom: 28px; padding: 6px 0; }
+	margin-bottom: 18px; padding: 6px 0; }
 .menu-entree h2 {
 	font-size: 20px;
 	border-bottom: 1px dotted #600099;
 	margin-top: 18px; margin-bottom: 12px; padding-bottom: 6px; }
 	.menu-entree h2 a { color: #600099; }
-	.menu-entree p.descriptif { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	.menu-entree p.descriptif { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin-bottom: 36px; }
 
 /* hfeed */
 .hentry {
@@ -416,10 +414,10 @@ h2.section {
 
 	h3.entry-title {
 		font-size: 14px;
-		margin: 0 0 18px; }
+		margin: 0 0 9px; }
 		h3.entry-title a { xcolor: #000; }
 	
-	.entry-content {  }	
+	.entry-content { padding-top: 9px; }	
 		.entry-content p {
 			text-align: left; }
 	
@@ -511,6 +509,32 @@ h2.section {
 						color: #600099; font-weight: bold;
 						display: block; float: left;
 						margin-left: -7em; width: 7em; }
+/* mots */
+
+	/* articles : voir hentry plus haut */
+	/* autres objets liés */
+.item {
+	border-bottom: 1px dotted #ccc;
+	margin-bottom: 22px; padding-bottom: 5px; }
+
+	h3.title {
+		font-size: 14px;
+		margin: 0 0 9px; }
+	
+	.introduction {  }	
+		.introduction p {
+			text-align: left; }
+	
+	.meta-publi {  }
+		.meta-publi p {
+			font-size: 11px; line-height: 12px; text-align: left;
+			float: left;
+			border-right: 1px solid #ccc;
+			margin-bottom: 9px; margin-right: 10px; padding-right: 10px; }
+		.meta-publi p:last-child { border-right: 0; }
+
+	
+
 /* #extra rubriques */
 /* listes (actu, agenda, etc.) */
 #extra .liste { margin-bottom: 46px; }
@@ -665,6 +689,8 @@ p.signatures_compteur {
 p.pagination { 
 	font: 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right; color: ;
 	margin: 0 0 18px; padding-top: 4px; }
+p.pagination.haut { margin-bottom: 9px; }
+p.pagination.bas { margin-bottom: 36px; }
 	p.pagination a, p.pagination strong {
 		border: 1px solid #ccc;
 		padding: 0 3px 0; }
