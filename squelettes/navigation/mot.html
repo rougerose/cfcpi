@@ -1,0 +1,38 @@
+[(#REM)
+*************************************************************
+index alphabetique de mots-clés
+-------------------------------------------------------------
+- necessite spip-bonux
+- nécessite filtres perso mot_fonctions.php
+- sur la base de
+<www.spip-contrib.net/Annuaire-d-auteurs-avec-Spip-Bonux>
+
+*************************************************************
+fichier appelé depuis squelettes mots.html (index de tous les mots) et mot.html
+
+]
+
+[(#REM) alphabet ]
+[(#SET{alphabet,[(#VAL{ABCDEFGHIJKLMNOPQRSTUVWXYZ}|str_split)]})]
+
+[(#REM) on récupère uniquement les mots-clés liés au moins à un article ]
+<BOUCLE_mots_avec_articles(mots_articles)><BOUCLE_tri_mots(MOTS){id_mot}{unique}>[(#SET_PUSH{index,[(#TITRE|nettoyage|mb_substr{0,1})]})][(#SET_PUSH{initiale[(#TITRE|nettoyage|mb_substr{0,1})],#ID_MOT})]</BOUCLE_tri_mots></BOUCLE_mots_avec_articles>
+<BOUCLE_titre(MOTS){id_mot}>[(#SET{initiale_mot,[(#TITRE|nettoyage|mb_substr{0,1})]})]</BOUCLE_titre>
+<div id="accordeon">
+	<h2><:index:></h2>
+	<BOUCLE_alphabet(POUR){tableau #GET{alphabet}}>
+	<dl class="index grille [ item(#COMPTEUR_BOUCLE|modulo{4})]">
+	    <dt class="alphabet[(#VALEUR|in_array{#GET{index}}|oui) contenu][(#VALEUR|=={#GET{initiale_mot}}|oui) etat-actif]">#VALEUR</dt>
+	    <B_mots>
+	    <dd class="tag[(#VALEUR|=={#GET{initiale_mot}}|oui) etat-actif]">
+	        <ul>
+	            <BOUCLE_mots(MOTS){id_mot IN #GET{initiale#VALEUR}}>
+	            <li[ class="(#EXPOSE)"]><a href="#URL_MOT" rel="tag">#TITRE</a></li>
+	            </BOUCLE_mots>
+	        </ul>
+	    </dd>
+	    </B_mots>
+	</dl>
+	</BOUCLE_alphabet>
+</div>
+

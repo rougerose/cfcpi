@@ -26,5 +26,26 @@ $(document).ready(function() {
 	// UI-tabs
 	$("#tabs").tabs();
 	
-	
+
+	// Page mot-clé index mots dans #navigation
+	// présentation style "accordéon"
+	$(".page_mot #navigation .index").each(function(){
+		var $this = $(this);
+		var $alphabet = $(".alphabet.contenu", $this);
+		var $tag = $(".tag", $this);
+		
+		$tag.hide();
+		$tag.filter(".etat-actif").show("slow");
+		
+		$alphabet.click(function(){
+			if ($(this).hasClass("etat-actif")){
+				$(this).removeClass("etat-actif").siblings().removeClass("etat-actif").slideUp("slow");
+			} else {
+				$("dt.alphabet").filter(".etat-actif").removeClass("etat-actif")
+					.siblings().removeClass("etat-actif").slideUp("slow");
+				$(this).addClass("etat-actif").siblings().addClass("etat-actif").slideDown("slow");
+			}
+		});
+		$alphabet.append('<span class="drop"></span>');
+	});
 });

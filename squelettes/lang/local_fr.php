@@ -26,6 +26,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'haut_page' => "Haut de page",
 
 	// I
+	'index' => 'Index',
 	'informations' => 'Informations',
 	'item' => '&eacute;lement',
 	'items' => '&eacute;lements',

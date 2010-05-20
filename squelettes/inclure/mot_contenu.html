@@ -1,8 +1,12 @@
-[(#REM) articles ]
-#INCLURE{fond=inclure/mot_articles,id_mot,env,ajax}
+<div class="colonne principale">
+	[(#REM) articles ]
+	#INCLURE{fond=inclure/mot_articles,id_mot,env,ajax}
+</div>
 
-[(#REM) rubriques ]
-#INCLURE{fond=inclure/mot_rubriques,id_mot,env,ajax}
+<div class="colonne secondaire">
+	[(#REM) rubriques ]
+	#INCLURE{fond=inclure/mot_rubriques,id_mot,env,ajax}
 
-[(#REM) sites web]
-#INCLURE{fond=inclure/mot_sites,id_mot,env,ajax}
+	[(#REM) sites web]
+	#INCLURE{fond=inclure/mot_sites,id_mot,env,ajax}
+</div>

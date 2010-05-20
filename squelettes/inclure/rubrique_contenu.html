@@ -1,7 +1,7 @@
 <B_articles>
 <div class="liste articles">
 	#ANCRE_PAGINATION
-	<h2 class="section"><:articles_rubrique:></h2>
+	<h2 class="section-titre"><:articles_rubrique:></h2>
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<ul class="liste-items">
 		<BOUCLE_articles(ARTICLES){id_rubrique}{!par date}{pagination 5}>
@@ -15,7 +15,7 @@
 	[(#REM) Si aucun article, affiche un plan de la rubrique ]
 	<B_sous_rubriques>
 	<div class="liste rubriques">
-		<h2 class="section"><:sous_rubriques:></h2>
+		<h2 class="section-titre"><:sous_rubriques:></h2>
 		<ul class="menu-liste hfeed">
 			<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
 			<li class="menu-entree">

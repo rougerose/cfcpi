@@ -3,7 +3,7 @@
 <B_rubriques>
 <div class="liste rubriques">
 	#ANCRE_PAGINATION
-	<h2 class="section">[(#GRAND_TOTAL|=={1}|?{test})]<:rubriques:></h2>
+	<h2 class="section-titre"><:rubriques:></h2>
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<ul class="liste-items">
 		<BOUCLE_rubriques(RUBRIQUES){id_mot}{par titre}{pagination}>
@@ -20,7 +20,7 @@
 </div>
 </B_rubriques>
 <div class="liste rubriques">
-	<h2 class="section"><:rubriques:></h2>
+	<h2 class="section-titre"><:rubriques:></h2>
 	<div class="info resultat-vide">
 		<p><:mot_pas_de_rubrique:></p>
 	</div>
