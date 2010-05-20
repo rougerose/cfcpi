@@ -593,68 +593,6 @@ h2.section-titre {
 			#navigation .tag { margin-left: -10px; margin-top: 2px; }
 				#navigation .tag ul { margin-left: 10px; }
 					#navigation .tag.etat-actif li.on a { background: url(../img/navigation-locale-hover-active.png) no-repeat left center; }
-		
-/*
-.tags-index { margin-bottom: 18px; }
-	
-.mots .tags-index {
-	margin-bottom: 36px; }
-	
-	.tags-index dt {
-		font: 30px/36px "Museo Sans";
-		color: #f7e8d7;
-		margin-bottom: 7px;
-		border-bottom: 4px solid #f7e8d7;
-		padding-left: 1px;
-		xpadding-bottom: 5px; }
-	
-	#navigation dt.contenu { cursor: pointer; }
-	
-	#navigation dt.contenu:hover {
-		background-color: #ff9c00;
-		color: #fff; }
-	
-	#navigation dt.contenu:active, #navigation dt.contenu:focus {
-		position: relative; top: 1px; }
-		
-		#navigation dt.contenu:hover span.drop {
-			border-color: #ffb133; border-style: outset; }
-			
-		#navigation dt.contenu:active span.drop { border-style: inset; }
-			
-		
-			#navigation dt.contenu:hover span.drop span {
-				background-image: url(../img/ui-icons_ffffff_256x240.png); }
-	
-		#navigation dt.contenu span.drop {
-			border: 1px solid #fff; border-top-width: 0;
-			display: block;
-			float: right;
-			height: 35px; }
-			
-				#navigation dl dt.contenu span.drop span {
-					background: url(../img/ui-icons_ff9c00_256x240.png) no-repeat -16px -128px;
-					display: block;
-					height: 16px; width: 16px;
-					margin-top: 16px; }
-				
-				#navigation dl.ouvert dt.contenu span.drop span {
-					background-position: -64px -128px; }
-	
-	.mots .tags-index dt {
-		xline-height: 18px;
-		padding-bottom: 5px;
-		margin-bottom: 13px; }
-	
-	.tags-index dt.on {
-		color:#ff9c00;
-		border-bottom-color: #ff9c00; }
-	
-	
-*/	
-	
-	
-	
 
 /* #extra rubriques */
 /* listes (actu, agenda, etc.) */
