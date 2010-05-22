@@ -568,27 +568,26 @@ h2.section-titre {
 			border-bottom: 1px solid #eee;
 			padding-bottom: 2px;
 			position: relative; }
+		#navigation .index.etat-actif {
+			border-bottom-color: #600099; }
 			#navigation .alphabet {
 				color: #ccc;
 				font-size: 18px;
-				margin-left: 2px; padding: 0 0 0 8px;
+				margin-left: 2px; padding: 2px 0 2px 8px;
 				position: relative; }
 			#navigation .alphabet.contenu {
 				color: #600099;
 				cursor: pointer; }
-			#navigation .alphabet.etat-actif, #navigation .alphabet.contenu:hover {
-				color: #fff;
-				background-color: #600099; }
 				#navigation .alphabet .drop {
 					display: block;
 					height: 16px; width: 16px;
 					position: absolute; right: 0; top: 50%; z-index: 100;
 					margin-top: -8px; }
 				#navigation .alphabet:hover .drop {
-					background-image: url(../img/ui-icons_ffffff_256x240.png);
+					background-image: url(../img/ui-icons_600099_256x240.png);
 					background-position: -16px -128px; }
 				#navigation .alphabet.etat-actif:hover .drop {
-					background-image: url(../img/ui-icons_ffffff_256x240.png);
+					background-image: url(../img/ui-icons_600099_256x240.png);
 					background-position: -48px -128px; }
 			#navigation .tag { margin-left: -10px; margin-top: 2px; }
 				#navigation .tag ul { margin-left: 10px; }

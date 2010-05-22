@@ -39,10 +39,13 @@ $(document).ready(function() {
 		
 		$alphabet.click(function(){
 			if ($(this).hasClass("etat-actif")){
+				$(this).parent().removeClass("etat-actif");
 				$(this).removeClass("etat-actif").siblings().removeClass("etat-actif").slideUp("slow");
 			} else {
+				$("dl.index").filter(".etat-actif").removeClass("etat-actif");
 				$("dt.alphabet").filter(".etat-actif").removeClass("etat-actif")
 					.siblings().removeClass("etat-actif").slideUp("slow");
+				$(this).parent().addClass("etat-actif");
 				$(this).addClass("etat-actif").siblings().addClass("etat-actif").slideDown("slow");
 			}
 		});

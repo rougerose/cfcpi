@@ -21,7 +21,7 @@ fichier appelé depuis squelettes mots.html (index de tous les mots) et mot.html
 <div id="accordeon">
 	<h2><:index:></h2>
 	<BOUCLE_alphabet(POUR){tableau #GET{alphabet}}>
-	<dl class="index grille [ item(#COMPTEUR_BOUCLE|modulo{4})]">
+	<dl class="index grille [ item(#COMPTEUR_BOUCLE|modulo{4})][(#VALEUR|=={#GET{initiale_mot}}|oui) etat-actif]">
 	    <dt class="alphabet[(#VALEUR|in_array{#GET{index}}|oui) contenu][(#VALEUR|=={#GET{initiale_mot}}|oui) etat-actif]">#VALEUR</dt>
 	    <B_mots>
 	    <dd class="tag[(#VALEUR|=={#GET{initiale_mot}}|oui) etat-actif]">
