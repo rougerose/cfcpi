@@ -629,7 +629,7 @@ h2.section-titre {
 		.contenu_principal .index .tag { font-size: 13px; }
 
 /* squelette recherche */
-.titre h1 span { color: #000; }
+.titre h1 span { color: #bde500; }
 
 
 /* #extra rubriques */
@@ -902,6 +902,8 @@ input, select, textarea {
 /* ------------------------------------ */
 /*  Divers								*/
 /* ------------------------------------ */
+
+.spip_surligne { background-color: #bde500; }
 
 /* lien "action" */
 a.action { 
