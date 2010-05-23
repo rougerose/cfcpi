@@ -164,6 +164,11 @@ body {
 		width: 300px; }
 .page_mot #extra { display: none; }
 
+/* mots */
+.page_mots #contenu .contenu_principal { width: 780px; }
+.page_mots #navigation { display: none; }
+.page_mots #extra { display: none; }
+
 /* ------------------------------------ */
 /*  Liens (réglages général)			*/
 /* ------------------------------------ */
@@ -593,6 +598,24 @@ h2.section-titre {
 				#navigation .tag ul { margin-left: 10px; }
 					#navigation .tag.etat-actif li.on a { background: url(../img/navigation-locale-hover-active.png) no-repeat left center; }
 
+	/* squelette mots > .contenu_principal */
+	.contenu_principal .index {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		float: left;
+		margin-right: 20px; margin-bottom: 36px;
+		width: 220px; }
+	.contenu_principal .index.item0 { margin-right: 0; }
+	.contenu_principal .index.item1 { clear: left; }
+		.contenu_principal .index .alphabet {
+			font-size: 20px; line-height: 31px;
+			color: #ccc;
+			border-bottom: 1px solid #eee;
+			margin-bottom: 4px; }
+		.contenu_principal .index .alphabet.contenu {
+			color: #600099;
+			border-bottom-color: #600099; }
+		.contenu_principal .index .tag { font-size: 13px; }
+
 /* #extra rubriques */
 /* listes (actu, agenda, etc.) */
 #extra .liste { margin-bottom: 46px; }
@@ -796,7 +819,7 @@ input, select, textarea {
 		
 /* lien vers index mots-clés */
 #formulaire_recherche p { 
-	font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 11px;
 	text-transform: uppercase;
 	vertical-align: middle;
 	border-right: 1px solid rgb(164,199,0);
