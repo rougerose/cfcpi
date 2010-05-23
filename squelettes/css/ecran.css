@@ -628,6 +628,10 @@ h2.section-titre {
 			border-bottom-color: #600099; }
 		.contenu_principal .index .tag { font-size: 13px; }
 
+/* squelette recherche */
+.titre h1 span { color: #000; }
+
+
 /* #extra rubriques */
 /* listes (actu, agenda, etc.) */
 #extra .liste { margin-bottom: 46px; }
