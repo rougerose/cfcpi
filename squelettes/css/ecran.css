@@ -169,6 +169,17 @@ body {
 .page_mots #navigation { display: none; }
 .page_mots #extra { display: none; }
 
+/* recherche */
+.page_recherche .contenu_principal { width: 780px; }
+	.page_recherche .principale {
+		float: left;
+		width: 460px; }
+	.page_recherche .secondaire {
+		float: right;
+		margin-right: 0;
+		width: 300px; }
+.page_recherche #extra { display: none; }
+
 /* ------------------------------------ */
 /*  Liens (réglages général)			*/
 /* ------------------------------------ */
@@ -346,7 +357,7 @@ table.spip {
 					background-image: none; }
 
 /* Menu local */
-	/* squelettes rubriques */
+	/* squelettes rubrique, article */
 #navigation {  }
 	#navigation ul {  }
 		#navigation li {  }
@@ -371,12 +382,13 @@ table.spip {
 					#navigation li li li > a { padding-left: 18px; }
 						#navigation li li li li > a { padding-left: 22px; }
 
-	/* squelettes mot-clé voir plus bas dans section index des mots-clés */
+	/* squelette mot-clé voir plus bas dans section index des mots-clés */
 
 /* ------------------------------------ */
 /*  Contenu								*/
 /* ------------------------------------ */
 /* Règles générales */
+.liste {  }
 .meta-publi, .info-publi { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* Articles */
@@ -793,7 +805,7 @@ input, select, textarea {
 	font-size: 100%; font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* surcharge spip_formulaires */
-.xformulaire_spip { font-size: 1em; }
+.formulaire_spip {  }
 	.formulaire_spip .boutons { margin-bottom: 1.5em; }
 
 /* recherche */
@@ -898,7 +910,7 @@ a.action {
 a.action:hover { color: #c00; background-color: #000; }
 
 /* texte d'infos */
-.info {
+div.info {
 	background-color: rgba(72,0,114,0.89);
 	color: #fff;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -911,10 +923,15 @@ a.action:hover { color: #c00; background-color: #000; }
 	-webkit-box-shadow: 0 0 5px rgba(72,0,114,0.3);
 	-moz-box-shadow: 0 0 5px rgba(72,0,114,0.3); }
 	.info p {
-		xtext-align: center; 
+		font-size: 12px;
+		text-align: left; 
 		background: url(../img/icone-information-32x32.png) no-repeat 0 center;
 		padding: 13px 15px 15px 42px ; }
 
+p.info {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 11px; text-align: right;
+	color: #600099;
+	margin-top: -18px; }
 
 /* accessibilité */
 .accessibilite { display:none; }

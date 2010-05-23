@@ -1,0 +1,16 @@
+<div class="colonne principale">
+	[(#REM) articles ]
+	#INCLURE{fond=inclure/recherche_articles,env,ajax}
+</div>
+
+<div class="colonne secondaire">
+	[(#REM) rubriques ]
+	#INCLURE{fond=inclure/recherche_rubriques,env,ajax}
+
+	[(#REM) sites web]
+	#INCLURE{fond=inclure/recherche_mots,env,ajax}
+
+	[(#REM) sites web]
+	#INCLURE{fond=inclure/recherche_sites,env,ajax}
+	
+</div>

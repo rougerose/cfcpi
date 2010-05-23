@@ -61,8 +61,21 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'quand' => 'Quand&nbsp;?',
 	
 	// R
+	'recherche_un_article' => '@nb@ article disponible',
+	'recherche_deux_articles' => '@nb@ articles disponibles',
+	'recherche_pas_d_article' => 'Aucun article n&#x27;est disponible.',
+	'recherche_un_mot' => '@nb@ mot-cl&eacute; disponible',
+	'recherche_deux_mots' => '@nb@ mots disponibles',
+	'recherche_pas_de_mot' => 'Aucun mot-cl&eacute; n&#x27;est disponible.',
+	'recherche_une_rubrique' => '@nb@ rubrique disponible',
+	'recherche_deux_rubriques' => '@nb@ rubriques disponibles',
+	'recherche_pas_de_rubrique' => 'Aucune rubrique n&#x27;est disponible.',
+	'recherche_un_site_web' => '@nb@ site web disponible',
+	'recherche_deux_sites_web' => '@nb@ sites web disponibles',
+	'recherche_pas_de_site_web' => 'Aucun site web n&#x27;est disponible.',
 	'_rubrique' => 'rubrique',
 	'_rubriques' => 'rubriques',
+	'rubriques_liees' => 'Rubriques li&eacute;es',
 
 	// S
 	'signature' => 'signature',
@@ -72,6 +85,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'signer_petition' => 'Signer la p&eacute;tition',
 	'_site_web' => 'site web',
 	'_sites_web' => 'sites web',
+	'sites_web_lies' => 'Sites web li&eacute;s',
 	'skip_contenu' => 'Aller au contenu',
 	'skip_navigation' => 'Aller &agrave; la navigation',
 	'skip_search' => 'Aller &agrave; la recherche',
