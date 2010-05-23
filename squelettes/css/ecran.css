@@ -525,7 +525,7 @@ h2.section-titre {
 						display: block; float: left;
 						margin-left: -7em; width: 7em; }
 /* squelette mot-clé */
-.chapo {
+.page_mot .chapo {
 	margin-bottom: 36px;
 	width: 620px; }
 
@@ -766,28 +766,45 @@ p.pagination.bas { margin-bottom: 36px; }
 
 /* paramètres communs */
 fieldset {  }
-input { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; }
+input, select, textarea {
+	font-size: 100%; font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* surcharge spip_formulaires */
-.formulaire_spip .boutons { margin-bottom: 1.5em; }
+.xformulaire_spip { font-size: 1em; }
+	.formulaire_spip .boutons { margin-bottom: 1.5em; }
 
 /* recherche */
-#formulaire_recherche { position: absolute; top: -3.9em; right: 0; }
-	#formulaire_recherche label { display: none; }
-	#formulaire_recherche input {
-		background-color: #92b100;
-		border: 1px solid rgba(189,229,0,0.2) }
-	#formulaire_recherche input[type="text"] { 
-		color: rgb(210,255,0);
-		background: #92b100 url(../img/icone_recherche.png) no-repeat 1px -1px;
-		width: 15em; }
-	#formulaire_recherche input[type="submit"] { color: rgb(189,229,0); font-size: 10px; }
-	#formulaire_recherche input[type="text"]:focus { border-color: rgb(210,255,0); }
-	#formulaire_recherche input[type="submit"]:hover { 
-		color: rgb(210,255,0);
-		border-color: rgb(210,255,0); }
-	#formulaire_recherche input[type="submit"]:active {
-		border-style: inset; outline: none; }
+#formulaire_recherche { position: absolute; top: -4em; right: 0; }
+	#formulaire_recherche * { display: inline; }
+	#formulaire_recherche fieldset { margin: 0; }
+		#formulaire_recherche label { display: none; }
+		#formulaire_recherche input {
+			background-color: #92b100;
+			border: 1px solid rgba(189,229,0,0.2) }
+		#formulaire_recherche input[type="text"] { 
+			color: rgb(210,255,0);
+			background: #92b100 url(../img/icone_recherche.png) no-repeat 1px -1px;
+			padding: 2px 0 2px 25px;
+			width: 15em; }
+		#formulaire_recherche input[type="submit"] { color: rgb(189,229,0); xfont-size: 10px; }
+		#formulaire_recherche input[type="text"]:focus { border-color: rgb(210,255,0); }
+		#formulaire_recherche input[type="submit"]:hover { 
+			color: rgb(210,255,0);
+			border-color: rgb(210,255,0); }
+		#formulaire_recherche input[type="submit"]:active {
+			border-style: inset; outline: none; }
+		
+/* lien vers index mots-clés */
+#formulaire_recherche p { 
+	font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	vertical-align: middle;
+	border-right: 1px solid rgb(164,199,0);
+	margin: 0 7px 0 0; padding-right: 7px; }
+	#formulaire_recherche p a {
+		color: rgb(189,229,0); }
+	#formulaire_recherche p a:hover {
+		color: rgb(210,255,0); }
 
 /* formulaire signature pétition */
 .petition {

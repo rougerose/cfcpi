@@ -27,6 +27,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// I
 	'index' => 'Index',
+	'index_mots' => 'Index des mots-cl&eacute;s',
 	'informations' => 'Informations',
 	'item' => '&eacute;lement',
 	'items' => '&eacute;lements',
