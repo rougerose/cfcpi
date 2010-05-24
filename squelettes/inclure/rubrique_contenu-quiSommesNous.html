@@ -1,0 +1,41 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<li id="article-#ID_ARTICLE" class="item[-(#ENV{compteur}) colonne] hentry">
+	<h3 class="entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
+	[<div class="#EDIT{intro} introduction entry-content"><p>(#INTRODUCTION|couper{200})</p></div>]
+	
+	<BOUCLE_test_article_bureau(CONDITION){si #ID_ARTICLE|=={56}}>
+	<B_membres_bureau>
+	<div class="caroussel">
+		#ANCRE_PAGINATION 
+		[<p class="pagination">(#PAGINATION)</p>]
+		<ul class="nav-membres clearfix">
+			<BOUCLE_membres_bureau(AUTEURS){par nom}{bureau==oui}{tout}{pagination 4}>
+			[(#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{4})]})]
+			<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,compteur=#GET{compteur},fonction=oui}>
+			</BOUCLE_membres_bureau>
+		</ul>
+	</div>
+	</B_membres_bureau>
+	</BOUCLE_test_article_bureau>
+
+	<BOUCLE_test_article_membres(CONDITION){si #ID_ARTICLE|=={305}}>
+	<B_membres>
+	<div class="caroussel">
+		#ANCRE_PAGINATION
+		[<p class="pagination">(#PAGINATION{page})</p>]
+		<ul class="nav-membres clearfix">
+			<BOUCLE_membres(AUTEURS){par nom}{membre==oui}{tout}{pagination 4}>
+			[(#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{4})]})]
+			<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,compteur=#GET{compteur}}>
+			</BOUCLE_membres>
+		</ul>
+	</div>
+	</B_membres>
+	</BOUCLE_test_article_membres>
+
+	<div class="meta-publi clearfix">
+		<p class="info-publi published">[<:publie_le:> <span class="value" title="[(#DATE|date_iso)]">(#DATE|affdate)</span>]</p>
+		<p class="lire-suite"><a href="#URL_ARTICLE"><:lire_la_suite:></a></p>
+	</div>
+</li>
+</BOUCLE_article>

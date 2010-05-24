@@ -439,13 +439,37 @@ h2.section-titre {
 	.menu-entree h2 a { color: #600099; }
 	.menu-entree p.descriptif { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin-bottom: 36px; }
 
+/* rubrique Qui sommes-nous ? */
+	/* navigation membres */
+.caroussel {
+	background-color: #f6f4f7;
+	border: 1px solid #ccc; border-color: #dedcdf #fff #fff #dedcdf;
+	padding: 9px 9px 0; margin-bottom: 18px; }
+	.caroussel .nav-membres { margin: 0 auto; }
+		.nav-membres li {
+			float: left;
+			margin-right: 8px; margin-bottom: 18px;
+			width: 124px; }
+		.nav-membres li.item0 { margin-right: 0; }
+			.nav-membres li p {
+				text-align: center;
+				font: 10px "Lucida Grande", Lucida, Verdana, sans-serif;
+				margin: 0; }
+			.nav-membres p.nom { margin: 9px 5px 0; }
+			.nav-membres p.logo { 
+				background-color: #fff;
+				height: 100px; width: 124px;
+				display: table-cell; vertical-align: middle;
+				border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+				.nav-membres p.logo img { background-color: #fff; } 
+
 /* hfeed */
 .hentry {
 	border-bottom: 1px dotted #ccc;
 	margin-bottom: 22px; padding-bottom: 5px; }
 
 	h3.entry-title {
-		font-size: 14px;
+		font-size: 16px;
 		margin: 0 0 9px; }
 		h3.entry-title a { xcolor: #000; }
 	

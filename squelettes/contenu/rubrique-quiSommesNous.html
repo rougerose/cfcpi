@@ -1,0 +1,43 @@
+<BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}>
+<div class="titre">
+	[(#LOGO_RUBRIQUE||image_reduire{200,200})]
+	<h1 class="h1 #EDIT{titre}">#TITRE</h1>
+</div>
+<div class="contenu_principal surlignable">
+	[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
+	<B_organisation>
+	<div class="liste articles">
+		<h2 class="section-titre">Notre organisation</h2>
+		<ul class="liste-items">
+			<BOUCLE_organisation(ARTICLES){id_rubrique}{id_article IN 56,305}>
+			#INCLURE{fond=inclure/rubrique_contenu-quiSommesNous,id_article,env,ajax}
+			</BOUCLE_organisation>
+		</ul>
+	</div>
+	</B_organisation>
+
+	<B_objectifs>
+	<div class="liste articles">
+		<h2 class="section-titre">Nos objectifs et actions</h2>
+		<ul class="liste-items">
+			<BOUCLE_objectifs(ARTICLES){id_rubrique}{id_article IN 4,46}>
+			#INCLURE{fond=inclure/rubrique_contenu-quiSommesNous,id_article,env,ajax}
+			</BOUCLE_objectifs>
+		</ul>
+	</div>
+	</B_objectifs>
+	
+	<B_rejoindre>
+	<div class="liste articles">
+		<h2 class="section-titre">Nous rejoindre</h2>
+		<ul class="liste-items">
+			<BOUCLE_rejoindre(ARTICLES){id_rubrique}{id_article=306}>
+			#INCLURE{fond=inclure/rubrique_contenu-quiSommesNous,id_article,env,ajax}
+			</BOUCLE_rejoindre>
+		</ul>
+	</div>
+	</B_rejoindre>
+
+	[<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
+</div>
+</BOUCLE_contenu_rubrique>
