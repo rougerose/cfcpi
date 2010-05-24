@@ -541,7 +541,8 @@ h2.section-titre {
 						color: #600099; font-weight: bold;
 						display: block; float: left;
 						margin-left: -7em; width: 7em; }
-/* squelette mot-clé */
+
+/* squelettes mot-clé et recherche  */
 .page_mot .chapo {
 	margin-bottom: 36px;
 	width: 620px; }
@@ -559,9 +560,10 @@ h2.section-titre {
 		font-size: 14px;
 		margin: 0 0 9px; }
 	
-	.introduction {  }	
-		.introduction p {
+	.introduction, .description {  }	
+		.introduction p, .description p {
 			text-align: left; }
+			.description p span { color: #bababa; }
 	
 	.meta-publi {  }
 		.meta-publi p {
@@ -629,7 +631,7 @@ h2.section-titre {
 		.contenu_principal .index .tag { font-size: 13px; }
 
 /* squelette recherche */
-.titre h1 span { color: #bde500; }
+.titre h1 span { color: #600099; }
 
 
 /* #extra rubriques */

@@ -20,6 +20,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// E
 	'en_savoir_plus' => 'En savoir plus',
+	
+	// F
+	'fichier' => 'Fichier',
 
 	// H
 	'help' => 'Aide',
@@ -64,6 +67,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'recherche_un_article' => '1 article disponible',
 	'recherche_deux_articles' => '@nb@ articles disponibles',
 	'recherche_pas_d_article' => 'Aucun article n&#x27;est disponible.',
+	'recherche_un_document' => '1 document disponible',
+	'recherche_deux_documents' => '@nb@ documents disponibles',
+	'recherche_pas_de_document' => 'Aucun document disponible',
 	'recherche_un_mot' => '1 mot-cl&eacute; disponible',
 	'recherche_deux_mots' => '@nb@ mots-cl&eacute;s disponibles',
 	'recherche_pas_de_mot' => 'Aucun mot-cl&eacute; n&#x27;est disponible.',

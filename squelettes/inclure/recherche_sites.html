@@ -6,7 +6,7 @@
 	<p class="info resultats">[(#GRAND_TOTAL|singulier_ou_pluriel{recherche_un_site_web,recherche_deux_sites_web})]</p>
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<ul class="liste-items">
-		<BOUCLE_sites(SITES){recherche}{par points}{inverse}{pagination 4}>
+		<BOUCLE_sites(SITES){recherche}{par points}{inverse}{pagination 3}>
 		<li id="site-#ID_SYNDIC" class="item">
 			<h3 class="title"><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]">#NOM_SITE</a></h3>
 			[<div class="introduction"><p>(#DESCRIPTIF|couper{200})</p></div>]

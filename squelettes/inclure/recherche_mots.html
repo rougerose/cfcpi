@@ -6,7 +6,7 @@
 	<p class="info resultats">[(#GRAND_TOTAL|singulier_ou_pluriel{recherche_un_mot,recherche_deux_mots})]</p>
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<ul class="liste-items">
-		<BOUCLE_mots(MOTS){recherche}{par points}{inverse}{pagination 4}>
+		<BOUCLE_mots(MOTS){recherche}{par points}{inverse}{pagination 3}>
 		<li id="mot-#ID_MOT" class="item">
 			<h3 class="title"><a href="#URL_MOT">#TITRE</a></h3>
 			[<div class="introduction"><p>(#DESCRIPTIF|couper{200})</p></div>]
