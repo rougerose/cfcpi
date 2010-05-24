@@ -7,7 +7,7 @@
 	<B_membres_bureau>
 	<div class="caroussel">
 		#ANCRE_PAGINATION 
-		[<p class="pagination">(#PAGINATION)</p>]
+		[<p class="pagination">(#PAGINATION{page})</p>]
 		<ul class="nav-membres clearfix">
 			<BOUCLE_membres_bureau(AUTEURS){par nom}{bureau==oui}{tout}{pagination 4}>
 			[(#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{4})]})]
