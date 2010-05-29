@@ -442,26 +442,48 @@ h2.section-titre {
 /* rubrique Qui sommes-nous ? */
 	/* navigation membres */
 .caroussel {
-	background-color: #f6f4f7;
+	background-color: #f7f4f4;
 	border: 1px solid #ccc; border-color: #dedcdf #fff #fff #dedcdf;
-	padding: 9px 9px 0; margin-bottom: 18px; }
-	.caroussel .nav-membres { margin: 0 auto; }
-		.nav-membres li {
-			float: left;
-			margin-right: 8px; margin-bottom: 18px;
-			width: 124px; }
-		.nav-membres li.item0 { margin-right: 0; }
-			.nav-membres li p {
-				text-align: center;
-				font: 10px "Lucida Grande", Lucida, Verdana, sans-serif;
-				margin: 0; }
-			.nav-membres p.nom { margin: 9px 5px 0; }
-			.nav-membres p.logo { 
-				background-color: #fff;
-				height: 100px; width: 124px;
-				display: table-cell; vertical-align: middle;
-				border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
-				.nav-membres p.logo img { background-color: #fff; } 
+	position: relative;
+	margin-bottom: 18px;
+	width: 540px; }
+	.caroussel .fleches {
+		position: absolute; top: 9px; right: 10px; }
+		.caroussel .fleches a {
+			background: url(../img/cfcpi-icones.png) no-repeat 0 0;
+			cursor: pointer;
+			text-indent: -9999px;
+			display: block; float: left;
+			height: 16px; width: 16px; }
+		.caroussel .fleches a.precedent { 
+			background-position: 0 0; }
+		.caroussel .fleches a.suivant {
+			background-position: -16px 0; }
+		.caroussel .fleches a.direct {
+			background-position: -32px 0; }
+		.caroussel .fleches a.select {
+			background-position: -48px 0; }
+	.caroussel .caroussel-conteneur {
+		overflow: auto;
+		margin: 27px 10px 0;
+		width: 520px; }
+		.caroussel .caroussel-conteneur .nav-membres { width: 9999px; }
+			.caroussel .caroussel-conteneur .nav-membres li {
+				display: block; float: left; text-align: center;
+				width: 124px; padding-right: 8px; padding: 5px 3px; }
+				.caroussel .caroussel-conteneur .nav-membres li p {
+					font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+					text-align: center;
+					margin: 0; }
+				.caroussel .caroussel-conteneur .nav-membres li p.nom { margin: 9px 0; }
+				.caroussel .caroussel-conteneur .nav-membres li p.logo {
+					background-color: #fff;
+					border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
+					.caroussel .caroussel-conteneur .nav-membres li p.logo a {
+						display: block;
+						text-indent: -99999px;
+						height: 80px; width: 80px;
+						margin: 0 auto; padding: 5px;  }
 
 /* hfeed */
 .hentry {

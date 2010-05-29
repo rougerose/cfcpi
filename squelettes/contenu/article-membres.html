@@ -1,0 +1,68 @@
+<BOUCLE_contenu_article(ARTICLES){id_article}>
+<div class="titre">
+	[(#LOGO_ARTICLE||image_reduire{200,200})]
+	[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
+	<h1 class="h1 #EDIT{titre}">#TITRE</h1>
+	[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
+	
+	<p class="info-publi">
+		<:publie_le:> <abbr class="published" title="[(#DATE|date_iso)]">[(#DATE|affdate)]</abbr>
+	</p>
+	[(#REM) Inclure le modele des liens de traductions ]
+	#MODELE{article_traductions}
+
+</div>
+<div class="contenu_principal clearfix">
+	<div class="surlignable">
+		[<div class="#EDIT{chapo} chapo">(#CHAPO|image_reduire{500,0})</div>]
+		[<div class="#EDIT{texte} texte">(#TEXTE|image_reduire{500,0})</div>]
+	</div>
+	
+	<BOUCLE_test_article_bureau(CONDITION){si #ID_ARTICLE|=={56}}>
+	<B_membres_bureau>
+	<div class="caroussel">
+		#ANCRE_PAGINATION 
+		[<p class="pagination">(#PAGINATION{page})</p>]
+		<ul class="nav-membres clearfix">
+			<BOUCLE_membres_bureau(AUTEURS){par nom}{bureau==oui}{tout}{pagination 50}>
+			[(#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{4})]})]
+			<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,compteur=#GET{compteur},fonction=oui}>
+			</BOUCLE_membres_bureau>
+		</ul>
+	</div>
+	</B_membres_bureau>
+	</BOUCLE_test_article_bureau>
+
+	<BOUCLE_test_article_membres(CONDITION){si #ID_ARTICLE|=={305}}>
+	<B_membres>
+	<div class="caroussel">
+		#ANCRE_PAGINATION
+		[<p class="pagination">(#PAGINATION{page})</p>]
+		<ul class="nav-membres clearfix">
+			<BOUCLE_membres(AUTEURS){par nom}{membre==oui}{tout}{pagination 50}>
+			[(#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{4})]})]
+			<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,compteur=#GET{compteur}}>
+			</BOUCLE_membres>
+		</ul>
+	</div>
+	</B_membres>
+	</BOUCLE_test_article_membres>
+
+	[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+
+	[<div class="ps">
+		<h2 class="h2"><:ps:></h2>
+		<div class="#EDIT{ps} surlignable">(#PS|image_reduire{500,0})</div>
+	</div>]
+	<!--
+		TODO gérer le portfolio
+	-->
+	[(#REM) Gestion du portfolio et des documents ]
+	[(#INCLURE{fond=inclure/documents}{id_article})]
+
+	[(#PETITION|oui)<INCLURE{fond=inclure/petition_signatures}{id_article}{env}{ajax}>]
+
+	[<div class="notes surlignable"><h2 class="h2 pas_surlignable"><:info_notes:></h2>(#NOTES)</div>]
+
+</div>
+</BOUCLE_contenu_article>

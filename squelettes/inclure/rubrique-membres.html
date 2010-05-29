@@ -1,6 +1,8 @@
 <BOUCLE_membres(AUTEURS){id_auteur}{tout}>
 <li[ class="item(#ENV{compteur})"]>
-	[<p class="logo ombre005">(#LOGO_AUTEUR||image_reduire{80,80}|inserer_attribut{alt,membre CFCPI}|sinon{[(#CHEMIN{img/membres-CFCPI.png}|balise_img{membre CFCPI})]})</p>]
+	[<p class="logo ombre005">
+		<a href="#URL_AUTEUR" style="background: #fff url((#LOGO_AUTEUR||image_reduire{80,80}|extraire_attribut{src}|sinon{[(#CHEMIN{img/membres-CFCPI.png})]})) no-repeat 50% 50%;">[(#NOM)]</a>
+	</p>]
 	[<p class="nom">(#NOM)[(#ENV{fonction}|oui)[<br /><span class="fonction">(#FONCTION|PtoBR)</span>]]</p>]
 </li>
 </BOUCLE_membres>
