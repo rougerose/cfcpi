@@ -1,10 +1,9 @@
 <BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}>
 <div class="titre">
-	[(#LOGO_RUBRIQUE||image_reduire{200,200})]
 	<h1 class="h1 #EDIT{titre}">#TITRE</h1>
 </div>
 <div class="contenu_principal surlignable">
-	[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
+	[<div class="#EDIT{texte} chapo">(#LOGO_RUBRIQUE||image_reduire{200,200})[(#TEXTE)]</div>]
 
 	[(#INCLURE{fond=inclure/rubrique_contenu,id_rubrique,env,ajax})]
 

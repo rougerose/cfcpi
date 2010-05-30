@@ -425,6 +425,8 @@ p.pagination.bas { margin-bottom: 36px; }
 	.titre .soustitre { 
 		font-size: 18px; text-transform: none;
 		margin-top: 18px; margin-left: 30px; }
+		
+	.titre .spip_logos { float: left; margin: 4px 18px 18px 0; }
 
 	.titre .info-publi {
 		color: #ccc; 
