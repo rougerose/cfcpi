@@ -23,6 +23,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	// F
 	'fichier' => 'Fichier',
+	'fonction_bureau' => 'Fonction au Bureau de la CFCPI',
 
 	// H
 	'help' => 'Aide',
@@ -89,6 +90,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'signatures' => 'signatures',
 	'signatures_enregistrees' => 'signatures d&eacute;j&agrave; enregistr&eacute;es',
 	'signer_petition' => 'Signer la p&eacute;tition',
+	'site_web' => 'Site web',
 	'_site_web' => 'site web',
 	'_sites_web' => 'sites web',
 	'sites_web_lies' => 'Sites web li&eacute;s',

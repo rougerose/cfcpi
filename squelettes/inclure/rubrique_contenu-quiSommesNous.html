@@ -10,7 +10,7 @@
 			<ul class="nav-membres clearfix">
 				<BOUCLE_membres_bureau(AUTEURS){par nom}{bureau==oui}{tout}>
 				[(#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{4})]})]
-				<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,compteur=#GET{compteur},fonction=oui}>
+				<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,contexte=#SQUELETTE,taille_image=80,compteur=#GET{compteur},fonction=oui}>
 				</BOUCLE_membres_bureau>
 			</ul>
 		</div>
@@ -25,7 +25,7 @@
 			<ul class="nav-membres clearfix">
 				<BOUCLE_membres(AUTEURS){par nom}{membre==oui}{tout}>
 				[(#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{4})]})]
-				<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,compteur=#GET{compteur}}>
+				<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,contexte=#SQUELETTE,taille_image=80,compteur=#GET{compteur}}>
 				</BOUCLE_membres>
 			</ul>
 		</div>

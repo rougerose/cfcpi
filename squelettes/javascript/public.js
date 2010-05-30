@@ -77,6 +77,7 @@ $(document).ready(function() {
 	/* éléments de navigation */
 	$(".caroussel").jQcaroussel();
 	
+	
 });
 
 // Plugin Caroussel
@@ -91,13 +92,45 @@ $.fn.jQcaroussel = function () {
 		$slider = $wrapper.find('> ul'),
 		$items = $slider.find('> li'),
 		$single = $items.filter(':first'),
-		
 
 		singleWidth = $single.outerWidth(), 
 		visible = Math.floor($wrapper.innerWidth() / singleWidth), // note: doesn't include padding or border
 		currentPage = 1,
-		pages = Math.ceil($items.length / visible);
+		pages = Math.ceil($items.length / visible),
 		
+		// ajouts pour page article-membres
+		$note = $(".article_membres .caroussel .caroussel-conteneur .nav-membres li .vcard .note"),
+		$noteP = $note.find("> p"),
+		$notePPremier = $note.find(":first-child"),
+		$notePAutres = $note.find("p:gt(0)"),
+		afficher = 'Afficher la suite '+'&#x2193;',
+		masquer = 'Masquer &#x2191;';
+		
+		
+		$note.each(function(){
+			var $p = $(this).children("p");
+			if ($p.length > 1) {
+			//	$p.filter(":last").after('<p><a href="#" class="suite">' + afficher + '</a></p>');
+				$p.filter(":first").nextAll("p").wrapAll('<div class="masque" />');
+			}
+		});
+		$(".masque").css("display","none").after('<p class="suite"><a href="#">' + afficher + '</a></p>');
+		
+		$("p.suite a",this).click(function(){
+		//	$notePAutres.css("display","none");
+			var $cible = $(this),
+				$parent_cible = $(this).parent(),
+				$parent = $parent_cible.parent(),
+				$visibles = $parent.children("div.masque:visible"),
+				$caches = $parent.children("div.masque:hidden");
+			
+			if ($visibles.length) {
+				$visibles.slideUp('slow',function(){
+					$parent_cible.removeClass("masquer"); $cible.html(afficher);
+				});
+			} else { $caches.slideDown('slow'); $parent_cible.addClass("masquer"); $cible.html(masquer); }
+			return false
+		});
 		
 
 		// 1. Pad so that 'visible' number will always be seen, otherwise create empty items
@@ -148,6 +181,7 @@ $.fn.jQcaroussel = function () {
 		
 		$("a.direct",this).each(function(count){
 			$(this).click(function(){
+				$("a.masquer").trigger('click');
 				$(this).siblings("a.select").removeClass("select");
 				$(this).addClass("select");
 				var offsetArrivee = (count + 1) * offsetDepart;
@@ -157,6 +191,7 @@ $.fn.jQcaroussel = function () {
 
 		// 5. Bind to the forward and back buttons
 		$('a.precedent', this).click(function () {
+			$("a.masquer").trigger('click');
 			// ajout pour les liens directs
 			var $select = $(this).siblings("a.select"),
 				$previous = $select.prev();
@@ -180,6 +215,7 @@ $.fn.jQcaroussel = function () {
 		
 
 		$('a.suivant', this).click(function () {
+			$("a.masquer").trigger('click');
 			// ajout pour les liens directs
 			var $select = $(this).siblings("a.select"),
 				$next = $select.next();
@@ -205,5 +241,9 @@ $.fn.jQcaroussel = function () {
 		$(this).bind('goto', function (event, page) {
 			gotoPage(page);
 		})
+		
+		// ajout pour afficher/masquer une partie de la note (bio)
+		
+		
 	});  
 };

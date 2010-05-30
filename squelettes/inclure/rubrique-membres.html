@@ -1,8 +1,22 @@
+#SET{taille_image,#ENV{taille_image}}
+#SET{contexte,#ENV{contexte}}
 <BOUCLE_membres(AUTEURS){id_auteur}{tout}>
 <li[ class="item(#ENV{compteur})"]>
-	[<p class="logo ombre005">
-		<a href="#URL_AUTEUR" style="background: #fff url((#LOGO_AUTEUR||image_reduire{80,80}|extraire_attribut{src}|sinon{[(#CHEMIN{img/membres-CFCPI.png})]})) no-repeat 50% 50%;">[(#NOM)]</a>
-	</p>]
+	<p class="logo ombre005">
+		<a href="[(#URL_ARTICLE|ancre_url{auteur-#ID_AUTEUR})]" style="background: #fff url([(#LOGO_AUTEUR||image_reduire{#GET{taille_image}}|extraire_attribut{src}|sinon{[(#CHEMIN{img/membres-CFCPI.png})]})]) no-repeat 50% 50%;">[(#NOM)]</a>
+	</p>
+
+	[(#GET{contexte}|match{quiSommesNous}|oui)
 	[<p class="nom">(#NOM)[(#ENV{fonction}|oui)[<br /><span class="fonction">(#FONCTION|PtoBR)</span>]]</p>]
+	]
+
+	[(#GET{contexte}|match{article-membres}|oui)
+	<div class="vcard">
+		[<h2 class="nom #EDIT{qui} fn org">(#NOM)</h2>]
+		[<p class="fonction"><:fonction_bureau:>&nbsp;: (#FONCTION|PtoBR)</p>]
+		[<div class="#EDIT{bio} texte note">(#BIO)</div>]
+		[<p class="#EDIT{hyperlien} hyperlien"><:site_web:>: <a href="(#URL_SITE)" class="url spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+	</div>
+	]
 </li>
 </BOUCLE_membres>

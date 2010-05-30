@@ -467,14 +467,14 @@ h2.section-titre {
 		overflow: auto;
 		margin: 27px 10px 0;
 		width: 520px; }
-		.caroussel .caroussel-conteneur .nav-membres { width: 9999px; }
+		.caroussel .caroussel-conteneur .nav-membres { width: 99999px; }
 			.caroussel .caroussel-conteneur .nav-membres li {
 				display: block; float: left; text-align: center;
-				width: 124px; padding-right: 8px; padding: 5px 3px; }
+				width: 124px; padding: 5px 3px; }
 				.caroussel .caroussel-conteneur .nav-membres li p {
-					font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+					xfont: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
 					text-align: center;
-					margin: 0; }
+					xmargin: 0; }
 				.caroussel .caroussel-conteneur .nav-membres li p.nom { margin: 9px 0; }
 				.caroussel .caroussel-conteneur .nav-membres li p.logo {
 					background-color: #fff;
@@ -484,6 +484,39 @@ h2.section-titre {
 						text-indent: -99999px;
 						height: 80px; width: 80px;
 						margin: 0 auto; padding: 5px;  }
+
+.article_membres .caroussel {  }
+	.article_membres .caroussel .caroussel-conteneur {  }
+		.article_membres .caroussel .caroussel-conteneur .nav-membres {  }
+			.article_membres .caroussel .caroussel-conteneur .nav-membres li { 
+				height: auto;
+				margin-top: 18px; padding: 5px;
+				width: 510px; }
+				.article_membres .caroussel .nav-membres li p.logo {
+					text-align: center;
+					float: left;
+					width: 170px; }
+					.article_membres .caroussel .nav-membres li p.logo a { height: 150px; width: 150px; }
+				.article_membres .caroussel .nav-membres li .vcard {
+					text-align:left;
+					float: right;
+					width: 320px; }
+					.article_membres .caroussel .nav-membres li h2 {
+						font-size: 20px;
+						margin-top: 0; }
+					.article_membres .caroussel .nav-membres li p { text-align: left; }
+				
+					.article_membres .caroussel .nav-membres li p.fonction,
+					.article_membres .caroussel .nav-membres li p.hyperlien {
+						font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+				
+					.article_membres .caroussel .nav-membres li .note { margin-bottom: 18px; }
+						.article_membres .caroussel .nav-membres li .note p { margin: 18px 0 0; }
+						.article_membres .caroussel .nav-membres li .note p.suite {
+							font: 12px "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right;
+							border-top: 2px solid #b80000; 
+							margin: 9px 0 4px; padding-top: 4px; }
+					
 
 /* hfeed */
 .hentry {
