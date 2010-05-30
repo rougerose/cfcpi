@@ -7,7 +7,7 @@
 	</p>
 
 	[(#GET{contexte}|match{quiSommesNous}|oui)
-	[<p class="nom">(#NOM)[(#ENV{fonction}|oui)[<br /><span class="fonction">(#FONCTION|PtoBR)</span>]]</p>]
+	[<p class="nom">(#NOM)[<br /><span class="fonction">(#FONCTION|PtoBR)</span>]</p>]
 	]
 
 	[(#GET{contexte}|match{article-membres}|oui)

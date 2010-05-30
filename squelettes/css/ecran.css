@@ -271,6 +271,26 @@ table.spip {
 
 
 /* ------------------------------------ */
+/*  Pagination							*/
+/* ------------------------------------ */
+p.pagination { 
+	font: 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right; color: ;
+	margin: 0 0 18px; padding-top: 4px; }
+p.pagination.haut { margin-bottom: 9px; }
+p.pagination.bas { margin-bottom: 36px; }
+	p.pagination a, p.pagination strong {
+		border: 1px solid #ccc;
+		padding: 0 3px 0; }
+	p.pagination a:hover {
+		color: #c00; background-color: #000; 
+		border-color: #000; }
+	p.pagination strong { 
+		color: #fff; background-color: #b80000; 
+		border-color: #b80000; }
+	p.pagination .sep { display: none; }
+
+
+/* ------------------------------------ */
 /*  Entete								*/
 /* ------------------------------------ */
 
@@ -439,8 +459,8 @@ h2.section-titre {
 	.menu-entree h2 a { color: #600099; }
 	.menu-entree p.descriptif { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin-bottom: 36px; }
 
-/* rubrique Qui sommes-nous ? */
-	/* navigation membres */
+/* Caroussel des membres et Bureau (rubrique Qui sommes-nous ?) */
+	/* pour le squelette de la rubrique */
 .caroussel {
 	background-color: #f7f4f4;
 	border: 1px solid #ccc; border-color: #dedcdf #fff #fff #dedcdf;
@@ -449,20 +469,16 @@ h2.section-titre {
 	width: 540px; }
 	.caroussel .fleches {
 		position: absolute; top: 9px; right: 10px; }
-		.caroussel .fleches a {
+		.caroussel .fleches a, .caroussel .fleches strong, .caroussel .fleches span.off {
 			background: url(../img/cfcpi-icones.png) no-repeat 0 0;
-			cursor: pointer;
-			text-indent: -9999px;
 			display: block; float: left;
+			text-indent: -9999px;
 			height: 16px; width: 16px; }
-		.caroussel .fleches a.precedent { 
-			background-position: 0 0; }
-		.caroussel .fleches a.suivant {
-			background-position: -16px 0; }
-		.caroussel .fleches a.direct {
-			background-position: -32px 0; }
-		.caroussel .fleches a.select {
-			background-position: -48px 0; }
+		.caroussel .fleches a { cursor: pointer; }
+		.caroussel .fleches a.precedent { background-position: 0 0; }
+		.caroussel .fleches a.suivant { background-position: -16px 0; }
+		.caroussel .fleches a.direct { background-position: -32px 0; }
+		.caroussel .fleches a.select, .caroussel .fleches strong { background-position: -48px 0; }
 	.caroussel .caroussel-conteneur {
 		overflow: auto;
 		margin: 27px 10px 0;
@@ -471,10 +487,10 @@ h2.section-titre {
 			.caroussel .caroussel-conteneur .nav-membres li {
 				display: block; float: left; text-align: center;
 				width: 124px; padding: 5px 3px; }
-				.caroussel .caroussel-conteneur .nav-membres li p {
-					xfont: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+				.rubrique_quiSommesNous .caroussel .caroussel-conteneur .nav-membres li p {
+					font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
 					text-align: center;
-					xmargin: 0; }
+					margin: 0; }
 				.caroussel .caroussel-conteneur .nav-membres li p.nom { margin: 9px 0; }
 				.caroussel .caroussel-conteneur .nav-membres li p.logo {
 					background-color: #fff;
@@ -485,9 +501,18 @@ h2.section-titre {
 						height: 80px; width: 80px;
 						margin: 0 auto; padding: 5px;  }
 
+	/* pour le squelette de l'article */
 .article_membres .caroussel {  }
+	.article_membres .caroussel p.pagination { text-align: left; }
+		.article_membres .caroussel .fleches a, .article_membres .caroussel .fleches strong {
+			padding: 0;
+			border: none; outline: none; }
+		.article_membres .caroussel .fleches a.suspension { background-position: -64px 0; }
+		.article_membres .caroussel .fleches span.precedent.off { background-position: 0 -16px; }
+		.article_membres .caroussel .fleches span.suivant.off { background-position: -16px -16px; }
+		.article_membres .caroussel .fleches a:hover { background-color: transparent; }
 	.article_membres .caroussel .caroussel-conteneur {  }
-		.article_membres .caroussel .caroussel-conteneur .nav-membres {  }
+		.article_membres .caroussel .caroussel-conteneur .nav-membres { width: auto; }
 			.article_membres .caroussel .caroussel-conteneur .nav-membres li { 
 				height: auto;
 				margin-top: 18px; padding: 5px;
@@ -860,25 +885,6 @@ p.signatures_compteur {
 	#signatures p.signer {
 		font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-align: right; }
-
-/* ------------------------------------ */
-/*  Pagination							*/
-/* ------------------------------------ */
-p.pagination { 
-	font: 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right; color: ;
-	margin: 0 0 18px; padding-top: 4px; }
-p.pagination.haut { margin-bottom: 9px; }
-p.pagination.bas { margin-bottom: 36px; }
-	p.pagination a, p.pagination strong {
-		border: 1px solid #ccc;
-		padding: 0 3px 0; }
-	p.pagination a:hover {
-		color: #c00; background-color: #000; 
-		border-color: #000; }
-	p.pagination strong { 
-		color: #fff; background-color: #b80000; 
-		border-color: #b80000; }
-	p.pagination .sep { display: none; }
 
 /* ------------------------------------ */
 /*  Formulaires							*/

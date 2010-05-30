@@ -75,7 +75,7 @@ $(document).ready(function() {
 	
 	// activation plugin Caroussel
 	/* éléments de navigation */
-	$(".caroussel").jQcaroussel();
+	$(".rubrique_quiSommesNous .caroussel").jQcaroussel();
 	
 	
 });
@@ -96,28 +96,26 @@ $.fn.jQcaroussel = function () {
 		singleWidth = $single.outerWidth(), 
 		visible = Math.floor($wrapper.innerWidth() / singleWidth), // note: doesn't include padding or border
 		currentPage = 1,
-		pages = Math.ceil($items.length / visible),
+		pages = Math.ceil($items.length / visible);
 		
 		// ajouts pour page article-membres
-		$note = $(".article_membres .caroussel .caroussel-conteneur .nav-membres li .vcard .note"),
-		$noteP = $note.find("> p"),
-		$notePPremier = $note.find(":first-child"),
-		$notePAutres = $note.find("p:gt(0)"),
-		afficher = 'Afficher la suite '+'&#x2193;',
-		masquer = 'Masquer &#x2191;';
-		
+		var $note = $(".article_membres .caroussel .caroussel-conteneur .nav-membres li .vcard .note"),
+			$noteP = $note.find("> p"),
+			$notePPremier = $note.find(":first-child"),
+			$notePAutres = $note.find("p:gt(0)"),
+			afficher = 'Afficher la suite '+'&#x2193;',
+			masquer = 'Masquer &#x2191;';
 		
 		$note.each(function(){
 			var $p = $(this).children("p");
 			if ($p.length > 1) {
-			//	$p.filter(":last").after('<p><a href="#" class="suite">' + afficher + '</a></p>');
 				$p.filter(":first").nextAll("p").wrapAll('<div class="masque" />');
 			}
 		});
+		
 		$(".masque").css("display","none").after('<p class="suite"><a href="#">' + afficher + '</a></p>');
 		
 		$("p.suite a",this).click(function(){
-		//	$notePAutres.css("display","none");
 			var $cible = $(this),
 				$parent_cible = $(this).parent(),
 				$parent = $parent_cible.parent(),
@@ -131,7 +129,7 @@ $.fn.jQcaroussel = function () {
 			} else { $caches.slideDown('slow'); $parent_cible.addClass("masquer"); $cible.html(masquer); }
 			return false
 		});
-		
+
 
 		// 1. Pad so that 'visible' number will always be seen, otherwise create empty items
 		if (($items.length % visible) != 0) {
@@ -171,9 +169,7 @@ $.fn.jQcaroussel = function () {
 		}
 		
 		$wrapper.after('<p class="fleches"><a class="precedent">&lt;</a><a class="suivant">&gt;</a></p>');
-		
-		
-		
+
 		// liens directs (ajout cld)		
 		var offsetDepart = singleWidth * visible;
 		$("a.precedent",this).after(repeat('<a class="direct" />',pages));
@@ -241,9 +237,5 @@ $.fn.jQcaroussel = function () {
 		$(this).bind('goto', function (event, page) {
 			gotoPage(page);
 		})
-		
-		// ajout pour afficher/masquer une partie de la note (bio)
-		
-		
-	});  
+	});
 };

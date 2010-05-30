@@ -19,33 +19,11 @@
 	</div>
 	
 	<BOUCLE_test_article_bureau(CONDITION){si #ID_ARTICLE|=={56}}>
-	<B_membres_bureau>
-	<div class="caroussel">
-		<div class="caroussel-conteneur">
-			<ul class="nav-membres clearfix">
-				<BOUCLE_membres_bureau(AUTEURS){par nom}{bureau==oui}{tout}>
-				[(#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{4})]})]
-				<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,contexte=#SQUELETTE,taille_image=128,compteur=#GET{compteur},fonction=oui}>
-				</BOUCLE_membres_bureau>
-			</ul>
-		</div>
-	</div>
-	</B_membres_bureau>
+	<INCLURE{fond=inclure/article-membres_contenu,env,ajax}>
 	</BOUCLE_test_article_bureau>
 
 	<BOUCLE_test_article_membres(CONDITION){si #ID_ARTICLE|=={305}}>
-	<B_membres>
-	<div class="caroussel">
-		<div class="caroussel-conteneur">
-			<ul class="nav-membres clearfix">
-				<BOUCLE_membres(AUTEURS){par nom}{membre==oui}{tout}>
-				[(#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{4})]})]
-				<INCLURE{fond=inclure/rubrique-membres,env,id_auteur,contexte=#SQUELETTE,taille_image=128,compteur=#GET{compteur}}>
-				</BOUCLE_membres>
-			</ul>
-		</div>
-	</div>
-	</B_membres>
+	<INCLURE{fond=inclure/article-membres_contenu,env,ajax}>
 	</BOUCLE_test_article_membres>
 
 	[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
