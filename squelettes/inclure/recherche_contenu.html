@@ -9,11 +9,14 @@
 	
 	[(#REM) rubriques ]
 	#INCLURE{fond=inclure/recherche_rubriques,env,ajax}
+	
+	[(#REM) auteurs, uniquement parmi les membres ]
+	#INCLURE{fond=inclure/recherche_auteurs,env,ajax}
 
-	[(#REM) sites web]
+	[(#REM) mots-clés ]
 	#INCLURE{fond=inclure/recherche_mots,env,ajax}
 
-	[(#REM) sites web]
+	[(#REM) sites web ]
 	#INCLURE{fond=inclure/recherche_sites,env,ajax}
 	
 </div>

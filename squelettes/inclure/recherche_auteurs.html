@@ -1,0 +1,28 @@
+[(#REM) Résultat de la recherche : auteurs ]
+<B_auteurs>
+<div class="liste auteurs">
+	#ANCRE_PAGINATION
+	<h2 class="section-titre"><:membres_coalition:></h2>
+	<p class="info resultats">[(#GRAND_TOTAL|singulier_ou_pluriel{_resulat,_resultats})]</p>
+	[<p class="pagination haut">(#PAGINATION{page})</p>]
+	<ul class="liste-items">
+		<BOUCLE_auteurs(AUTEURS){recherche}{par points}{inverse}{pagination 3}>
+		<li id="auteur-#ID_AUTEUR" class="item">
+			<h3 class="title"><a href="#URL_AUTEUR">#NOM</a></h3>
+			[<div class="introduction"><p>(#BIO|couper{200})</p></div>]
+			<div class="meta-publi clearfix">
+				<p class="lire-suite"><a href="#URL_MOT"><:lire_la_suite:></a></p>
+			</div>
+		</li>
+		</BOUCLE_auteurs>
+	</ul>
+	[<p class="pagination bas">(#PAGINATION{page})</p>]
+</div>
+</B_auteurs>
+<div class="liste auteurs">
+	<h2 class="section-titre"><:membres_coalition:></h2>
+	<div class="info resultat-vide">
+		<p><:recherche_pas_de_resultat:></p>
+	</div>
+</div>
+<//B_auteurs>

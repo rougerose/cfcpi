@@ -3,7 +3,7 @@
 <div class="liste mots">
 	#ANCRE_PAGINATION
 	<h2 class="section-titre"><:mots_clefs:></h2>
-	<p class="info resultats">[(#GRAND_TOTAL|singulier_ou_pluriel{recherche_un_mot,recherche_deux_mots})]</p>
+	<p class="info resultats">[(#GRAND_TOTAL|singulier_ou_pluriel{_resultat,_resultats})]</p>
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<ul class="liste-items">
 		<BOUCLE_mots(MOTS){recherche}{par points}{inverse}{pagination 3}>
@@ -22,7 +22,7 @@
 <div class="liste mots">
 	<h2 class="section-titre"><:mots_clefs:></h2>
 	<div class="info resultat-vide">
-		<p><:recherche_pas_de_mot:></p>
+		<p><:recherche_pas_de_resultat:></p>
 	</div>
 </div>
 <//B_mots>

@@ -3,7 +3,7 @@
 <div class="liste documents">
 	#ANCRE_PAGINATION
 	<h2 class="section-titre"><:info_documents:></h2>
-	<p class="info resultats">[(#GRAND_TOTAL|singulier_ou_pluriel{recherche_un_document,recherche_deux_documents})]</p>
+	<p class="info resultats">[(#GRAND_TOTAL|singulier_ou_pluriel{_resultat,_resultats})]</p>
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<ul class="liste-items">
 		<BOUCLE_documents(DOCUMENTS){recherche}{par points}{inverse}{pagination 3}>
@@ -25,7 +25,7 @@
 <div class="liste documents">
 	<h2 class="section-titre"><:info_documents:></h2>
 	<div class="info resultat-vide">
-		<p><:recherche_pas_de_document:></p>
+		<p><:recherche_pas_de_resultat:></p>
 	</div>
 </div>
 <//B_documents>

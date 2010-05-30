@@ -42,6 +42,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// M
 	'map' => 'Plan du site',
+	'membres_coalition' => '',
 	'mois_precedent' => 'Mois pr&eacute;c&eacute;dent',
 	'mois_suivant'=> 'Mois suivant',
 	'mot_pas_d_article' => 'Aucun article n&#x27;est li&eacute; &agrave; ce mot-cl&eacute;',
@@ -80,8 +81,11 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'recherche_un_site_web' => '1 site web disponible',
 	'recherche_deux_sites_web' => '@nb@ sites web disponibles',
 	'recherche_pas_de_site_web' => 'Aucun site web n&#x27;est disponible.',
-	'_rubrique' => 'rubrique',
-	'_rubriques' => 'rubriques',
+	'recherche_pas_de_resultat' => 'Aucun résultat disponible',
+	'_resultat' => '1 r&eacute;sultat disponible',
+	'_resultats' => '@nb@ r&eacute;sultats disponibles',
+	'_rubrique' => '1 rubrique disponible',
+	'_rubriques' => '@nb@ rubriques disponibles',
 	'rubriques_liees' => 'Rubriques li&eacute;es',
 
 	// S
