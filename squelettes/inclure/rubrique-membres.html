@@ -3,7 +3,7 @@
 <BOUCLE_membres(AUTEURS){id_auteur}{tout}>
 <li[ class="item(#ENV{compteur})"]>
 	<p class="logo ombre005">
-		<a href="[(#URL_ARTICLE)]" style="background: #fff url([(#LOGO_AUTEUR||image_reduire{#GET{taille_image}}|extraire_attribut{src}|sinon{[(#CHEMIN{img/membres-CFCPI.png})]})]) no-repeat 50% 50%;">[(#NOM)]</a>
+		<a href="[(#URL_ARTICLE)]" style="background: #fff url([(#LOGO_AUTEUR||image_reduire{#GET{taille_image}}|extraire_attribut{src}|sinon{[(#CHEMIN{img/membres-CFCPI.png|image_reduire{#GET{taille_image}}})]})]) no-repeat 50% 50%;">[(#NOM)]</a>
 	</p>
 
 	[(#GET{contexte}|match{quiSommesNous}|oui)

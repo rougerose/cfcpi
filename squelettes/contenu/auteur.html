@@ -1,7 +1,7 @@
 <BOUCLE_contenu_auteur(AUTEURS){id_auteur}{tout}>
 <div class="titre">
 	[(#MEMBRE|oui)
-	[(#LOGO_AUTEUR||image_reduire{140,0}|sinon{[(#CHEMIN{img/membres-CFCPI.png}|image_reduire{140,0})]})]
+	[(#LOGO_AUTEUR||image_reduire{140,0}|sinon{[(#CHEMIN{img/membres-CFCPI.png}|image_reduire{140,0}|inserer_attribut{class,spip_logos})]})]
 	]
 	[(#MEMBRE|non)
 	[(#LOGO_AUTEUR||image_reduire{140,0})]
