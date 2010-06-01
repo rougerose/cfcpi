@@ -15,7 +15,7 @@
 		voir http://www.brunildo.org/test/OverflowR.html
 		]
 		<div id="conteneur" class="ombre005 clearfix">
-			<div id="contenu">
+			<div id="contenu"[(#ENV{type}=={auteur}|oui)class="vcard"]>
 				<INCLURE{fond=contenu/#ENV{type},env}>
 				
 				<div id="extra" class="a-cote">

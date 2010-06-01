@@ -180,6 +180,13 @@ body {
 		width: 300px; }
 .page_recherche #extra { display: none; }
 
+/* auteurs */
+.page_auteur #contenu { width: 940px; }
+	.page_auteur #contenu .contenu_principal { float: left; width: 540px; }
+	.page_auteur #contenu .no_logo { margin-left: 160px; }
+.page_auteur #navigation { display: none; }
+
+
 /* ------------------------------------ */
 /*  Liens (réglages général)			*/
 /* ------------------------------------ */
@@ -413,34 +420,26 @@ p.pagination.bas { margin-bottom: 36px; }
 
 /* Articles */
 .titre { margin-bottom: 36px; }
-	
 	.titre h1 { color: #B80000; }
-	
+	.page_auteur .titre h1 { margin-left: 160px; }
 	.titre .surtitre, .titre .soustitre { 
 		color: #600099;
 		font-size: 14px; line-height: 18px;
 		text-transform: uppercase;
 		margin-bottom: 0; }
-
 	.titre .soustitre { 
 		font-size: 18px; text-transform: none;
 		margin-top: 18px; margin-left: 30px; }
-		
-	.titre .spip_logos { float: left; margin: 4px 18px 18px 0; }
-
+	.titre .spip_logos { float: left; margin: 4px 20px 20px 0; }
 	.titre .info-publi {
 		color: #ccc; 
 		margin: 18px 0 0 560px; }
-	
 	.titre .info-publi abbr { color: #600099; border-bottom: none; }
-
 .chapo {  }
 	.chapo p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
 .texte {  }
 	.texte h2 + p, .texte h3 + p, .texte h4 + p, .texte h5 + p, .texte h6 + p { text-indent: 0; }
 	.texte p { text-indent: 1em; }
-
 .ps, .notes { margin: 36px 0 0 auto; width: 70%; }
 	.ps h2, .notes h2 {
 		font-size: 18px; line-height: 18px;
@@ -543,6 +542,10 @@ h2.section-titre {
 							font: 12px "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right;
 							border-top: 2px solid #b80000; 
 							margin: 9px 0 4px; padding-top: 4px; }
+
+/* auteurs */
+.page_auteur p.fonction, .page_auteur p.hyperlien { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.page_auteur .note { margin-top: 36px; }
 					
 
 /* hfeed */
@@ -897,7 +900,7 @@ fieldset {  }
 input, select, textarea {
 	font-size: 100%; font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* surcharge spip_formulaires */
+/* spip_formulaires */
 .formulaire_spip {  }
 	.formulaire_spip .boutons { margin-bottom: 1.5em; }
 
@@ -906,18 +909,16 @@ input, select, textarea {
 	#formulaire_recherche * { display: inline; }
 	#formulaire_recherche fieldset { margin: 0; }
 		#formulaire_recherche label { display: none; }
-		#formulaire_recherche input {
-			background-color: #92b100;
-			border: 1px solid rgba(189,229,0,0.2) }
+		#formulaire_recherche input { border: 1px solid rgba(189,229,0,0.2) }
 		#formulaire_recherche input[type="text"] { 
 			color: rgb(210,255,0);
 			background: #92b100 url(../img/icone_recherche.png) no-repeat 1px -1px;
 			padding: 2px 0 2px 25px;
 			width: 15em; }
-		#formulaire_recherche input[type="submit"] { color: rgb(189,229,0); xfont-size: 10px; }
+		#formulaire_recherche input[type="submit"] { background-color: transparent; border-color: transparent; color: rgb(189,229,0); }
 		#formulaire_recherche input[type="text"]:focus { border-color: rgb(210,255,0); }
 		#formulaire_recherche input[type="submit"]:hover { 
-			color: rgb(210,255,0);
+			color: rgb(210,255,0); background-color: #92b100;
 			border-color: rgb(210,255,0); }
 		#formulaire_recherche input[type="submit"]:active {
 			border-style: inset; outline: none; }
@@ -934,50 +935,57 @@ input, select, textarea {
 	#formulaire_recherche p a:hover {
 		color: rgb(210,255,0); }
 
-/* formulaire signature pétition */
-.petition {
+/* habillage formulaire_cfcpi (formulaires petition et ecrire_auteur) */
+.formulaire_cfcpi {
 	background: #280000 url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
 	padding: 1.5em 2px 0;
 	border-radius: 2px 0; 
 	-webkit-border-top-left-radius: 2px; 
 	-webkit-border-top-right-radius: 2px; 
 	-moz-border-radius: 2px 2px 0 0; }
-	
+	.formulaire_cfcpi .formulaire_spip {
+		background-color: #fff;
+		border: 1px solid #800014; border-bottom-width: 0;
+		padding: 0 5px; }
+		.formulaire_cfcpi form { border-bottom:	1px solid #eee; }
+			.formulaire_cfcpi fieldset { margin: .7em 0 0; }
+			.formulaire_cfcpi fieldset.previsu {
+				border-color: #990017; }
+				.formulaire_cfcpi fieldset legend, .formulaire_cfcpi fieldset.previsu legend { 
+					font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+					color: #bc1e20; background-color: transparent;
+					font-weight: bold; text-transform: uppercase;
+					border-bottom: 1px solid #bc1e20; }
+					.formulaire_cfcpi li { 
+						opacity: .6;
+						margin: 0 0 18px; }
+					.formulaire_cfcpi li.obligatoire, .formulaire_cfcpi .previsu li { opacity: 1; }
+						.formulaire_cfcpi li label {
+							font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+							color: #000; }
+						.formulaire_cfcpi li span.erreur_message {
+							font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; float: right; }
+						.formulaire_cfcpi input.text, .formulaire_cfcpi textarea { border: 2px solid #eaeaea; }
+						.formulaire_cfcpi input:focus, .formulaire_cfcpi textarea:focus { border: 2px solid #990017; }
+		.formulaire_cfcpi p.reponse_formulaire_ok {  }
+
+
+/* formulaire signature pétition */
+.petition {  }
 	.petition h3 {
 		color: #fff;
 		text-transform: uppercase;
 		margin: 0 5px 0; }
-	
-	.petition .formulaire_signature {
-		background-color: #fafafa;
-		border: 1px solid #800014; border-bottom-width: 0;
-		padding: 0 5px; }
-		
-		.petition form { border-bottom:	1px solid #eee; }
-		
-			.petition fieldset { 
-				margin: .7em 0 0; }
-				
-				.petition fieldset legend { 
-					font: 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-					color: #bc1e20; background-color: transparent;
-					font-weight: bold; text-transform: uppercase;
-					border-bottom: 1px solid #bc1e20; }
-				
-				.petition li {
-					opacity: .6; }
-				
-				.petition li.obligatoire {
-					opacity: 1; }
-				
-				.petition label {
-					font: 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-					color: #000; }
-					
-				.petition input.text, .petition textarea {
-					border: 2px solid #eaeaea; }
-				
-				.petition input:focus, .petition textarea:focus { border: 1px solid #990017; }
+	.petition .formulaire_spip {  }
+		.petition fieldset {  }
+			.petition .formulaire_spip fieldset legend { font-size: 11px; }
+				.petition .formulaire_spip li label { font-size: 11px; }
+				.petition .formulaire_spip li span.erreur_message { float: none; }
+
+/* formulaire ecrire_auteur */
+.formulaire_ecrire_auteur label { display: inline; float: left; width: 200px; }
+.formulaire_ecrire_auteur input.text, .formulaire_ecrire_auteur textarea { width: 300px; float: right; }
+
 
 /* ------------------------------------ */
 /*  Habillage : ombres                  */

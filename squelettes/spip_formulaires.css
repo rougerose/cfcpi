@@ -56,7 +56,7 @@ input, select, textarea { font-size: 100%; font-family: inherit; }
 .formulaire_spip fieldset.previsu p { margin: 1em 0; } 
 
 /* Reponse du formulaire */
-.reponse_formulaire { font-weight: bold; color: #e86519; font-size: 1.20em; }
+.reponse_formulaire { font-weight: bold; }
 fieldset.reponse_formulaire { border-color: #e86519; font-weight: normal; }
 fieldset.reponse_formulaire.reponse_formulaire legend { color: #F57900; } /* Preciser la couleur des legend et du fond pour IE/Win */
 
@@ -66,7 +66,7 @@ fieldset.reponse_formulaire.reponse_formulaire legend { color: #F57900; } /* Pre
 .reponse_formulaire_erreur { margin: 0; color: #C30; font-weight: bold; }
 
 /* * OK */
-.reponse_formulaire_ok { margin: 0; color: #53AD20; font-weight: bold; }
+.reponse_formulaire_ok {  }
 
 
 /* Variantes et cas particuliers

@@ -33,6 +33,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'index' => 'Index',
 	'index_mots' => 'Index des mots-cl&eacute;s',
 	'informations' => 'Informations',
+	'info_organisation_membre_cfcpi' => 'Organisation membre de la CFCPI',
+	'info_les_membres' => 'Les membres de la CFCPI',
+	'info_membres' => 'Membres de la CFCPI',
+	'info_texte_message' => 'Texte de votre message',
 	'item' => '&eacute;lement',
 	'items' => '&eacute;lements',
 
@@ -42,7 +46,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// M
 	'map' => 'Plan du site',
-	'membres_coalition' => '',
 	'mois_precedent' => 'Mois pr&eacute;c&eacute;dent',
 	'mois_suivant'=> 'Mois suivant',
 	'mot_pas_d_article' => 'Aucun article n&#x27;est li&eacute; &agrave; ce mot-cl&eacute;',
