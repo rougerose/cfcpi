@@ -4,7 +4,7 @@
 	<h1 class="h1 #EDIT{titre}">#TITRE</h1>
 </div>
 <div class="contenu_principal">
-	[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
+	[<div class="#EDIT{texte} chapo surlignable">(#TEXTE)</div>]
 
 	[(#SET{moisSuivant,[(#VAL{Y-m}|date{#VAL{+1 month}|strtotime{#ENV{date}|affdate{U}}})]})]
 	[(#SET{moisPrecedent,[(#VAL{Y-m}|date{#VAL{-1 month}|strtotime{#ENV{date}|affdate{U}}})]})]
