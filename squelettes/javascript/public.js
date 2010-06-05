@@ -23,7 +23,7 @@
 */
 $(document).ready(function() {
 	// grille de mise en page
-	$("body").addGrid(12, {img_path: 'plugins/960grid/img/', z_index:'99', left:'70px'});
+	$("body").addGrid(12, {img_path: 'plugins/960grid/img/', z_index:'99', left:'0',top: '30px'});
 
 	// navigation : menus "drop-down"
 	$("#nav > div > ul > li:has(ul)").each(function(){

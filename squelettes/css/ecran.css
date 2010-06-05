@@ -1088,6 +1088,6 @@ p.info {
 /* accessibilité */
 .accessibilite { display:none; }
 
-/* surcharge css boutons admin */
-#spip-admin { margin-top: 4.5em; }
-	#spip-admin a { float: none; margin-bottom: .5em; }
+/* surcharge css boutons admin à partir de la surcharge tetue-trousse */
+#spip-admin { float: left; right: auto !important; left: 5px !important;}
+	#spip-admin a { xfloat: none; xmargin-bottom: .5em; }
