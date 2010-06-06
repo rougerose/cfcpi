@@ -68,11 +68,11 @@ function formulaires_ecrire_auteur_traiter_dist($id_auteur, $id_article, $mail){
 
 	if ($envoyer_mail($mail, $sujet, $texte, $adres,
 	"X-Originating-IP: ".$GLOBALS['ip']))
-		$message = _T('form_prop_message_envoye');
+		$message['message_ok'] = _T('form_prop_message_envoye');
 	else
-		$message = _T('pass_erreur_probleme_technique');
+		$message['message_erreur'] = _T('pass_erreur_probleme_technique');
 
-	return array('message_ok'=>$message);
+	return $message;
 }
 
 ?>

@@ -1,0 +1,19 @@
+<div id="tabs">
+	<ul class="clearfix">
+		<BOUCLE_test_mots(MOTS){id_syndic}> </BOUCLE_test_mots>
+		<li><a href="#mots"><:mots_clefs:></a></li>
+		</B_test_mots>
+	</ul>
+	<B_liste_mots>
+	<div id="mots">
+		<ul class="mots">
+			<BOUCLE_liste_mots(MOTS){id_syndic}{par titre}>
+			<li><h3><a href="#URL_MOT" rel="tag">#TITRE</a></h3></li>
+			</BOUCLE_liste_mots>
+		</ul>
+	</div>
+	</B_liste_mots>
+</div>
+
+[(#REM) Autres sites web ]
+[(#INCLURE{fond=inclure/site_liste-sites,ajax})]

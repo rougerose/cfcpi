@@ -48,16 +48,6 @@ $(document).ready(function() {
 	// UI-tabs
 	$("#tabs").tabs();
 	
-	// UI-dialog
-	$("#dialog").dialog({
-		height: 140,
-		modal: true
-	});
-/*	$(".formulaire_spip").dialog({
-		height: 140,
-		modal: true
-	});
-*/	
 	// Page mot-clé index mots dans #navigation
 	// présentation style "accordéon"
 	$(".page_mot #navigation .index").each(function(){

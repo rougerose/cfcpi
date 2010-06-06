@@ -1,0 +1,15 @@
+<BOUCLE_site(SITES){id_syndic}>
+<div class="titre surlignable">
+	<a href="#URL_SITE">[(#LOGO_SITE||image_reduire{200,200})]</a>
+	<h1 class="h1 #EDIT{nom_site}">#NOM_SITE</h1>
+</div>
+<div class="contenu_principal surlignable">
+	[<div class="#EDIT{descriptif} chapo">(#DESCRIPTIF)</div>]
+	[<p class="#EDIT{url_site} hyperlien"><a href="#URL_SITE" class="spip_out">(#URL_SITE|couper{80})</a></p>]
+	[(#REM) Articles issus de la syndication ]
+	
+	[(#INCLURE{fond=inclure/site_contenu,id_syndic,env,ajax})]
+	
+	[<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
+</div>
+</BOUCLE_site>

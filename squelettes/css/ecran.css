@@ -151,7 +151,7 @@ body {
 /* règles spécifiques */
 
 /* article */
-.page_article .contenu_principal, .page_rubrique .contenu_principal { float: left; }
+.page_article .contenu_principal, .page_rubrique .contenu_principal, .page_site .contenu_principal { float: left; }
 
 /* mot */
 .page_mot .contenu_principal { width: 780px; }
@@ -743,15 +743,16 @@ h2.section-titre {
 .titre h1 span { color: #600099; }
 
 
-/* #extra rubriques */
-/* listes (actu, agenda, etc.) */
+/* #extra */
+/* listes */
 #extra .liste { margin-bottom: 46px; }
 	#extra .liste h2 {
 		font-size: 14px;
 		border: 2px solid #600099; border-width: 2px 0 1px;
 		margin: 0 0 10px; padding: 8px 0 8px; }
+	#extra .liste li { margin-bottom: 9px; padding-bottom: 9px; }
 	
-	/* actu */
+	/* liste actu */
 	#extra .liste li.hentry {
 		list-style-type: none;
 		margin-bottom: 12px; padding-bottom: 0px; }
@@ -760,7 +761,7 @@ h2.section-titre {
 			margin-bottom: 6px; }
 		#extra .liste .entry-content { display: none; }
 	
-	/* agenda */
+	/* liste agenda */
 	/* voir également section "contenu agenda" plus haut */
 	#extra .liste dl {
 		border-bottom: 1px dotted #ccc;
@@ -773,10 +774,20 @@ h2.section-titre {
 		#extra .liste dd { margin-left: 4.25em; }
 			#extra .liste dd h3 { font-size: 12px; margin: 0; }
 						 
+/* boite infos */
+div.info {  }
+	div.info p { text-align: left; }
+	div.info p:last-child { margin-bottom: 0; }
+p.info {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 11px; text-align: right;
+	color: #600099;
+	margin-top: -18px; }
+
+
 /* css UI thème par défaut (JQuery) */
 
 /* jquery.ui.theme.css personnalisé */
-.ui-widget { background-image: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;/*{ffDefault}*/; font-size:14px/*{fsDefault}*/; }
+.ui-widget, div.info { background-image: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;/*{ffDefault}*/; font-size:14px/*{fsDefault}*/; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;/*{ffDefault}*/; font-size: 1em; }
 .ui-widget-content { border: none; }
@@ -789,7 +800,7 @@ h2.section-titre {
 
 /* Icons */
 /* states and images */
-.ui-widget-content .ui-icon { background-image: url(../img/cfcpi-icones.png); }
+.ui-widget-content .ui-icon, div.info .ui-icon { background-image: url(../img/cfcpi-icones.png); }
 .ui-widget-header .ui-icon { background-image: url(../img/cfcpi-icones.png); }
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon { background-image: url(../img/cfcpi-icones.png); }
 /* positioning */
@@ -804,7 +815,7 @@ h2.section-titre {
 
 /* personnalisé */
 
-.ui-dialog {
+.ui-dialog, div.info {
 	background-color: #f9f6fb;
 	border: 6px solid #fff;
 	padding: 4px;
@@ -1016,7 +1027,7 @@ input, select, textarea {
 							font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; float: right; }
 						.formulaire_cfcpi input.text, .formulaire_cfcpi textarea { border: 2px solid #eaeaea; }
 						.formulaire_cfcpi input:focus, .formulaire_cfcpi textarea:focus { border: 2px solid #990017; }
-		.formulaire_cfcpi p.reponse_formulaire_ok {  }
+		.formulaire_cfcpi div.info { margin-top: 18px; margin-bottom: 18px; }
 
 
 /* formulaire signature pétition */
@@ -1060,30 +1071,6 @@ a.action {
 	-webkit-border: 4px;
 	-moz-border-radius: 4px; }
 a.action:hover { color: #c00; background-color: #000; }
-
-/* texte d'infos */
-div.info {
-/*	background-color: rgba(72,0,114,0.89);
-	color: #fff;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin: 18px auto; padding: 0 5px;
-	width: 80%;
-	border-radius: 4px;
-	-webkit-border: 4px;
-	-moz-border-radius: 4px;
-	box-shadow: 0 0 5px rgba(72,0,114,0.3);
-	-webkit-box-shadow: 0 0 5px rgba(72,0,114,0.3);
-	-moz-box-shadow: 0 0 5px rgba(72,0,114,0.3); */ }
-	.info p {/*
-		font-size: 12px;
-		text-align: left; 
-		background: url(../img/icone-information-32x32.png) no-repeat 0 center;
-		padding: 13px 15px 15px 42px ;*/ }
-
-p.info {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 11px; text-align: right;
-	color: #600099;
-	margin-top: -18px; }
 
 /* accessibilité */
 .accessibilite { display:none; }
