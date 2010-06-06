@@ -11,7 +11,7 @@
 	<div id="documents">
 		<BOUCLE_liste_documents(DOCUMENTS){id_article?}{id_rubrique?}{vu=non}{par num titre, titre}>
 		<dl class="document clearfix">
-			<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT)]</dt>
+			<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT|image_reduire{52})]</dt>
 			<dd>
 				<h3>[<a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:info_document:> #ID_DOCUMENT})]</a>]</h3>
 				<p>[(#DESCRIPTIF|PtoBR)] <span>#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)]</span></p>
