@@ -787,18 +787,22 @@ p.info {
 /* css UI thème par défaut (JQuery) */
 
 /* jquery.ui.theme.css personnalisé */
-.ui-widget, div.info { background-image: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;/*{ffDefault}*/; font-size:14px/*{fsDefault}*/; }
-.ui-widget .ui-widget { font-size: 1em; }
-.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;/*{ffDefault}*/; font-size: 1em; }
+.ui-widget, div.info { background-image: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:14px; }
+.ui-widget .ui-widget { xfont-size: 1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1em; }
 .ui-widget-content { border: none; }
 	.ui-widget-header { background-color: transparent; background-image: none; border: none; }
 
 /* Interaction states */
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: none; background: #fff url(../img/cfcpi-icones.png) 50% 50% repeat-x; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 0; background: #fff url(../img/cfcpi-icones.png) 50% 50% repeat-x; }
 
 .ui-widget-overlay { background: #000 url(../img/ui-bg_flat_0_000000_40x100.png) repeat 50% 50%; opacity: .50; filter:Alpha(Opacity=50); }
 
 /* Icons */
+.ui-icon {
+	background-repeat: no-repeat;
+	display: block; overflow: hidden; text-indent: -99999px;
+	height: 16px; width: 16px; }
 /* states and images */
 .ui-widget-content .ui-icon, div.info .ui-icon { background-image: url(../img/cfcpi-icones.png); }
 .ui-widget-header .ui-icon { background-image: url(../img/cfcpi-icones.png); }
@@ -856,12 +860,13 @@ p.info {
 	-webkit-border-top-right-radius: 2px; 
 	-moz-border-radius: 2px 2px 0 0; }
 
-	.ui-tabs-nav {
+	.ui-tabs .ui-tabs-nav {
 		border-bottom: 1px solid #50206d;
 		margin: 0 2px; padding: 0 0 0 5px; }
 	
 		.ui-tabs-nav li {
-			border: 1px solid #50206d;
+			font-size: 12px;
+			xborder: 1px solid #50206d;
 			border-radius: 2px 0; 
 			-webkit-border-top-left-radius: 2px; 
 			-webkit-border-top-right-radius: 2px; 
@@ -891,7 +896,8 @@ p.info {
 
 	.ui-tabs .ui-tabs-panel {
 		background-color: #fff;
-		border: 1px solid #50206d; border-top-width: 0; border-bottom-width: 0; 
+		border: 1px solid #50206d; border-top-width: 0; border-bottom-width: 0;
+		border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0;
 		padding: 1.1em 5px 0 10px; margin: 0 2px }
 		
 		.ui-tabs-panel dl, .ui-tabs-panel ul { 
