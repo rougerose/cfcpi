@@ -1,0 +1,17 @@
+<div class="formulaire_spip formulaire_menu_lang colonnes" id="formulaire_menu_lang">
+	<form method="post" action="#ENV{url}">
+		<div>
+			<fieldset>
+				<legend><:choix_langue:></legend>
+				[(#ENV{url}|form_hidden)]
+				<ul>
+					<li class="clearfix">
+						<label for="#ENV{nom}"><:info_langues:></label>
+						<select name="#ENV{nom}" id="#ENV{nom}" onchange="this.parentNode.parentNode.submit()">#ENV*{langues}</select>
+					</li>
+				</ul>
+				<noscript><p class="boutons"><input type="submit" class="submit" value="&gt;&gt;" /></p></noscript>
+			</fieldset>
+		</div>
+	</form>
+</div>

@@ -11,6 +11,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'articles_lies' => 'Articles li&eacute;s',
 	'_au' => 'au',
 	
+	// C
+	'choix_langue' => 'Choix de la langue',
+	
 	// D
 	'dans_l' => 'Dans l&#x27;', // pour le titre "Dans l'agenda de la CFCPI"
 	'de_la_cfcpi' => 'de la CFCPI',
@@ -43,6 +46,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// L
 	'_le' => 'le',
 	'lire_la_suite' => 'Lire la suite &#x2192;',
+	'login_login2' => 'Login <br />(identifiant de connexion au site)',
+	'login_pass2' => 'Mot de passe',
 
 	// M
 	'map' => 'Plan du site',

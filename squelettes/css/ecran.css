@@ -968,7 +968,7 @@ input, select, textarea {
 
 /* spip_formulaires */
 .formulaire_spip {  }
-	.formulaire_spip .boutons { margin-bottom: 1.5em; }
+	.formulaire_spip .boutons { xmargin-bottom: 1.5em; }
 
 /* recherche */
 #formulaire_recherche { position: absolute; top: -4em; right: 0; }
@@ -1001,7 +1001,7 @@ input, select, textarea {
 	#formulaire_recherche p a:hover {
 		color: rgb(210,255,0); }
 
-/* habillage formulaire_cfcpi (formulaires petition et ecrire_auteur) */
+/* habillage formulaire_cfcpi (formulaires petition, ecrire_auteur, login) */
 .formulaire_cfcpi {
 	background: #280000 url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
 	padding: 1.5em 2px 0;
@@ -1013,8 +1013,12 @@ input, select, textarea {
 		background-color: #fff;
 		border: 1px solid #800014; border-bottom-width: 0;
 		padding: 0 5px; }
-		.formulaire_cfcpi form { border-bottom:	1px solid #eee; }
-			.formulaire_cfcpi fieldset { margin: .7em 0 0; }
+	.formulaire_cfcpi .formulaire_spip + .formulaire_spip {
+		border-top: none; }
+		.formulaire_cfcpi form { border-bottom:	1px solid #eee; padding-bottom: 18px; }
+		.formulaire_cfcpi .formulaire_spip + .formulaire_spip form {
+			padding-top: 9px; }
+			.formulaire_cfcpi fieldset { margin: 9px 0 0; }
 			.formulaire_cfcpi fieldset.previsu {
 				border-color: #990017; }
 				.formulaire_cfcpi fieldset legend, .formulaire_cfcpi fieldset.previsu legend { 
@@ -1029,9 +1033,13 @@ input, select, textarea {
 						.formulaire_cfcpi li label {
 							font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 							color: #000; }
-						.formulaire_cfcpi li span.erreur_message {
+						.formulaire_cfcpi .colonnes li label {
+							display: inline; float: left;
+							width: 200px; }
+						.formulaire_cfcpi .colonnes li input.text, .formulaire_cfcpi .colonnes textarea, .formulaire_cfcpi .colonnes input.password { float: left; width: 300px; }
+						.formulaire_cfcpi li span.erreur_message,  {
 							font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; float: right; }
-						.formulaire_cfcpi input.text, .formulaire_cfcpi textarea { border: 2px solid #eaeaea; }
+						.formulaire_cfcpi input.text, .formulaire_cfcpi textarea, .formulaire_cfcpi input.password { border: 2px solid #eaeaea; }
 						.formulaire_cfcpi input:focus, .formulaire_cfcpi textarea:focus { border: 2px solid #990017; }
 		.formulaire_cfcpi div.info { margin-top: 18px; margin-bottom: 18px; }
 
@@ -1045,12 +1053,14 @@ input, select, textarea {
 	.petition .formulaire_spip {  }
 		.petition fieldset {  }
 			.petition .formulaire_spip fieldset legend { font-size: 11px; }
-				.petition .formulaire_spip li label { font-size: 11px; }
+				.petition .formulaire_spip li { float: left; }
+				.petition .formulaire_spip li label { font-size: 11px;   }
+				.petition .formulaire_spip li input, .petition .formulaire_spip li textarea {
+					xwidth: inherit; }
 				.petition .formulaire_spip li span.erreur_message { float: none; }
 
-/* formulaire ecrire_auteur */
-.formulaire_ecrire_auteur label { display: inline; float: left; width: 200px; }
-.formulaire_ecrire_auteur input.text, .formulaire_ecrire_auteur textarea { width: 300px; float: right; }
+/* formulaire login */
+.formulaire_login .details { margin-left: 200px; margin-top: 18px; }
 
 
 /* ------------------------------------ */
