@@ -968,7 +968,9 @@ input, select, textarea {
 
 /* spip_formulaires */
 .formulaire_spip {  }
-	.formulaire_spip .boutons { xmargin-bottom: 1.5em; }
+	.formulaire_spip li.erreur .erreur_message { display: block; color: #C30; font-weight: bold; }
+	.formulaire_spip li.erreur input.text, .formulaire_spip li.erreur textarea, .formulaire_spip li.erreur input.password { background-color: #f99; border-style: solid; border-color: #f99; }
+	.formulaire_spip .boutons {  }
 
 /* recherche */
 #formulaire_recherche { position: absolute; top: -4em; right: 0; }
@@ -1037,8 +1039,10 @@ input, select, textarea {
 							display: inline; float: left;
 							width: 200px; }
 						.formulaire_cfcpi .colonnes li input.text, .formulaire_cfcpi .colonnes textarea, .formulaire_cfcpi .colonnes input.password { float: left; width: 300px; }
-						.formulaire_cfcpi li span.erreur_message,  {
-							font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; float: right; }
+						.formulaire_cfcpi li .erreur_message  {
+							font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; float: left; }
+						.formulaire_cfcpi li .pass_securise {
+							xfloat: right; }
 						.formulaire_cfcpi input.text, .formulaire_cfcpi textarea, .formulaire_cfcpi input.password { border: 2px solid #eaeaea; }
 						.formulaire_cfcpi input:focus, .formulaire_cfcpi textarea:focus { border: 2px solid #990017; }
 		.formulaire_cfcpi div.info { margin-top: 18px; margin-bottom: 18px; }
@@ -1060,7 +1064,7 @@ input, select, textarea {
 				.petition .formulaire_spip li span.erreur_message { float: none; }
 
 /* formulaire login */
-.formulaire_login .details { margin-left: 200px; margin-top: 18px; }
+.formulaire_login .details { float: left; margin: 9px 0 9px 200px; }
 
 
 /* ------------------------------------ */
