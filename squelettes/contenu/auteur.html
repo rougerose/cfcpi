@@ -10,10 +10,24 @@
 </div>
 
 <div class="contenu_principal clearfix[(#MEMBRE|non)[(#LOGO_AUTEUR|non) no_logo]]">
-	[<p class="fonction"><:fonction_bureau:>&nbsp;: (#FONCTION|PtoBR)</p>]
-	[<p class="fonction">(#MEMBRE|oui)<:info_organisation_membre_cfcpi:></p>]
-	[<p class="#EDIT{hyperlien} hyperlien"><:site_web:>&nbsp; <a href="(#URL_SITE)" class="url spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
-	[<div class="#EDIT{bio} texte note">(#BIO)</div>]
+	<div class="identite">
+		[<dl class="clearfix">
+			<dt>Fonction(s) au sein de la CFCPI</dt>
+			<dd>(#MEMBRE|oui)<:info_organisation_membre_cfcpi:></dd>
+			[<dd>(#FONCTION|oui)#FONCTION <:texte_bureau_cfcpi:></dd>]
+		</dl>]
+		[<dl class="adr clearfix">
+			<dt>Adresse</dt>
+			<dd class="street-address">(#ADRESSE)</dd>
+			<dd>[<span class="postal-code">(#CODE_POSTAL)</span>][ <span class="locality">(#VILLE)</span>]</dd>
+			[<dd class="country-name">(#PAYS)</dd>]
+		</dl>]
+		[<dl class="clearfix">
+			<dt><:site_web:></dt>
+			<dd class="#EDIT{hyperlien} hyperlien"><a href="(#URL_SITE)" class="url spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></dd>
+		</dl>]
+		[<div class="#EDIT{bio} texte note">(#BIO)</div>]
+	</div>
 	
 	[<div class="formulaire_cfcpi ecrire_auteur ajax">
 		(#FORMULAIRE_ECRIRE_AUTEUR)

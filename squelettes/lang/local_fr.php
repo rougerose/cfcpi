@@ -112,6 +112,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'sur' => 'sur',
 
 	// T
+	'texte_bureau_cfcpi' => 'du Bureau de la CFCPI',
 	'tous_articles_in_rubrique' => 'Tous les articles publi&eacute;s dans la rubrique',
 
 	// V

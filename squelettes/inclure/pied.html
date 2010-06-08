@@ -1,0 +1,21 @@
+<div class="colonne">
+	<h3>Navigation</h3>
+	<ul>
+		<BOUCLE_secteurs(RUBRIQUES){racine}{par num titre, titre}>
+		<li><a href="#URL_RUBRIQUE">#TITRE</a></li>
+		</BOUCLE_secteurs>
+	</ul>
+</div>
+<div id="cfcpi" class="colonne">
+	<div class="vcard">
+		<div><a class="fn org url" rel="me" href="#URL_SITE_SPIP">#NOM_SITE_SPIP</a></div>
+		<BOUCLE_adresse(AUTEURS){id_auteur=2}{tout}>
+		<div class="adr clearfix">
+			[<div class="street-address">(#ADRESSE)</div>]
+			[<div>[<span class="postal-code">(#CODE_POSTAL)</span> ]<span class="locality">(#VILLE)</span></div>]
+			[<div class="country-name">(#PAYS)</div>]
+		</div>
+		</BOUCLE_adresse>
+		[<p class="apropos clearfix">(#DESCRIPTIF_SITE_SPIP|PtoBR)</p>]
+	</div>
+</div>

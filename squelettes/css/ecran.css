@@ -147,6 +147,9 @@ body {
             #navigation { 
             	float: left;
             	width: 160px; }
+            
+            #pied { 
+            	margin-top: 18px; margin-left: 60px; }
 
 /* règles spécifiques */
 
@@ -182,8 +185,8 @@ body {
 
 /* auteurs */
 .page_auteur #contenu { width: 940px; }
-	.page_auteur #contenu .contenu_principal { float: left; width: 540px; }
-	.page_auteur #contenu .no_logo { margin-left: 160px; }
+	.page_auteur #contenu .contenu_principal { float: left; width: 540px; margin-left: 160px; }
+	.page_auteur #contenu .no_logo {  }
 .page_auteur #navigation { display: none; }
 
 
@@ -546,6 +549,23 @@ h2.section-titre {
 /* auteurs */
 .page_auteur p.fonction, .page_auteur p.hyperlien { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 .page_auteur .note { margin-top: 36px; }
+
+/* hcard */
+.identite {  }
+	.identite dl {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 12px;
+		border-bottom: 1px dotted #ccc;
+		margin-bottom: 9px; padding-bottom: 9px;
+		width: 540px; }
+	.identite dl dt { 
+		color: #600099; font-weight: bold;
+		display: block; float: left; clear: left;
+		margin-right: ;
+		width: 200px; }
+	.identite dl dd {
+		float: right;
+		width: 340px;}
+		.identite dl p { margin-bottom: 0; }
 					
 
 /* hfeed */
@@ -606,7 +626,7 @@ h2.section-titre {
 					display: inline; clear: none; 
 					margin: 0;  }
 	
-	/* contenu agenda */
+	/* contenu agenda (hcalendar) */
 .vcalendar {  }
 .page_article .vcalendar { margin-bottom: 36px; }
 	.page_rubrique .vevent {
@@ -1075,6 +1095,25 @@ input, select, textarea {
 	-webkit-box-shadow: 0 0 5px #333;
 	-moz-box-shadow: 0 0 5px #333; }
 
+/* ------------------------------------ */
+/*  Pied de page						*/
+/* ------------------------------------ */
+#pied {  }
+	#pied a { color: #fff; }
+	#pied .colonne { width: 220px; }
+	#pied h3 { font-size: 14px; color: #b80000; margin-top: 0; }
+	#pied #cfcpi { width: 380px; }
+		#pied #cfcpi .vcard > div:first-child { margin-bottom: 18px; }
+			#pied #cfcpi .vcard a.url {
+				font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				font-size: 14px; color: #b80000; }
+		#pied #cfcpi .vcard .adr { float: left; width: 140px; }
+			#pied #cfcpi .vcard p { margin-bottom: 0; }
+		#pied #cfcpi .apropos { 
+			border-left: 1px solid #fff;
+			float: left;
+			margin-left: 10px; padding-left: 10px;
+			width: 200px; }
 	
 /* ------------------------------------ */
 /*  Divers								*/
