@@ -395,7 +395,7 @@ p.pagination.bas { margin-bottom: 36px; }
 			#navigation li a {
 				color: #bababa;
 				display: block;
-				margin: 0 0 2px; padding-left: 10px; }
+				margin: 0 0 2px; padding-left: 20px; }
 				#navigation li a span {
 					display: block;
 					padding: 0 2px 2px;
@@ -408,9 +408,9 @@ p.pagination.bas { margin-bottom: 36px; }
 				color: #600099;
 				background: url(../img/navigation-locale-hover-active.png) no-repeat left center; }
 				#navigation li.on > a span { border-bottom-color: #600099; }
-				#navigation li li > a { padding-left: 14px; }
-					#navigation li li li > a { padding-left: 18px; }
-						#navigation li li li li > a { padding-left: 22px; }
+				#navigation li li > a { padding-left: 24px; }
+					#navigation li li li > a { padding-left: 28px; }
+						#navigation li li li li > a { padding-left: 32px; }
 
 	/* squelette mot-clé voir plus bas dans section index des mots-clés */
 
@@ -432,7 +432,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		margin-bottom: 0; }
 	.titre .soustitre { 
 		font-size: 18px; text-transform: none;
-		margin-top: 18px; margin-left: 30px; }
+		margin-top: 9px; margin-bottom: 9px; xmargin-left: 30px; }
 	.titre .spip_logos { float: left; margin: 4px 20px 20px 0; }
 	.titre .info-publi {
 		color: #ccc; 
@@ -1098,19 +1098,37 @@ input, select, textarea {
 /* ------------------------------------ */
 /*  Pied de page						*/
 /* ------------------------------------ */
-#pied {  }
-	#pied a { color: #fff; }
+#pied { margin-left: 80px; }
+	#pied a:hover { color: #fff; }
 	#pied .colonne { width: 220px; }
-	#pied h3 { font-size: 14px; color: #b80000; margin-top: 0; }
-	#pied #cfcpi { width: 380px; }
-		#pied #cfcpi .vcard > div:first-child { margin-bottom: 18px; }
-			#pied #cfcpi .vcard a.url {
+	#pied .pied-nav {  }
+	#pied .pied-cfcpi { width: 380px; }
+	#pied .pied-newsletter { width: 460px; }
+	#pied .pied-social { margin-top: 18px; }
+		#pied .pied-social ul {
+			xwidth: 880px; }
+		#pied .pied-social li {
+			border-bottom: 0; line-height: 18px; margin-right: 20px; width: 220px; }
+		#pied .pied-social #rss { margin-right: 0; }
+		#pied .pied-social a {
+			display: block;
+			float: left;
+			height: 30px;
+			padding-left: 30px; }
+		#pied h3 { 
+			font-size: 14px; 
+			color: #8000cc; 
+			border-bottom: 1px solid #600099;
+			margin: 0 0 4px; padding: 0 0 5px; }
+			#pied li { 
 				font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-				font-size: 14px; color: #b80000; }
-		#pied #cfcpi .vcard .adr { float: left; width: 140px; }
-			#pied #cfcpi .vcard p { margin-bottom: 0; }
-		#pied #cfcpi .apropos { 
-			border-left: 1px solid #fff;
+				line-height: 17px;
+				border-bottom: 1px dotted #3e0063;  }
+		#pied .pied-cfcpi .vcard a.url { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+			#pied .pied-cfcpi .vcard .adr { float: left; width: 140px; }
+			#pied .pied-cfcpi .vcard p { margin-bottom: 0; }
+		#pied .pied-cfcpi .apropos { 
+			border-left: 1px solid #3e0063;
 			float: left;
 			margin-left: 10px; padding-left: 10px;
 			width: 200px; }
