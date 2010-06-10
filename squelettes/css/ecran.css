@@ -153,7 +153,13 @@ body {
 
 /* règles spécifiques */
 
-/* article */
+/* sommaire */
+.page_sommaire #contenu { width: 940px; }	
+	.page_sommaire #contenu .contenu_principal { float: left; width: 620px; }
+	.page_sommaire #extra { width: 300px; }
+.page_sommaire #navigation { display: none; }
+
+/* article, rubrique, site */
 .page_article .contenu_principal, .page_rubrique .contenu_principal, .page_site .contenu_principal { float: left; }
 
 /* mot */
@@ -595,8 +601,8 @@ h2.section-titre {
 	on présente les articles des sous-rubriques
 	sur 2 colonnes.									*/
 .rubriques .hfeed .articles { width: 540px; margin-bottom: 54px; }
-.rubriques .hfeed .colonne { width: 240px; }
-.rubriques .hfeed .item-1 { margin-right: 60px; clear: left; }
+.rubriques .hfeed .colonne { width: 260px; }
+.rubriques .hfeed .item-1 { margin-right: 20px; clear: left; }
 .rubriques .hfeed .item-0 { margin-right: 0; }
 
 /*	lien vers tous les articles d'une sous-rubrique */

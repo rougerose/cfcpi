@@ -1,0 +1,31 @@
+<p>env inclus CP #ENV{cp}</p>
+<p>env inclus agenda #ENV{agenda}</p>
+
+<div id="tabs">
+	<ul class="clearfix">
+		[(#ENV{cp}|=={1}|oui)
+		<li><a href="#cp">Communiqués de presse</a></li>
+		]
+		[(#ENV{agenda}|=={1}|oui)
+		<li><a href="#agenda">Agenda</a></li>
+		]
+	</ul>
+	<B_cp>
+	<div id="cp">
+		<ul class="">
+			<BOUCLE_cp(ARTICLES){id_article IN #ENV{tableau_cp}}>
+			<li><h3><a href="#URL_ARTICLE">#TITRE</a></h3></li>
+			</BOUCLE_cp>
+		</ul>
+	</div>
+	</B_cp>
+	<B_agenda>
+	<div id="agenda">
+		<ul class="">
+			<BOUCLE_agenda(EVENEMENTS){id_evenement IN #ENV{tableau_agenda}}>
+			<li><h3><a href="#URL_ARTICLE">#TITRE</a>[(#DATE_DEBUT|affdate)]</h3></li>
+			</BOUCLE_agenda>
+		</ul>
+	</div>
+	</B_agenda>
+</div>

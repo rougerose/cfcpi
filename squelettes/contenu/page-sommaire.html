@@ -1,0 +1,12 @@
+<div class="contenu_principal surlignable">
+	<B_articles>
+	<div class="liste articles">
+		<h2 class="section-titre"><:derniers_articles:></h2>
+		<ul class="liste-items">
+			<BOUCLE_articles(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}>
+			#INCLURE{fond=inclure/article-resume,id_article}
+			</BOUCLE_articles>
+		</ul>
+	</div>
+	</B_articles>
+</div>

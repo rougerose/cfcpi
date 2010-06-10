@@ -7,12 +7,30 @@
 </BOUCLE_test_total>
 
 [(#REM) dernières actualités ]
-[(#REM) test : est-on dans la rubrique actualités ? ]
-[(#ENV{id_rubrique}|!={9}|oui)
-<INCLURE{fond=inclure/rubrique_extra-actualites,env}>
-]
+<BOUCLE_test_rubrique_actu(CONDITION){si #ENV{id_rubrique}|!={9}}>
+<BOUCLE_rubrique_actu(RUBRIQUES){id_rubrique=9}>
+<B_articles>
+<div id="actus" class="liste">
+	<h2><:dernieres:> <a href="#URL_RUBRIQUE">#TITRE</a></h2>
+	<BOUCLE_articles(ARTICLES){id_rubrique}{age<90}{!par date}>
+	#INCLURE{fond=inclure/article-resume,id_article}
+	</BOUCLE_articles>
+</div>
+</B_articles>
+</BOUCLE_rubrique_actu>
+</BOUCLE_test_rubrique_actu>
+
 
 [(#REM) dates à venir dans l'agenda ]
-[(#ENV{id_rubrique}|!={14}|oui)
-<INCLURE{fond=inclure/rubrique_extra-agenda,env}>
-]
+<BOUCLE_test_rubrique_agenda(CONDITION){si #ENV{id_rubrique}|!={14}}>
+<BOUCLE_rubrique_agenda(RUBRIQUES){id_rubrique=14}>
+<B_evenements>
+<div id="agenda" class="liste">
+	<h2><:dans_l:><a href="#URL_RUBRIQUE">#TITRE</a> <:de_la_cfcpi:></h2>
+	<BOUCLE_evenements(EVENEMENTS){id_rubrique}{statut=publie}{!par date}{0,5}{date_debut>=#ENV{date}}>
+	#INCLURE{fond=inclure/evenement-resume,id_evenement}
+	</BOUCLE_evenements>
+</div>
+</B_evenements>
+</BOUCLE_rubrique_agenda>
+</BOUCLE_test_rubrique_agenda>

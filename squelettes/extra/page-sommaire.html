@@ -1,0 +1,44 @@
+[(#REM) Qui sommes-nous ?]
+#ENV{date}
+
+[(#REM) UI-tab : communiqués de presse et agenda ]
+[(#REM) tableaux des articles CP et Agenda ]
+[(#SET{cp,0})]
+[(#SET{agenda,0})]
+
+[(#REM) on recupere les id des objets lors des tests ]
+[(#SET{tableau_cp,#ARRAY})]
+[(#SET{tableau_agenda,#ARRAY})]
+
+<BOUCLE_rubrique_cp(RUBRIQUES){id_rubrique=11}>
+<BOUCLE_test_articles_cp(ARTICLES){branche}{par date}{inverse}>
+	[(#SET_PUSH{tableau_cp,#ID_ARTICLE})][(#SET{cp,1})]
+</BOUCLE_test_articles_cp>
+</BOUCLE_rubrique_cp>
+
+<B_test_agenda>
+<BOUCLE_test_agenda(EVENEMENTS){statut=publie}{date_debut>=#ENV{date}}>
+	[(#SET_PUSH{tableau_agenda,#ID_EVENEMENT})][(#SET{agenda,1})]
+</BOUCLE_test_agenda>
+</B_test_agenda>
+
+<BOUCLE_condition_cp(CONDITION){si #GET{cp}|=={1}}>
+	[(#INCLURE{fond=inclure/tabs_cp_agenda,
+		cp=#GET{cp},
+		agenda=#GET{agenda},
+		tableau_cp=#GET{tableau_cp},
+		tableau_agenda=#GET{tableau_agenda},
+		env}
+	)]
+</BOUCLE_condition_cp>
+[(#REM) si faux alors ]
+<BOUCLE_condition_agenda(CONDITION){si #GET{agenda}|=={1}}>
+	[(#INCLURE{fond=inclure/tabs_cp_agenda,
+		cp=#GET{cp},
+		agenda=#GET{agenda},
+		tableau_agenda=#GET{tableau_agenda},
+		tableau_agenda=#GET{tableau_agenda},
+		env}
+	)]
+</BOUCLE_condition_agenda>
+<//B_condition_cp>
