@@ -228,7 +228,7 @@ h4 { font-size: 18px; line-height: 18px; margin: 0 0 18px; }
 h5 { font-size: 14px; line-height: 18px; margin: 0 0 0; }
 h6 { font-size: 13px; line-height: 16px; margin: 0 0 0; }
 
-.a-cote h3 { font-size: 14px; line-height: 1.38em; }
+.a-cote h3 { font-size: 14px; line-height: 18px; }
 
 /* texte  */
 p { margin-bottom: 18px; }
@@ -424,7 +424,6 @@ p.pagination.bas { margin-bottom: 36px; }
 /*  Contenu								*/
 /* ------------------------------------ */
 /* Règles générales */
-.liste {  }
 .meta-publi, .info-publi { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* Articles */
@@ -458,10 +457,12 @@ p.pagination.bas { margin-bottom: 36px; }
 
 
 /* Rubriques */
+.page_rubrique .chapo { margin-bottom: 36px; }
+.page_rubrique .contenu_principal .liste { margin-bottom: 36px; }
 h2.section-titre {
 	color: #600099;
 	border: 2px solid #600099; border-width: 2px 0 1px;
-	margin-bottom: 18px; padding: 6px 0; }
+	margin: 0 0 18px; padding: 6px 0; }
 .menu-entree h2 {
 	font-size: 20px;
 	border-bottom: 1px dotted #600099;
@@ -576,7 +577,7 @@ h2.section-titre {
 
 /* hfeed */
 .hentry {
-	border-bottom: 1px dotted #ccc;
+	border-bottom: 1px solid #ccc;
 	margin-bottom: 22px; padding-bottom: 5px; }
 
 	h3.entry-title {
@@ -783,7 +784,7 @@ h2.section-titre {
 		list-style-type: none;
 		margin-bottom: 12px; padding-bottom: 0px; }
 		#extra .liste h3.entry-title {
-			font-size: 12px;
+			font-size: 13px;
 			margin-bottom: 6px; }
 		#extra .liste .entry-content { display: none; }
 	
@@ -792,13 +793,13 @@ h2.section-titre {
 	#extra .liste dl {
 		border-bottom: 1px dotted #ccc;
 		margin-bottom: 9px; padding-bottom: 6px;}
-		#extra .liste dt { padding: 2px 3px; }
+		#extra .liste dt { border-bottom: 0; padding: 2px 3px; }
 			#extra .liste dt .jour { font-size: 18px; line-height: 18px; }
 			#extra .liste dt .mois-annee {
 				font-size: 9px; line-height: 10px;
 				margin: 2px 0 2px; padding: 0 2px; }
 		#extra .liste dd { margin-left: 4.25em; }
-			#extra .liste dd h3 { font-size: 12px; margin: 0; }
+			#extra .liste dd h3 { font-size: 13px; margin: 0; }
 						 
 /* boite infos */
 div.info {  }
@@ -892,8 +893,8 @@ p.info {
 	
 		.ui-tabs-nav li {
 			font-size: 12px;
-			xborder: 1px solid #50206d;
-			border-radius: 2px 0; 
+			border-radius: 2px 0;
+			margin-right: 3px;
 			-webkit-border-top-left-radius: 2px; 
 			-webkit-border-top-right-radius: 2px; 
 			-moz-border-radius: 2px 2px 0 0; }
@@ -926,14 +927,19 @@ p.info {
 		border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0;
 		padding: 1.1em 5px 0 10px; margin: 0 2px }
 		
-		.ui-tabs-panel dl, .ui-tabs-panel ul { 
-			width: 199px;
-			margin-bottom: .7em; }
+		.ui-tabs-panel dl, .ui-tabs-panel ul { margin-bottom: .7em; }
 		
 			.ui-tabs-panel dt, .ui-tabs-panel li {
-				border-bottom: 1px solid #eee;
+				border-bottom: 1px dotted #ccc;
 				padding-top: .4em;
 				padding-bottom: .4em; }
+				
+				.ui-tabs-panel dd h3, .ui-tabs-panel li h3 {
+					font-size: 13px; line-height: 18px;
+					margin: 0; }
+				
+				.ui-tabs-panel .introduction p {
+					font-size: 12px; font-family: Georgia, "Times New Roman", Times, serif; }
 			
 		.ui-tabs-panel dl.document {
 			border-bottom:	1px solid #eee;
@@ -956,12 +962,10 @@ p.info {
 				float: right;
 				width: 138px; }
 				
-				.ui-tabs-panel dl.document dd h3, .ui-tabs-panel ul.mots li h3 {
-					font-size: 12px; line-height: 18px;
-					margin: 0; }
-				
 			.ui-tabs-panel dl.document dd span {
-				border-top: 1px dotted #eee; }
+				font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
+				border-top: 1px dotted #eee;
+				display: block; }
 
 /* Pétition */
 	/* formulaire voir plus bas */

@@ -1,6 +1,3 @@
-<p>env inclus CP #ENV{cp}</p>
-<p>env inclus agenda #ENV{agenda}</p>
-
 <div id="tabs">
 	<ul class="clearfix">
 		[(#ENV{cp}|=={1}|oui)
@@ -11,21 +8,19 @@
 		]
 	</ul>
 	<B_cp>
-	<div id="cp">
+	<div id="cp" class="liste">
 		<ul class="">
 			<BOUCLE_cp(ARTICLES){id_article IN #ENV{tableau_cp}}>
-			<li><h3><a href="#URL_ARTICLE">#TITRE</a></h3></li>
+			#INCLURE{fond=inclure/article-resume,id_article}
 			</BOUCLE_cp>
 		</ul>
 	</div>
 	</B_cp>
 	<B_agenda>
-	<div id="agenda">
-		<ul class="">
-			<BOUCLE_agenda(EVENEMENTS){id_evenement IN #ENV{tableau_agenda}}>
-			<li><h3><a href="#URL_ARTICLE">#TITRE</a>[(#DATE_DEBUT|affdate)]</h3></li>
-			</BOUCLE_agenda>
-		</ul>
+	<div id="agenda" class="liste">
+		<BOUCLE_agenda(EVENEMENTS){id_evenement IN #ENV{tableau_agenda}}>
+		#INCLURE{fond=inclure/evenement-resume,id_evenement}
+		</BOUCLE_agenda>
 	</div>
 	</B_agenda>
 </div>

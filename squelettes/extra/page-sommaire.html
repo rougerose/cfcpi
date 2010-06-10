@@ -1,5 +1,5 @@
 [(#REM) Qui sommes-nous ?]
-#ENV{date}
+
 
 [(#REM) UI-tab : communiqués de presse et agenda ]
 [(#REM) tableaux des articles CP et Agenda ]
@@ -11,7 +11,7 @@
 [(#SET{tableau_agenda,#ARRAY})]
 
 <BOUCLE_rubrique_cp(RUBRIQUES){id_rubrique=11}>
-<BOUCLE_test_articles_cp(ARTICLES){branche}{par date}{inverse}>
+<BOUCLE_test_articles_cp(ARTICLES){branche}{par date}{inverse}{age<180}>
 	[(#SET_PUSH{tableau_cp,#ID_ARTICLE})][(#SET{cp,1})]
 </BOUCLE_test_articles_cp>
 </BOUCLE_rubrique_cp>
