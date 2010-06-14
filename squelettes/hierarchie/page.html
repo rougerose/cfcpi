@@ -1,0 +1,6 @@
+[(#REM)
+le principe automatique du compilateur avec Zpip
+pour trouver la page hierarchie/page-xxx ne fonctionne pas.
+Sinon, il trouve automatiquement les pages article, rubrique, mot, etc.
+]#SET{composition,#CHEMIN{hierarchie/page-#ENV{composition}|concat{.html}}|?{page-#ENV{composition},dist}}
+#INCLURE{fond=hierarchie/#GET{composition},env}

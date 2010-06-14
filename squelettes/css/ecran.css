@@ -106,7 +106,6 @@ body {
 	background: #000 url(../img/body-background.jpg) repeat-x left top;
 	color: #000;
 	margin: 0; }
-
 	#page { 
 		color: #fff; background-color:#2c0046;
 		position: relative;
@@ -117,9 +116,7 @@ body {
 		-webkit-border-top-left-radius: 8px; 
 		-webkit-border-bottom-left-radius: 8px;
 		-moz-border-radius: 8px 0 0 8px; }
-	
 		#entete { padding: 27px 0 0 20px; }
-		
 		#conteneur {
 			color: #000; background-color: #fff;
             margin-left: 60px; padding-top: 34px; 
@@ -129,26 +126,19 @@ body {
             -webkit-border-top-right-radius: 8px; 
             -webkit-border-bottom-right-radius: 8px; 
             -moz-border-radius: 0 8px 8px 0; }
-            
             #contenu { 
             	margin-right: 20px;
             	float: right;
             	width: 780px; }
-            	
             	.titre { width: 780px; }
-            
             	.contenu_principal { width: 540px; }
-            	
-            	#hierarchie { xclear: both; }
-            	
             	#extra { 
             		display: inline; float: right;
             		width: 220px; }
-            
             #navigation { 
             	float: left;
             	width: 160px; }
-            
+            #hierarchie { clear: both; border-top: 2px solid #600099; margin: 0 20px; padding: 36px 0; width: 940px;  }
             #pied { 
             	margin-top: 18px; margin-left: 60px; }
 
