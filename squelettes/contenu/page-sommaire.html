@@ -1,12 +1,102 @@
 <div class="contenu_principal surlignable">
-	<B_articles>
-	<div class="liste articles">
-		<h2 class="section-titre"><:derniers_articles:></h2>
-		<ul class="liste-items">
-			<BOUCLE_articles(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}>
-			#INCLURE{fond=inclure/article-resume,id_article}
-			</BOUCLE_articles>
+	<div id="news" class="hfeed section clearfix">
+		<div class="colonne principale">
+			<h2 class="section-titre"><:derniers_articles_publies:></h2>
+			<B_articles>
+			<div class="liste articles majeur">
+				#ANCRE_PAGINATION
+				[<p class="pagination haut clearfix">(#PAGINATION{page})</p>]
+				<ul class="liste-items clearfix">
+					<BOUCLE_articles(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{pagination 8}>
+					[(#INCLURE{fond=inclure/article-resume,id_article,compteur=[(#COMPTEUR_BOUCLE|modulo{2})]})]
+					</BOUCLE_articles>
+				</ul>
+				[<p class="pagination bas">(#PAGINATION{page})</p>]
+			</div>
+			</B_articles>
+		</div><!-- / .principale -->
+		<div class="section secondaire colonne">
+			[(#REM) Qui sommes-nous ?]
+			<B_quiSommesNous>
+			<BOUCLE_quiSommesNous(RUBRIQUES){id_rubrique=8}>
+			<div class="quiSommesNous">
+				<h3><a href="#URL_RUBRIQUE" title="consulter la rubrique [(#TITRE|supprimer_numero|textebrut)]">[(#TITRE|supprimer_numero)]</a></h3>
+				<div>
+					[(#DESCRIPTIF)]
+					<ul class="liens">
+						<li><a href="[(#URL_RUBRIQUE|ancre_url{organisation})]"><:notre_organisation:></a></li>
+						<li><a href="[(#URL_RUBRIQUE|ancre_url{objectifs})]"><:nos_objectifs_actions:></a></li>
+						<li><a href="[(#URL_RUBRIQUE|ancre_url{rejoindre})]"><:nous_rejoindre:></a></li>
+					</ul>
+				</div>	
+			</div>
+			</BOUCLE_quiSommesNous>
+			</B_quiSommesNous>
+
+			[(#REM) UI-tab : communiqués de presse et agenda ]
+			[(#REM) tableaux des articles CP et Agenda ]
+			[(#SET{cp,0})]
+			[(#SET{agenda,0})]
+
+			[(#REM) on recupere les id des objets lors des tests ]
+			[(#SET{tableau_cp,#ARRAY})]
+			[(#SET{tableau_agenda,#ARRAY})]
+
+			<BOUCLE_rubrique_cp(RUBRIQUES){id_rubrique=11}>
+			<BOUCLE_test_articles_cp(ARTICLES){branche}{par date}{inverse}{0,6}>
+			[(#SET_PUSH{tableau_cp,#ID_ARTICLE})][(#SET{cp,1})]
+			</BOUCLE_test_articles_cp>
+			</BOUCLE_rubrique_cp>
+
+			<B_test_agenda>
+			<BOUCLE_test_agenda(EVENEMENTS){statut=publie}{date_debut>=#ENV{date}}>
+			[(#SET_PUSH{tableau_agenda,#ID_EVENEMENT})][(#SET{agenda,1})]
+			</BOUCLE_test_agenda>
+			</B_test_agenda>
+
+			<BOUCLE_condition_cp(CONDITION){si #GET{cp}|=={1}}>
+			[(#INCLURE{fond=inclure/tabs_cp_agenda,
+				cp=#GET{cp},
+				agenda=#GET{agenda},
+				tableau_cp=#GET{tableau_cp},
+				tableau_agenda=#GET{tableau_agenda},
+				env}
+				)]
+			</BOUCLE_condition_cp>
+			[(#REM) si faux alors ]
+			<BOUCLE_condition_agenda(CONDITION){si #GET{agenda}|=={1}}>
+			[(#INCLURE{fond=inclure/tabs_cp_agenda,
+				cp=#GET{cp},
+				agenda=#GET{agenda},
+				tableau_cp=#GET{tableau_cp},
+				tableau_agenda=#GET{tableau_agenda},
+				env}
+				)]
+			</BOUCLE_condition_agenda>
+			<//B_condition_cp>
+		</div><!-- / .secondaire -->
+	</div><!-- / #news -->
+	<div id="rubriques">
+		<ul class="liste clearfix">
+			#SET{selection_rubriques,#ARRAY{1,16,2,1,3,9,4,26}}
+			<BOUCLE_rubriques_une(RUBRIQUES){id_rubrique IN #GET{selection_rubriques}}>
+			<li class="colonne [item-(#COMPTEUR_BOUCLE|modulo{4})]">
+				<h3><a href="#URL_RUBRIQUE">#TITRE</a></h3>
+				[<div class="introduction">
+					<p>(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE">&#x2192;</a></p>
+				</div>]
+				<ul>
+					<BOUCLE_sousrubriques(RUBRIQUES){id_parent}{par num titre, titre}>
+					<li>
+						<h4>#PUCE <a href="#URL_RUBRIQUE">#TITRE</a></h4>
+						[<div class="introduction">
+							<p>(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" class="suite">&#x2192;</a></p>
+						</div>]
+					</li>
+					</BOUCLE_sousrubriques>
+				</ul>
+			</li>
+			</BOUCLE_rubriques_une>
 		</ul>
 	</div>
-	</B_articles>
 </div>
