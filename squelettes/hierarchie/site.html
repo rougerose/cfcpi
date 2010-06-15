@@ -1,15 +1,15 @@
-<BOUCLE_article(ARTICLES){id_article}>
+<BOUCLE_hierarchie(SITES){id_syndic}>
 <ol class="clearfix">
 	<li>
 		<a href="#URL_SITE_SPIP" rel="home"><:accueil_site:></a>
 	</li>
-	<BOUCLE_ariane(HIERARCHIE){id_article}>
+	<BOUCLE_ariane(HIERARCHIE){id_syndic}>
 	<li>
 		<a href="#URL_RUBRIQUE">[(#TITRE)]</a>
 	</li>
 	</BOUCLE_ariane>
 	<li>
-		<strong>#TITRE</strong>
+		<strong>#NOM_SITE</strong>
 	</li>
 </ol>
-</BOUCLE_article>
+</BOUCLE_hierarchie>

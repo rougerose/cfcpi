@@ -138,7 +138,7 @@ body {
             #navigation { 
             	float: left;
             	width: 160px; }
-            #hierarchie { clear: both; border-top: 2px solid #600099; margin: 0 20px; padding: 36px 0; width: 940px;  }
+            #hierarchie { clear: both; border-top: 2px solid #600099; margin: 0 20px; width: 940px;  }
             #pied { 
             	margin-top: 18px; margin-left: 60px; }
 
@@ -1015,6 +1015,21 @@ p.signatures_compteur {
 	#signatures p.signer {
 		font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-align: right; }
+
+/* ------------------------------------ */
+/*  Pied de page/hierarchie				*/
+/* ------------------------------------ */
+#hierarchie {  }
+	#hierarchie ol {
+		padding: 9px 0 27px; }
+	#hierarchie li {
+		font: 12px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+		background: url(../img/hierarchie-icone.png) no-repeat 0 50%;
+		float: left;
+		padding-left: 14px; margin-right: 5px; }
+	#hierarchie li:first-child { background: none; padding-left: 0; }
+		#hierarchie li strong { color: #600099; }
+
 
 /* ------------------------------------ */
 /*  Formulaires							*/

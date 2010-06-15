@@ -70,6 +70,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// P
 	'page' => 'Page',
 	'par_motcle' => 'Par mot-cl&eacute;',
+	'pass_oublie' => 'Mot de passe oubli&eacute;',
 	'petition' => 'P&eacute;tition',
 	'ps' => 'Post-scriptum',
 	'publie_le' => 'Publi&eacute; le',
