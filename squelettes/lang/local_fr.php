@@ -46,7 +46,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// L
 	'_le' => 'le',
-	'lire_la_suite' => 'Lire la suite &#x2192;',
+	'lire_la_suite' => 'Lire la suite&nbsp;&#x2192;',
 	'login_login2' => 'Login (identifiant de connexion au site)',
 	'login_pass2' => 'Mot de passe',
 

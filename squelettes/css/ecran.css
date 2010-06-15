@@ -225,7 +225,7 @@ h6 { font-size: 13px; line-height: 16px; margin: 0 0 0; }
 .a-cote h3 { font-size: 14px; line-height: 18px; }
 h2.section-titre {
 	color: #600099;
-	border: 2px solid #600099; border-width: 2px 0 1px;
+	border: 2px solid #600099; border-width: 0px 0 1px;
 	margin: 0 0 18px; padding: 6px 0; }
 
 /* texte  */
@@ -798,6 +798,15 @@ p.pagination.bas { margin-bottom: 36px; }
 /* squelette recherche */
 .titre h1 span { color: #600099; }
 
+
+/* squelette page-plan */
+.page_plan {  }
+	.page_plan .liste { margin-bottom: 36px; }
+		.page_plan .liste .item {
+			border: 0;
+			margin-bottom: 0; padding-bottom: 0; }
+			.page_plan .liste ul ul { 
+				margin-left: 20px; margin-bottom: 18px; }
 
 /* #extra et .secondaire */
 /* listes */
