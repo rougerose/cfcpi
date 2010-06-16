@@ -32,11 +32,6 @@
 		<h2 class="h2"><:ps:></h2>
 		<div class="#EDIT{ps} surlignable">(#PS|image_reduire{500,0})</div>
 	</div>]
-	<!--
-		TODO gérer le portfolio et supprimer l'affichage des documents joints en bas d'article
-	-->
-	[(#REM) Gestion du portfolio et des documents ]
-	[(#INCLURE{fond=inclure/documents}{id_article})]
 
 	[(#PETITION|oui)<INCLURE{fond=inclure/petition_signatures}{id_article}{env}{ajax}>]
 
