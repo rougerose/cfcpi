@@ -1,45 +1,52 @@
-<div class="colonne pied-nav">
-	<h3>Navigation</h3>
-	#INCLURE{fond=inclure/menu, env, identifiant=navigation_rapide}
-</div>
-<div class="colonne pied-news">
-	<h3>Derniers articles publiés</h3>
-	<ul>
-		<BOUCLE_dernier_articles(ARTICLES){!par date}{0,5}>
-		<li><a href="#URL_ARTICLES">#TITRE</a></li>
-		</BOUCLE_dernier_articles>
-	</ul>
-</div>
-<div class="colonne pied-cfcpi">
-	<h3>À propos</h3>
-	<div class="vcard">
-		<div><a class="fn org url" rel="me" href="#URL_SITE_SPIP">#NOM_SITE_SPIP</a></div>
-		<BOUCLE_adresse(AUTEURS){id_auteur=2}{tout}>
-		<div class="adr clearfix">
-			[<div class="street-address">(#ADRESSE)</div>]
-			[<div>[<span class="postal-code">(#CODE_POSTAL)</span> ]<span class="locality">(#VILLE)</span></div>]
-			[<div class="country-name">(#PAYS)</div>]
+<div class="groupe clearfix">
+	<div class="colonne pied-nav">
+		<h3>Navigation</h3>
+		#INCLURE{fond=inclure/menu, env, identifiant=navigation_rapide}
+	</div>
+	<div class="colonne pied-news">
+		<h3>Derniers articles publiés</h3>
+		<ul>
+			<BOUCLE_dernier_articles(ARTICLES){!par date}{0,5}>
+			<li><a href="#URL_ARTICLES">#TITRE</a></li>
+			</BOUCLE_dernier_articles>
+		</ul>
+	</div>
+	<div class="colonne pied-cfcpi">
+		<h3>À propos</h3>
+		<div class="vcard">
+			<div><a class="fn org url" rel="me" href="#URL_SITE_SPIP">#NOM_SITE_SPIP</a></div>
+			<BOUCLE_adresse(AUTEURS){id_auteur=2}{tout}>
+			<div class="adr clearfix">
+				[<div class="street-address">(#ADRESSE)</div>]
+				[<div>[<span class="postal-code">(#CODE_POSTAL)</span> ]<span class="locality">(#VILLE)</span></div>]
+				[<div class="country-name">(#PAYS)</div>]
+			</div>
+			</BOUCLE_adresse>
+			[<p class="apropos clearfix">(#DESCRIPTIF_SITE_SPIP|PtoBR)</p>]
 		</div>
-		</BOUCLE_adresse>
-		[<p class="apropos clearfix">(#DESCRIPTIF_SITE_SPIP|PtoBR)</p>]
 	</div>
 </div>
-<div class="colonne pied-newsletter">
-	<h3>Abonnement à notre lettre d'informations</h3>
-	
+
+<div class="groupe clearfix">
+	<div class="colonne pied-newsletter">
+		<h3>Abonnement à notre lettre d'informations</h3>
+	</div>
+	<div class="colonne utile">
+		<ul class="clearfix">
+			<li><a href="#URL_PAGE{plan}"><:plan_site:></a></li>
+			<li><a href="#">À propos de ce site</a></li>
+			<li><a href="#">Droits de reproduction</a></li>
+		</ul>
+	</div>
+	<div class="colonne pied-social">
+		<ul class="clearfix">
+			<li id="twitter"><a href="#" rel="me twitter" style="background:url([(#CHEMIN{img/twitter-icon.png}|image_reduire{24}|extraire_attribut{src})]) no-repeat">Suivez-nous sur Twitter</a></li>
+			<li id="facebook"><a href="#" rel="me facebook" style="background:url([(#CHEMIN{img/facebook-icon.png}|image_reduire{24}|extraire_attribut{src})]) no-repeat">Rejoignez notre groupe Facebook</a></li>
+			<li id="contact"><a href="#URL_PAGE{contact}" style="background:url([(#CHEMIN{img/mail-icon.png}|image_reduire{24}|extraire_attribut{src})]) no-repeat 0 0">Contactez-nous par mail</a></li>
+			[<li id="rss"><a href="(#URL_PAGE{backend})" style="background:url([(#CHEMIN{img/feed-icon.png}|image_reduire{24}|extraire_attribut{src})]) no-repeat">Abonnez-vous à notre RSS</a></li>]
+		</ul>
+	</div>
 </div>
-<div class="colonne pied-social">
-	<ul class="clearfix">
-		<li id="twitter"><a href="#" rel="me twitter" style="background:url([(#CHEMIN{img/twitter-icon.png}|image_reduire{24}|extraire_attribut{src})]) no-repeat">Suivez-nous sur Twitter</a></li>
-		<li id="facebook"><a href="#" rel="me facebook" style="background:url([(#CHEMIN{img/facebook-icon.png}|image_reduire{24}|extraire_attribut{src})]) no-repeat">Rejoignez notre groupe Facebook</a></li>
-		<li id="contact"><a href="#" style="background:url([(#CHEMIN{img/mail-icon.png}|image_reduire{24}|extraire_attribut{src})]) no-repeat 0 0">Contactez-nous par mail</a></li>
-		[<li id="rss"><a href="(#URL_PAGE{backend})" style="background:url([(#CHEMIN{img/feed-icon.png}|image_reduire{24}|extraire_attribut{src})]) no-repeat">Abonnez-vous à notre RSS</a></li>]
-	</ul>
-</div>
-<div class="colonne">
-	[(#REM) 
-	<!--
-		TODO ajouter logo + page contact + à propos du site
-	-->
-	]
+<div class="groupe">
+	<p class="logo-pied">[(#CHEMIN{img/cfcpi-logo-pied.png}|balise_img{#NOM_SITE_SPIP})] | <a href="#page">Haut de page</a></p>
 </div>

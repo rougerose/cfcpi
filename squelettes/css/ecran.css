@@ -433,11 +433,14 @@ p.pagination.bas { margin-bottom: 36px; }
 .quiSommesNous { 
 	background: #280000 url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
 	margin-bottom: 36px; padding-top: 18px; }
-	.quiSommesNous > div { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #fff; margin: 0 3px; padding: 9px 5px 0 10px; }
+	.quiSommesNous > div { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #fff; margin: 0 3px; padding: 9px 5px 0 10px; }
 		.quiSommesNous h3 { margin: 0 0 18px 13px; }
 			.quiSommesNous h3 a { color: #fff; }
 		.quiSommesNous p { font-size: 12px; text-align: left; }
 	.quiSommesNous ul.liens { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; border-bottom: 1px dotted #ccc; padding-bottom: 8px; }
+		.quiSommesNous ul.liens li {
+			background: url(../puce.gif) no-repeat left center;
+			padding-left: 14px; }
 	
 #rubriques li {
 	width: 220px; }
@@ -1162,17 +1165,20 @@ input, select, textarea {
 /*  Pied de page						*/
 /* ------------------------------------ */
 #pied { margin-left: 80px; }
+	#pied .groupe { margin-bottom: 36px; }
+	#pied .groupe:last-child { margin-bottom: 0; }
 	#pied a:hover { color: #fff; }
 	#pied .colonne { width: 220px; }
 	#pied .pied-nav {  }
 	#pied .pied-cfcpi { width: 380px; }
 	#pied .pied-newsletter { width: 460px; }
-	#pied .pied-social { margin-top: 18px; }
+	#pied .pied-social { margin-right: 0; }
 		#pied .pied-social ul {
 			xwidth: 880px; }
 		#pied .pied-social li {
 			border-bottom: 0; line-height: 18px; margin-right: 20px; width: 220px; }
 		#pied .pied-social #rss { margin-right: 0; }
+		#pied .utile { width: 140px; }
 		#pied .pied-social a {
 			display: block;
 			float: left;
@@ -1195,6 +1201,8 @@ input, select, textarea {
 			float: left;
 			margin-left: 10px; padding-left: 10px;
 			width: 200px; }
+		#pied .logo-pied { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 22px; margin-bottom: 0; } 
+			#pied .logo-pied img { vertical-align: top; }
 	
 /* ------------------------------------ */
 /*  Divers								*/
