@@ -127,7 +127,7 @@ body {
             -webkit-border-bottom-right-radius: 8px; 
             -moz-border-radius: 0 8px 8px 0; }
             #contenu { 
-            	margin-right: 20px;
+            	margin-right: 20px; margin-bottom: 18px;
             	float: right;
             	width: 780px; }
             	.titre { width: 780px; }
@@ -137,6 +137,7 @@ body {
             		width: 220px; }
             #navigation { 
             	float: left;
+            	margin-bottom: 18px;
             	width: 160px; }
             #hierarchie { clear: both; border-top: 2px solid #600099; margin: 0 20px; width: 940px;  }
             #pied { 
@@ -330,7 +331,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		margin: 0;
 		height: 54px; width: 700px; }
 	
-	#logo a { top: 0; }
+	#logo a { top: 0; outline: 0; }
 
 /* ------------------------------------ */
 /*  Menus								*/
@@ -1013,14 +1014,11 @@ p.info {
 	
 	/* compteur signatures */
 p.signatures_compteur {
+	font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align: right;
-	margin: .7em 1px 0 0; }
+	margin: 9px 1px 9px; }
 	
-	.signatures_compteur a.action { 
-		border-radius: 4px 0;
-		-webkit-border-top-left-radius: 4px; 
-		-webkit-border-top-right-radius: 4px; 
-		-moz-border-radius: 4px 4px 0 0; }
+	.signatures_compteur a { color: #fff; }
 
 	/* signatures */
 #signatures { margin-top: 54px; margin-bottom: 2em; }
