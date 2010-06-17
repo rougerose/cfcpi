@@ -611,6 +611,7 @@ p.pagination.bas { margin-bottom: 36px; }
 	.entry-content { xpadding-top: 9px; }	
 		.entry-content p {
 			text-align: left; }
+			.entry-content p img { float: left; margin-right: 10px; }
 	
 	.meta-publi {  }
 		.meta-publi p {
