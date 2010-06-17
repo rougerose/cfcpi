@@ -1,6 +1,6 @@
 <div id="tabs">
 	<ul class="clearfix">
-		<BOUCLE_test_documents(DOCUMENTS){id_article?}{id_rubrique?}{vu=non}> </BOUCLE_test_documents>
+		<BOUCLE_test_documents(DOCUMENTS){id_article?}{id_rubrique?}{mode=document}> </BOUCLE_test_documents>
 		<li><h2><a href="#documents"><:titre_documents_joints:></a></h2></li>
 		</B_test_documents>
 		<BOUCLE_test_mots(MOTS){id_article?}{id_rubrique?}> </BOUCLE_test_mots>
@@ -9,9 +9,9 @@
 	</ul>
 	<B_liste_documents>
 	<div id="documents">
-		<BOUCLE_liste_documents(DOCUMENTS){id_article?}{id_rubrique?}{vu=non}{par num titre, titre}>
+		<BOUCLE_liste_documents(DOCUMENTS){id_article?}{id_rubrique?}{mode=document}{par num titre, titre}>
 		<dl class="document clearfix">
-			<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT|image_reduire{52})]</dt>
+			<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT|image_reduire{52,52})]</dt>
 			<dd>
 				<h3>[<a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:info_document:> #ID_DOCUMENT})]</a>]</h3>
 				<div class="introduction">

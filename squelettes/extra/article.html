@@ -7,7 +7,7 @@
 </div>]
 ]
 <BOUCLE_test_mots(MOTS){id_article}{par titre}>#SET{cpt_mots,#TOTAL_BOUCLE}</BOUCLE_test_mots>
-<BOUCLE_test_documents(DOCUMENTS){id_article}{par num titre, titre}{vu=non}>#SET{cpt_documents,#TOTAL_BOUCLE}</BOUCLE_test_documents>
+<BOUCLE_test_documents(DOCUMENTS){id_article}{par num titre, titre}{mode=document}>#SET{cpt_documents,#TOTAL_BOUCLE}</BOUCLE_test_documents>
 #SET{cpt_total, #GET{cpt_mots}|plus{#GET{cpt_documents}}}
 
 <BOUCLE_test_total(CONDITION){si #GET{cpt_total}|>{0}}>

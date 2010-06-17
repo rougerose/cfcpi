@@ -988,11 +988,13 @@ p.info {
 			padding-bottom: .7em; }
 			
 			.ui-tabs-panel dl.document dt {
+				border-bottom: 0;
 				float: left;
 				margin-right: 7px; padding-bottom: 0; }
 				
 				.ui-tabs-panel dl.document dt a {
 					display: block;
+					padding: 2px;
 					border: 1px solid #eee; }
 				
 				.ui-tabs-panel dl.document dt a:hover {
@@ -1002,7 +1004,7 @@ p.info {
 			.ui-tabs-panel dl.document dd {
 				color: #bababa;
 				float: right;
-				width: 138px; }
+				width: 134px; }
 				
 			.ui-tabs-panel dl.document dd span {
 				font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
