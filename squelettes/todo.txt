@@ -1,6 +1,7 @@
 TODO import de la fonte museo ?
 TODO squelette article : suppression de la gestion des docs en bas de page
-TODO #extra > actualités : régler l'âge des articles
+TODO #extra > actualités : régler l'âge des articles (actuellement à 600 jours ce qui est beaucoup)
+TODO #extra > : ajouter cp ? agenda ?
 TODO voir avec Jean-Philippe pour personnalisation du formulaire contact avancé
 TODO passer en chaîne de langue les entrées dans pied.html
 TODO plugin socialtags

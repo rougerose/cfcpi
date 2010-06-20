@@ -1143,6 +1143,7 @@ input, select, textarea {
 		margin: 0 5px 0; }
 	.petition .formulaire_spip {  }
 		.petition fieldset {  }
+			.petition .explication { font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif; }
 			.petition .formulaire_spip fieldset legend { font-size: 11px; }
 				.petition .formulaire_spip li { float: left; }
 				.petition .formulaire_spip li label { font-size: 11px;   }
