@@ -4,3 +4,4 @@ TODO #extra > actualités : régler l'âge des articles
 TODO voir avec Jean-Philippe pour personnalisation du formulaire contact avancé
 TODO passer en chaîne de langue les entrées dans pied.html
 TODO plugin socialtags
+TODO refaire icone spip-out

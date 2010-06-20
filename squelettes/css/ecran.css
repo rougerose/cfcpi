@@ -523,8 +523,8 @@ p.pagination.bas { margin-bottom: 36px; }
 				.rubrique_quiSommesNous .caroussel .caroussel-conteneur .nav-membres li.membre p {
 					font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
 					text-align: center;
-					margin: 0; }
-				.caroussel .caroussel-conteneur .nav-membres li p.nom { margin: 9px 0; }
+					margin: 0 0 9px; }
+				.caroussel .caroussel-conteneur .nav-membres li p.nom { xmargin: 0 0 9px; }
 				.caroussel .caroussel-conteneur .nav-membres li p.logo {
 					background-color: #fff;
 					border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; }
@@ -658,7 +658,7 @@ p.pagination.bas { margin-bottom: 36px; }
 			display: inline; clear: none;
 			margin-right: 10px; }
 		#agenda-nav li:last-child { margin-right: 0; }
-			#agenda-nav a {
+			#agenda-nav a { font-size: 14px;
 				 }
 			#agenda-nav form { display: inline; }
 				#agenda-nav select {
@@ -705,6 +705,7 @@ p.pagination.bas { margin-bottom: 36px; }
 				.vevent dd h3 { margin: 36px 0 9px 0; }
 				.vevent dd .infos {
 						font: 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+						text-align: left;
 						border-bottom: 1px dotted #ccc;
 						margin: 0 0 9px; padding: 0 0 9px 7em; } 
 					.vevent dd .label {
@@ -1168,42 +1169,48 @@ input, select, textarea {
 #pied { margin-left: 80px; }
 	#pied .groupe { margin-bottom: 36px; }
 	#pied .groupe:last-child { margin-bottom: 0; }
-	#pied a:hover { color: #fff; }
 	#pied .colonne { width: 220px; }
+	#pied h3 { 
+			font-size: 14px; 
+			color: #8000cc; 
+			border-bottom: 1px solid #600099;
+			margin: 0 0 4px; padding: 0 0 5px; }
+	#pied li {
+		font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		line-height: 18px;
+		border-bottom: 1px dotted #3e0063;
+		margin-bottom: 5px; padding-bottom: 4px; }
+	#pied a:hover { color: #fff; }
+	
 	#pied .pied-nav {  }
+	#pied .pied-news { }
+		#pied .pied-news li {  }
 	#pied .pied-cfcpi { width: 380px; }
+	#pied .pied-cfcpi .vcard a.url { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	#pied .pied-cfcpi .vcard .adr { float: left; width: 140px; }
+	#pied .pied-cfcpi .vcard p { margin-bottom: 0; }
+	#pied .pied-cfcpi .apropos { 
+		border-left: 1px solid #3e0063;
+		float: left;
+		margin-left: 10px; padding-left: 10px;
+		width: 200px; }
 	#pied .pied-newsletter { width: 460px; }
 	#pied .pied-social { margin-right: 0; }
 		#pied .pied-social ul {
 			xwidth: 880px; }
 		#pied .pied-social li {
-			border-bottom: 0; line-height: 18px; margin-right: 20px; width: 220px; }
+			float: left;
+			border-bottom: 0;
+			margin-right: 20px; margin-bottom: 0; padding-bottom: 0;
+			width: 220px; }
 		#pied .pied-social #rss { margin-right: 0; }
-		#pied .utile { width: 140px; }
 		#pied .pied-social a {
 			display: block;
-			float: left;
 			height: 30px;
 			padding-left: 30px; }
-		#pied h3 { 
-			font-size: 14px; 
-			color: #8000cc; 
-			border-bottom: 1px solid #600099;
-			margin: 0 0 4px; padding: 0 0 5px; }
-			#pied li { 
-				font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-				line-height: 17px;
-				border-bottom: 1px dotted #3e0063;  }
-		#pied .pied-cfcpi .vcard a.url { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-			#pied .pied-cfcpi .vcard .adr { float: left; width: 140px; }
-			#pied .pied-cfcpi .vcard p { margin-bottom: 0; }
-		#pied .pied-cfcpi .apropos { 
-			border-left: 1px solid #3e0063;
-			float: left;
-			margin-left: 10px; padding-left: 10px;
-			width: 200px; }
-		#pied .logo-pied { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 22px; margin-bottom: 0; } 
-			#pied .logo-pied img { vertical-align: top; }
+	#pied .utile { width: 140px; }
+	#pied .logo-pied { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 22px; margin-bottom: 0; } 
+		#pied .logo-pied img { vertical-align: top; }
 	
 /* ------------------------------------ */
 /*  Divers								*/
