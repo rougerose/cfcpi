@@ -4,7 +4,7 @@
 	<h2 class="section-titre"><:articles_rubrique:></h2>
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<ul class="liste-items">
-		<BOUCLE_articles(ARTICLES){id_rubrique}{!par date}{pagination 5}>
+		<BOUCLE_articles(ARTICLES){id_rubrique}{!par date}{pagination 8}>
 		#INCLURE{fond=inclure/article-resume,id_article}
 		</BOUCLE_articles>
 	</ul>
