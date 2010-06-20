@@ -442,11 +442,10 @@ p.pagination.bas { margin-bottom: 36px; }
 			background: url(../puce.gif) no-repeat left center;
 			padding-left: 14px; }
 	
-#rubriques li {
-	width: 220px; }
+#rubriques li { width: 220px; }
 	#rubriques li h3 { font-size: 16px; margin: 0 0 9px; }
 	#rubriques li .introduction p { font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif; }
-		#rubriques li li { xmargin-left: 10px; }
+		#rubriques li li {  }
 		#rubriques li li h4 { font-size: 14px; margin-bottom: 0; }
 		#rubriques li li .introduction p { font-size: 11px; color: #999; margin-left: 16px; }
 			#rubriques li li .introduction a.suite { font-size: 13px; }
@@ -516,10 +515,10 @@ p.pagination.bas { margin-bottom: 36px; }
 		margin: 27px 10px 0;
 		width: 520px; }
 		.caroussel .caroussel-conteneur .nav-membres { width: 99999px; }
-			.caroussel .caroussel-conteneur .nav-membres li.membre {
+			.caroussel .caroussel-conteneur .nav-membres li {
 				display: block; float: left; text-align: center;
 				width: 124px; padding: 5px 3px; }
-				.rubrique_quiSommesNous .caroussel .caroussel-conteneur .nav-membres li.membre p {
+				.rubrique_quiSommesNous .caroussel .caroussel-conteneur .nav-membres li p {
 					font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
 					text-align: center;
 					margin: 0 0 9px; }
@@ -825,7 +824,7 @@ p.pagination.bas { margin-bottom: 36px; }
 	/* liste actu */
 	#extra .liste li.hentry, .secondaire .liste li.hentry {
 		list-style-type: none;
-		margin-bottom: 12px; padding-bottom: 0px; }
+		margin-bottom: 12px; padding-bottom: 5px; }
 		#extra .liste h3.entry-title, .secondaire .liste h3.entry-title {
 			font-size: 13px;
 			margin-bottom: 6px; }
@@ -1065,17 +1064,17 @@ input, select, textarea {
 	#formulaire_recherche fieldset { margin: 0; }
 		#formulaire_recherche label { display: none; }
 		#formulaire_recherche input { border: 1px solid rgba(189,229,0,0.2) }
-		#formulaire_recherche input[type="text"] { 
+		#formulaire_recherche input.text { 
 			color: rgb(210,255,0);
 			background: #92b100 url(../img/icone_recherche.png) no-repeat 1px -1px;
 			padding: 2px 0 2px 25px;
 			width: 15em; }
-		#formulaire_recherche input[type="submit"] { background-color: transparent; border-color: transparent; color: rgb(189,229,0); }
-		#formulaire_recherche input[type="text"]:focus { border-color: rgb(210,255,0); }
-		#formulaire_recherche input[type="submit"]:hover { 
+		#formulaire_recherche input.submit { background-color: transparent; border-color: transparent; color: rgb(189,229,0); }
+		#formulaire_recherche input.text:focus { border-color: rgb(210,255,0); }
+		#formulaire_recherche input.submit:hover { 
 			color: rgb(210,255,0); background-color: #92b100;
 			border-color: rgb(210,255,0); }
-		#formulaire_recherche input[type="submit"]:active {
+		#formulaire_recherche input.submit:active {
 			border-style: inset; outline: none; }
 		
 /* lien vers index mots-clés */
@@ -1128,12 +1127,10 @@ input, select, textarea {
 						.formulaire_cfcpi .colonnes li input.text, .formulaire_cfcpi .colonnes textarea, .formulaire_cfcpi .colonnes input.password { float: left; width: 300px; }
 						.formulaire_cfcpi li .erreur_message  {
 							font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; float: left; }
-						.formulaire_cfcpi li .pass_securise {
-							xfloat: right; }
+						.formulaire_cfcpi li .pass_securise {  }
 						.formulaire_cfcpi input.text, .formulaire_cfcpi textarea, .formulaire_cfcpi input.password { border: 2px solid #eaeaea; }
 						.formulaire_cfcpi input:focus, .formulaire_cfcpi textarea:focus { border: 2px solid #990017; }
 		.formulaire_cfcpi div.info { margin-top: 18px; margin-bottom: 18px; }
-
 
 /* formulaire signature pétition */
 .petition {  }

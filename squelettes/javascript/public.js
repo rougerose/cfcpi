@@ -27,12 +27,11 @@ $(document).ready(function() {
 
 	// navigation : menus "drop-down"
 	$("#nav > div > ul > li:has(ul)").each(function(){
-		
 		$(this).find("li").css("min-width","200px");
 		$(this).append('<span class="dropdown"></span>');
 		$("span.dropdown",this).mouseover(function(){
 			$(this).addClass("over").closest("li").addClass("over");
-			if($.browser.opera) {
+			if($.browser.opera || $.browser.msie) {
 				$(this).siblings("ul:hidden").addClass("dd ombre005").show();
 			} else {
 				$(this).siblings("ul:hidden").addClass("dd ombre005").slideDown({duration:500,easing:"easeOutBounce"});
@@ -42,7 +41,7 @@ $(document).ready(function() {
 			function(){}
 			,
 			function(){
-				if($.browser.opera){
+				if($.browser.opera || $.browser.msie){
 					$("ul.dd",this).hide(100,function(){
 						$("span").removeClass("over").closest("li").removeClass("over");
 					});
