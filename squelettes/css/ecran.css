@@ -364,8 +364,7 @@ p.pagination.bas { margin-bottom: 36px; }
 			
 			#nav ul ul li {
 				border-bottom: 1px solid #6800a7;
-				min-width: 200px; 
-				margin-right: 0;
+				margin-right: 0; min-width: 200px;
 				padding: 2px 2px 4px 4px; }
 			
 			#nav ul ul li:hover {

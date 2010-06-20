@@ -27,10 +27,16 @@ $(document).ready(function() {
 
 	// navigation : menus "drop-down"
 	$("#nav > div > ul > li:has(ul)").each(function(){
+		
+		$(this).find("li").css("min-width","200px");
 		$(this).append('<span class="dropdown"></span>');
 		$("span.dropdown",this).mouseover(function(){
 			$(this).addClass("over").closest("li").addClass("over");
-			$(this).siblings("ul:hidden").addClass("dd ombre005").slideDown({duration:500,easing:"easeOutBounce"});
+			if($.browser.opera) {
+				$(this).siblings("ul:hidden").addClass("dd ombre005").show();
+			} else {
+				$(this).siblings("ul:hidden").addClass("dd ombre005").slideDown({duration:500,easing:"easeOutBounce"});
+			}
 		});
 		$(this).hover(
 			function(){}
