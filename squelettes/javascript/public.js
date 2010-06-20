@@ -42,11 +42,17 @@ $(document).ready(function() {
 			function(){}
 			,
 			function(){
-				$("ul.dd",this).slideUp({
-					duration:100,
-					easing:"jswing",
-					complete: function(){$("span").removeClass("over").closest("li").removeClass("over");}
-				});
+				if($.browser.opera){
+					$("ul.dd",this).hide(100,function(){
+						$("span").removeClass("over").closest("li").removeClass("over");
+					});
+				} else {
+					$("ul.dd",this).slideUp({
+						duration:100,
+						easing:"jswing",
+						complete: function(){$("span").removeClass("over").closest("li").removeClass("over");}
+					});
+				}
 			}
 		);
 	});
