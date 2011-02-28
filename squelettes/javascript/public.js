@@ -9,7 +9,7 @@
 /* ------------------------------------ */
 /*  Table des matières                  */
 /* ------------------------------------ */
-/*	
+/*
 	** Paramètres JQuery **
 	grille de mise en page
 	navigation : menus "drop-down"
@@ -17,7 +17,7 @@
 	ajustement des hauteurs d'image rubrique Qui sommes-nous ?
 	activation plugin Carousel
 	index des mots-clés (pour #navigation)
-	
+
 	** Plugin JQuery :
 	Plugin carousel
 */
@@ -26,7 +26,36 @@ $(document).ready(function() {
 	$("body").addGrid(12, {img_path: 'plugins/960grid/img/', z_index:'99',left:'70px'});
 
 	// navigation : menus "drop-down"
-	$("#nav > div > ul > li:has(ul)").each(function(){
+	$("#nav").each(function(){
+		var $nav = $(this),
+			$menudropdown = $nav.find("> div > ul > li:has(ul)");
+
+		$menudropdown.append("<span/>");
+
+		var $span = $menudropdown.find("> span").addClass("dropdown");
+
+		$menudropdown.hover(
+			function(){
+				$(this)
+				.addClass("over").children("span.dropdown").addClass("over")
+					.end()
+				.children("ul:hidden").addClass("dd ombre005").stop().slideDown({duration:500,easing:"easeOutBounce"});
+			},
+			function(){
+				$(this).children("ul.dd").stop().slideUp({
+					duration:100,
+					easing:"jswing",
+					complete: function(){
+						$(this).parent()
+							.children("span").removeClass("over")
+						.end().removeClass("over");
+					}
+				});
+			}
+		);
+
+	});
+/*	$("#nav > div > ul > li:has(ul)").each(function(){
 		$(this).find("li").css("min-width","200px");
 		$(this).append('<span class="dropdown"></span>');
 		$("span.dropdown",this).mouseover(function(){
@@ -55,20 +84,20 @@ $(document).ready(function() {
 			}
 		);
 	});
-
+*/
 	// UI-tabs
 	$("#tabs").tabs();
-	
+
 	// Page mot-clé index mots dans #navigation
 	// présentation style "accordéon"
 	$(".page_mot #navigation .index").each(function(){
 		var $this = $(this);
 		var $alphabet = $(".alphabet.contenu", $this);
 		var $tag = $(".tag", $this);
-		
+
 		$tag.hide();
 		$tag.filter(".etat-actif").show("slow");
-		
+
 		$alphabet.click(function(){
 			if ($(this).hasClass("etat-actif")){
 				$(this).parent().removeClass("etat-actif");
@@ -83,12 +112,12 @@ $(document).ready(function() {
 		});
 		$alphabet.append('<span class="drop"></span>');
 	});
-	
+
 	// activation plugin Caroussel
 	/* éléments de navigation */
 	$(".rubrique_quiSommesNous .caroussel").jQcaroussel();
-	
-	
+
+
 });
 
 // Plugin Caroussel
@@ -97,14 +126,14 @@ $.fn.jQcaroussel = function () {
 	function repeat(str, num) {
 		return new Array( num + 1 ).join( str );
 	}
-	
+
 	return this.each(function () {
 		var $wrapper = $('> div', this).css('overflow', 'hidden'),
 		$slider = $wrapper.find('> ul'),
 		$items = $slider.find('> li'),
 		$single = $items.filter(':first'),
 
-		singleWidth = $single.outerWidth(), 
+		singleWidth = $single.outerWidth(),
 		visible = Math.floor($wrapper.innerWidth() / singleWidth), // note: doesn't include padding or border
 		currentPage = 1,
 		pages = Math.ceil($items.length / visible);
@@ -122,16 +151,16 @@ $.fn.jQcaroussel = function () {
 
 		// 3. Set the left position to the first 'real' item
 		$wrapper.scrollLeft(singleWidth * visible);
-		
+
 		// 4. paging function
 		function gotoPage(page) {
 			var dir = page < currentPage ? -1 : 1,
 			n = Math.abs(currentPage - page),
 			left = singleWidth * dir * visible * n;
-		
+
 			$wrapper.filter(':not(:animated)').animate({
 				scrollLeft : '+=' + left
-			}, 500, function () {	
+			}, 500, function () {
 				if (page == 0) {
 					$wrapper.scrollLeft(singleWidth * visible * pages);
 					page = pages;
@@ -140,19 +169,19 @@ $.fn.jQcaroussel = function () {
 					// reset back to start position
 					page = 1;
 				}
-				
+
 				currentPage = page;
-			});                
+			});
 			return false;
 		}
-		
+
 		$wrapper.after('<p class="fleches"><a class="precedent">&lt;</a><a class="suivant">&gt;</a></p>');
 
-		// liens directs (ajout cld)		
+		// liens directs (ajout cld)
 		var offsetDepart = singleWidth * visible;
 		$("a.precedent",this).after(repeat('<a class="direct" />',pages));
 		$("p.fleches a:nth-child(2)").addClass("select");
-		
+
 		$("a.direct",this).each(function(count){
 			$(this).click(function(){
 				$("a.masquer").trigger('click');
@@ -173,9 +202,9 @@ $.fn.jQcaroussel = function () {
 			if ($previous.hasClass("precedent")) {
 				$(this).siblings("a.suivant").prev().addClass("select");
 			} else $previous.addClass("select");
-			
-			// contrôle de l'offset du conteneur : si on utilise les liens directs, 
-			// puis le lien back, le conteneur se positionne sur la dernière page, 
+
+			// contrôle de l'offset du conteneur : si on utilise les liens directs,
+			// puis le lien back, le conteneur se positionne sur la dernière page,
 			// Il faudrait modifier la fonction gotoPage...
 			// Mais le contrôle ci-dessous peut faire également l'affaire.
 			var offsetActuel = $wrapper.scrollLeft();
@@ -185,8 +214,8 @@ $.fn.jQcaroussel = function () {
 			}
 			return gotoPage(currentPage - 1);
 		});
-		
-		
+
+
 
 		$('a.suivant', this).click(function () {
 			$("a.masquer").trigger('click');
@@ -197,11 +226,11 @@ $.fn.jQcaroussel = function () {
 			if ($next.hasClass("suivant")) {
 				$(this).siblings("a.precedent").next().addClass("select");
 			} else $next.addClass("select");
-			
-			// contrôle de l'offset du conteneur : si on utilise les liens directs, 
-			// puis le lien forward, quand le conteneur est sur la dernière page, 
+
+			// contrôle de l'offset du conteneur : si on utilise les liens directs,
+			// puis le lien forward, quand le conteneur est sur la dernière page,
 			// alors il ne revient pas sur la première page.
-			// Il faudrait modifier la fonction gotoPage... 
+			// Il faudrait modifier la fonction gotoPage...
 			// Mais le contrôle ci-dessous peut faire également l'affaire.
 			var offsetActuel = $wrapper.scrollLeft();
 			var offsetArrivee = offsetActuel + offsetDepart;

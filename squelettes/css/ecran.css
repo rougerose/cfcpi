@@ -25,7 +25,7 @@
 /*  Couleurs	 		                */
 /* ------------------------------------ */
 /*	rouge brique (liens...) : #b80000
-	
+
 */
 
 /* ------------------------------------ */
@@ -73,8 +73,8 @@ blockquote, q { quotes: "" ""; }
 /* ------------------------------------ */
 /*  Réglage des float                   */
 /* ------------------------------------ */
-/*	voir : 
-	http://www.positioniseverything.net/easyclearing.html 
+/*	voir :
+	http://www.positioniseverything.net/easyclearing.html
 	+ modif http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack
 */
 
@@ -102,51 +102,51 @@ blockquote, q { quotes: "" ""; }
 
 /* règles communes */
 
-body { 
-	background: #000 url(../img/body-background.jpg) repeat-x left top;
+body {
+	background: #000 url('../img/body-background.jpg') repeat-x left top;
 	color: #000;
 	margin: 0; }
-	#page { 
+	#page {
 		color: #fff; background-color:#2c0046;
 		position: relative;
 		overflow: visible;
-		margin: 36px auto; padding-bottom: 20px; 
+		margin: 36px auto; padding-bottom: 20px;
 		width: 960px;
 		border-radius: 8px 0 0 8px;
-		-webkit-border-top-left-radius: 8px; 
+		-webkit-border-top-left-radius: 8px;
 		-webkit-border-bottom-left-radius: 8px;
 		-moz-border-radius: 8px 0 0 8px; }
 		#entete { padding: 27px 0 0 20px; }
 		#conteneur {
 			color: #000; background-color: #fff;
-            margin-left: 60px; padding-top: 34px; 
+            margin-left: 60px; padding-top: 34px;
             position: relative;
             width: 980px;
             border-radius: 0 8px 8px 0;
-            -webkit-border-top-right-radius: 8px; 
-            -webkit-border-bottom-right-radius: 8px; 
+            -webkit-border-top-right-radius: 8px;
+            -webkit-border-bottom-right-radius: 8px;
             -moz-border-radius: 0 8px 8px 0; }
-            #contenu { 
+            #contenu {
             	margin-right: 20px; margin-bottom: 18px;
             	float: right;
             	width: 780px; }
             	.titre { width: 780px; }
             	.contenu_principal { width: 540px; }
-            	#extra { 
+            	#extra {
             		display: inline; float: right;
             		width: 220px; }
-            #navigation { 
+            #navigation {
             	float: left;
             	margin-bottom: 18px;
             	width: 160px; }
             #hierarchie { clear: both; border-top: 2px solid #600099; margin: 0 20px; width: 940px;  }
-            #pied { 
+            #pied {
             	margin-top: 18px; margin-left: 60px; }
 
 /* règles spécifiques */
 
 /* sommaire */
-.page_sommaire #contenu { width: 940px; }	
+.page_sommaire #contenu { width: 940px; }
 	.page_sommaire #contenu .contenu_principal { float: left; width: 940px; }
 	.page_sommaire .contenu_principal #news { width: 940px; border-bottom: 4px solid #600099; margin-bottom: 36px; }
 	.page_sommaire #news .principale { width: 620px; }
@@ -159,11 +159,11 @@ body {
 
 /* mot */
 .page_mot .contenu_principal { width: 780px; }
-	.page_mot .principale { 
+	.page_mot .principale {
 		float: left;
 		width: 460px; }
-	.page_mot .secondaire { 
-		float: right; 
+	.page_mot .secondaire {
+		float: right;
 		margin-right: 0;
 		width: 300px; }
 .page_mot #extra { display: none; }
@@ -202,7 +202,7 @@ a:active { outline: none; }
 
 
 a.spip_out, a.spip_glossaire {
-	background: url(../img/spip_out.png) no-repeat right center;
+	background: url('../img/spip_out.png') no-repeat right center;
 	color: #ba0003;
 	padding-right: 12px; }
 
@@ -232,7 +232,7 @@ h2.section-titre {
 /* texte  */
 p { margin-bottom: 18px; }
 blockquote, blockquote.spip {
-	color: rgb(120,120,120); 
+	color: rgb(120,120,120);
 	border: 0;
 	margin: 0; padding: 0 18px 0; }
 strong { font-weight: bold; }
@@ -241,8 +241,8 @@ abbr, acronym { border-bottom: 1px dotted; cursor: help; }
 small { font-size: 11px; }
 del { text-decoration: line-through; }
 ins {
-	color: #7e001a; text-decoration: none; 
-	border: 1px dotted #7e001a; 
+	color: #7e001a; text-decoration: none;
+	border: 1px dotted #7e001a;
 	padding: 0 2px; }
 sup { vertical-align: super; font-size: 10px; line-height: 8px;}
 sub { vertical-align: sub; font-size: 10px; line-height: 8px;}
@@ -288,7 +288,7 @@ table.spip {
 /* ------------------------------------ */
 /*  Pagination							*/
 /* ------------------------------------ */
-p.pagination { 
+p.pagination {
 	font: 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right; color: ;
 	margin: 0 0 18px; padding-top: 4px; }
 p.pagination.haut { margin-bottom: 18px; }
@@ -297,10 +297,10 @@ p.pagination.bas { margin-bottom: 36px; }
 		border: 1px solid #ccc;
 		padding: 0 3px 0; }
 	p.pagination a:hover {
-		color: #c00; background-color: #000; 
+		color: #c00; background-color: #000;
 		border-color: #000; }
-	p.pagination strong { 
-		color: #fff; background-color: #b80000; 
+	p.pagination strong {
+		color: #fff; background-color: #b80000;
 		border-color: #b80000; }
 	p.pagination .sep { display: none; }
 
@@ -326,11 +326,11 @@ p.pagination.bas { margin-bottom: 36px; }
 #logo { margin-left: 40px; }
 	#logo h1, #logo h2, #logo a {
 		text-indent: -9999px;
-		color: #fff; 
+		color: #fff;
 		display: block;
 		margin: 0;
 		height: 54px; width: 700px; }
-	
+
 	#logo a { top: 0; outline: 0; }
 
 /* ------------------------------------ */
@@ -339,54 +339,54 @@ p.pagination.bas { margin-bottom: 36px; }
 
 /* Menu principal */
 #nav { margin: 27px 0 0 60px; }
-	
-	#nav li { 
+
+	#nav li {
 		float: left;
 		position: relative; z-index: 999;
 		margin-right: 4px; padding: 0 4px 0; }
-	
-	#nav li.on > a { background: url(../img/navigation-hover-active-blanc.png) no-repeat center bottom; }
-	
-	#nav li.over { 
+
+	#nav li.on > a { background: url('../img/navigation-hover-active-blanc.png') no-repeat center bottom; }
+
+	#nav li.over {
 		background-color: #4f007e; }
-	
+
 	#nav li span.dropdown {
     		cursor: pointer;
-    		background: #2c0046 url(../img/ui-icons_888888_256x240.png) no-repeat -66px -17px;
+    		background: #2c0046 url('../img/ui-icons_888888_256x240.png') no-repeat -66px -17px;
     		border: 1px solid #2c0046;
     		height: 14px; width: 14px;
     		margin: 3px 0 0 3px; }
-		
-		#nav ul ul { 
+
+		#nav ul ul {
 			background-color: #4f007e;
 			display: none;
 			position: absolute; top: 24px; left: 0; z-index: 999; }
-			
+
 			#nav ul ul li {
 				border-bottom: 1px solid #6800a7;
 				margin-right: 0; min-width: 200px;
 				padding: 2px 2px 4px 4px; }
-			
+
 			#nav ul ul li:hover {
-				background-color: #80c/*#6800a7*/; background-image: none; }
-		
-				#nav li a { 
+				background-color: #80c; background-image: none; }
+
+				#nav li a {
 					color: #fff; text-decoration: none;
 					height: 24px; }
-		
-				#nav li a:hover { 
+
+				#nav li a:hover {
 					text-decoration: underline;
-					background: url(../img/navigation-hover-active-blanc.png) no-repeat center bottom; }
-		
-				#nav li li a { height: auto; } 
-		
+					background: url('../img/navigation-hover-active-blanc.png') no-repeat center bottom; }
+
+				#nav li li a { height: auto; }
+
 				#nav li a, #nav li span.dropdown {
 					display: block;
 					float: left; }
-			
+
 			#nav li span.over {
 				border: 1px solid #2c0046; border-color: #2c0046 #6800a7 #6800a7 #2c0046; }
-				
+
 	#nav li.over a:hover, #nav li li.on a, #nav li li a:hover {
 					background-image: none; }
 
@@ -430,7 +430,7 @@ p.pagination.bas { margin-bottom: 36px; }
 	border: 0;
 	margin: 0 0 18px; padding: 6px 0; }
 
-.quiSommesNous { 
+.quiSommesNous {
 	background: #280000 url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
 	margin-bottom: 36px; padding-top: 18px; }
 	.quiSommesNous > div { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #fff; margin: 0 3px; padding: 9px 5px 0 10px; }
@@ -441,7 +441,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		.quiSommesNous ul.liens li {
 			background: url(../puce.gif) no-repeat left center;
 			padding-left: 14px; }
-	
+
 #rubriques li { width: 220px; }
 	#rubriques li h3 { font-size: 16px; margin: 0 0 9px; }
 	#rubriques li .introduction p { font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -454,17 +454,17 @@ p.pagination.bas { margin-bottom: 36px; }
 .titre { margin-bottom: 36px; }
 	.titre h1 { color: #B80000; }
 	.page_auteur .titre h1 { margin-left: 160px; }
-	.titre .surtitre, .titre .soustitre { 
+	.titre .surtitre, .titre .soustitre {
 		color: #600099;
 		font-size: 14px; line-height: 18px;
 		text-transform: uppercase;
 		margin-bottom: 0; }
-	.titre .soustitre { 
+	.titre .soustitre {
 		font-size: 18px; text-transform: none;
 		margin-top: 9px; margin-bottom: 9px; xmargin-left: 30px; }
 	.titre .spip_logos { float: left; margin: 4px 20px 20px 0; }
 	.titre .info-publi {
-		color: #ccc; 
+		color: #ccc;
 		margin: 18px 0 0 560px; }
 	.titre .info-publi abbr { color: #600099; border-bottom: none; }
 .chapo {  }
@@ -545,7 +545,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		.article_membres .caroussel .fleches a:hover { background-color: transparent; }
 	.article_membres .caroussel .caroussel-conteneur {  }
 		.article_membres .caroussel .caroussel-conteneur .nav-membres { width: auto; }
-			.article_membres .caroussel .caroussel-conteneur .nav-membres li.membre { 
+			.article_membres .caroussel .caroussel-conteneur .nav-membres li.membre {
 				height: auto;
 				margin-top: 18px; padding: 5px;
 				width: 510px; }
@@ -562,16 +562,16 @@ p.pagination.bas { margin-bottom: 36px; }
 						font-size: 20px;
 						margin-top: 0; }
 					.article_membres .caroussel .nav-membres li p { text-align: left; text-indent: 0; }
-				
+
 					.article_membres .caroussel .nav-membres li p.fonction,
 					.article_membres .caroussel .nav-membres li p.hyperlien {
 						font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-				
+
 					.article_membres .caroussel .nav-membres li .note { margin-bottom: 18px; }
 						.article_membres .caroussel .nav-membres li .note p { margin: 18px 0 0; }
 						.article_membres .caroussel .nav-membres li .note p.suite {
 							font: 12px "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right;
-							border-top: 2px solid #b80000; 
+							border-top: 2px solid #b80000;
 							margin: 9px 0 4px; padding-top: 4px; }
 
 /* auteurs */
@@ -585,7 +585,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		border-bottom: 1px dotted #ccc;
 		margin-bottom: 9px; padding-bottom: 9px;
 		width: 540px; }
-	.identite dl dt { 
+	.identite dl dt {
 		color: #600099; font-weight: bold;
 		display: block; float: left; clear: left;
 		margin-right: ;
@@ -594,7 +594,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		float: right;
 		width: 340px;}
 		.identite dl p { margin-bottom: 0; }
-					
+
 
 /* hfeed */
 .hentry {
@@ -605,12 +605,12 @@ p.pagination.bas { margin-bottom: 36px; }
 		font-size: 16px;
 		margin: 0 0 9px; }
 		h3.entry-title a { xcolor: #000; }
-	
-	.entry-content { xpadding-top: 9px; }	
+
+	.entry-content { xpadding-top: 9px; }
 		.entry-content p {
 			text-align: left; }
 			.entry-content p img { float: left; margin-right: 10px; }
-	
+
 	.meta-publi {  }
 		.meta-publi p {
 			font: 11px/12px "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: left;
@@ -621,7 +621,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		.meta-publi p:last-child { border-right: 0; }
 
 
-/* 	pour les rubriques ne contenant pas d'articles : 
+/* 	pour les rubriques ne contenant pas d'articles :
 	on présente les articles des sous-rubriques
 	sur 2 colonnes.	 */
 .rubriques .hfeed .articles { width: 540px; margin-bottom: 54px; }
@@ -662,9 +662,9 @@ p.pagination.bas { margin-bottom: 36px; }
 				#agenda-nav select {
 					width: 15em; }
 				#agenda-nav p {
-					display: inline; clear: none; 
+					display: inline; clear: none;
 					margin: 0;  }
-	
+
 	/* contenu agenda (hcalendar) */
 .vcalendar {  }
 .page_article .vcalendar { margin-bottom: 36px; }
@@ -672,11 +672,11 @@ p.pagination.bas { margin-bottom: 36px; }
 		margin: 0 0 18px 0; }
 	.page_article .vevent { margin: 0 0 18px; }
 		.page_rubrique .vevent dt, #extra .liste dt, .secondaire .liste dt {
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: center; 
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: center;
 			background-color: #8234b1; color: #fff;
 			float: left;
 			padding: 5px;
-			border-radius: 4px; 
+			border-radius: 4px;
 			-webkit-border-radius: 4px;
 			-moz-border-radius: 4px;
 			box-shadow: 0 0 5px rgba(72,0,114,0.3);
@@ -705,7 +705,7 @@ p.pagination.bas { margin-bottom: 36px; }
 						font: 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 						text-align: left;
 						border-bottom: 1px dotted #ccc;
-						margin: 0 0 9px; padding: 0 0 9px 7em; } 
+						margin: 0 0 9px; padding: 0 0 9px 7em; }
 					.vevent dd .label {
 						color: #600099; font-weight: bold;
 						display: block; float: left;
@@ -719,7 +719,7 @@ p.pagination.bas { margin-bottom: 36px; }
 #articles h2.section-titre, #rubriques h2.section-titre { margin-top: 0; }
 
 	/* articles liés : voir hentry plus haut */
-	
+
 	/* autres objets liés */
 .item {
 	border-bottom: 1px dotted #ccc;
@@ -728,12 +728,12 @@ p.pagination.bas { margin-bottom: 36px; }
 	h3.title {
 		font-size: 14px;
 		margin: 0 0 9px; }
-	
-	.introduction, .description {  }	
+
+	.introduction, .description {  }
 		.introduction p, .description p {
 			text-align: left; }
 			.description p span { color: #bababa; }
-	
+
 	.meta-publi {  }
 		.meta-publi p {
 			font-size: 11px; line-height: 12px; text-align: left;
@@ -752,7 +752,7 @@ p.pagination.bas { margin-bottom: 36px; }
 			color: #600099;
 			border-bottom: 1px solid #600099;
 			margin: 0 0 9px 10px; }
-		#navigation .index { 
+		#navigation .index {
 			border-bottom: 1px solid #eee;
 			padding-bottom: 2px;
 			position: relative; }
@@ -809,7 +809,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		.page_plan .liste .item {
 			border: 0;
 			margin-bottom: 0; padding-bottom: 0; }
-			.page_plan .liste ul ul { 
+			.page_plan .liste ul ul {
 				margin-left: 20px; margin-bottom: 18px; }
 
 /* #extra et .secondaire */
@@ -820,7 +820,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		border: 2px solid #600099; border-width: 2px 0 1px;
 		margin: 0 0 10px; padding: 8px 0 8px; }
 	#extra .liste li, .secondaire .liste { margin-bottom: 9px; padding-bottom: 9px; }
-	
+
 	/* liste actu */
 	#extra .liste li.hentry, .secondaire .liste li.hentry {
 		list-style-type: none;
@@ -829,7 +829,7 @@ p.pagination.bas { margin-bottom: 36px; }
 			font-size: 13px;
 			margin-bottom: 6px; }
 		#extra .liste .entry-content, .secondaire .liste .entry-content { display: none; }
-	
+
 	/* liste agenda */
 	/* voir également section "contenu agenda" plus haut */
 	#extra .liste dl, .secondaire .liste dl {
@@ -842,7 +842,7 @@ p.pagination.bas { margin-bottom: 36px; }
 				margin: 2px 0 2px; padding: 0 2px; }
 		#extra .liste dd, .secondaire .liste dd { margin-left: 4.25em; }
 			#extra .liste dd h3, .secondaire .liste dd h3 { font-size: 13px; margin: 0; }
-						 
+
 /* boite infos */
 div.info {  }
 	div.info p { text-align: left; }
@@ -898,7 +898,7 @@ p.info {
 	-moz-box-shadow: 0 0 5px #333; }
 	.ui-dialog .ui-dialog-titlebar { padding: 4px; }
 	.ui-dialog .ui-dialog-titlebar-close {
-		top: -4px; right: auto; left: -16px; 
+		top: -4px; right: auto; left: -16px;
 		background-color: #fff;
 		box-shadow: 1px 1px 5px #333;
 		-webkit-box-shadow: 1px 1px 5px #333;
@@ -920,46 +920,46 @@ p.info {
 	.ui-tabs-hide { display: none !important; }
 
 /* personnalisé */
-.ui-tabs { 
+.ui-tabs {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-bottom: 46px; padding: 1.6em 0 0;
 	background: #110019 url(../img/background-rayures-noir_violet-degrade.png) repeat-x left top;
-	border-radius: 2px 0; 
-	-webkit-border-top-left-radius: 2px; 
-	-webkit-border-top-right-radius: 2px; 
+	border-radius: 2px 0;
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-top-right-radius: 2px;
 	-moz-border-radius: 2px 2px 0 0; }
 
 	.ui-tabs .ui-tabs-nav {
 		border-bottom: 1px solid #50206d;
 		margin: 0 2px; padding: 0 0 0 5px; }
-	
+
 		.ui-tabs-nav li {
 			font-size: 12px;
 			border-radius: 2px 0;
 			margin-right: 3px;
-			-webkit-border-top-left-radius: 2px; 
-			-webkit-border-top-right-radius: 2px; 
+			-webkit-border-top-left-radius: 2px;
+			-webkit-border-top-right-radius: 2px;
 			-moz-border-radius: 2px 2px 0 0; }
-		
+
 		.ui-tabs-nav li.ui-state-default {
 			background: #600099 url(../img/tabs-defaut-background.png) repeat-x left bottom;}
-	
+
 		.ui-tabs-nav li.ui-state-hover {
 			background-color: #8234b1; background-image: none; }
-		
+
 		.ui-tabs-nav li.ui-tabs-selected {
 			border-color: #50206d;
 			background-color: #fff;
 			background-image: none; }
-			
+
 			.ui-tabs-nav li h2 {
 				font-size: 12px;
 				margin: 0; }
-			
+
 			.ui-tabs-nav li a {
 				color: #fff;
 				padding: 0 5px .4em; }
-				
+
 			.ui-tabs-nav li.ui-tabs-selected a {
 				color: #4f007e; }
 
@@ -968,44 +968,44 @@ p.info {
 		border: 1px solid #50206d; border-top-width: 0; border-bottom-width: 0;
 		border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0;
 		padding: 1.1em 5px 0 10px; margin: 0 2px }
-		
+
 		.ui-tabs-panel dl, .ui-tabs-panel ul { margin-bottom: .7em; }
-		
+
 			.ui-tabs-panel dt, .ui-tabs-panel li {
 				border-bottom: 1px dotted #ccc;
 				padding-top: .4em;
 				padding-bottom: .4em; }
-				
+
 				.ui-tabs-panel dd h3, .ui-tabs-panel li h3 {
 					font-size: 13px; line-height: 18px;
 					margin: 0; }
-				
+
 				.ui-tabs-panel .introduction p {
 					font-size: 12px; font-family: Georgia, "Times New Roman", Times, serif; }
-			
+
 		.ui-tabs-panel dl.document {
 			border-bottom:	1px solid #eee;
 			padding-bottom: .7em; }
-			
+
 			.ui-tabs-panel dl.document dt {
 				border-bottom: 0;
 				float: left;
 				margin-right: 7px; padding-bottom: 0; }
-				
+
 				.ui-tabs-panel dl.document dt a {
 					display: block;
 					padding: 2px;
 					border: 1px solid #eee; }
-				
+
 				.ui-tabs-panel dl.document dt a:hover {
 					background-color: #80c;
 					border-color: #80c; }
-			
+
 			.ui-tabs-panel dl.document dd {
 				color: #bababa;
 				float: right;
 				width: 134px; }
-				
+
 			.ui-tabs-panel dl.document dd span {
 				font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
 				border-top: 1px dotted #eee;
@@ -1013,13 +1013,13 @@ p.info {
 
 /* Pétition */
 	/* formulaire voir plus bas */
-	
+
 	/* compteur signatures */
 p.signatures_compteur {
 	font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align: right;
 	margin: 9px 1px 9px; }
-	
+
 	.signatures_compteur a { color: #fff; }
 
 	/* signatures */
@@ -1064,21 +1064,21 @@ input, select, textarea {
 	#formulaire_recherche fieldset { margin: 0; }
 		#formulaire_recherche label { display: none; }
 		#formulaire_recherche input { border: 1px solid rgba(189,229,0,0.2) }
-		#formulaire_recherche input.text { 
+		#formulaire_recherche input.text {
 			color: rgb(210,255,0);
 			background: #92b100 url(../img/icone_recherche.png) no-repeat 1px -1px;
 			padding: 2px 0 2px 25px;
 			width: 15em; }
 		#formulaire_recherche input.submit { background-color: transparent; border-color: transparent; color: rgb(189,229,0); }
 		#formulaire_recherche input.text:focus { border-color: rgb(210,255,0); }
-		#formulaire_recherche input.submit:hover { 
+		#formulaire_recherche input.submit:hover {
 			color: rgb(210,255,0); background-color: #92b100;
 			border-color: rgb(210,255,0); }
 		#formulaire_recherche input.submit:active {
 			border-style: inset; outline: none; }
-		
+
 /* lien vers index mots-clés */
-#formulaire_recherche p { 
+#formulaire_recherche p {
 	font-family: "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 11px;
 	text-transform: uppercase;
 	vertical-align: middle;
@@ -1093,9 +1093,9 @@ input, select, textarea {
 .formulaire_cfcpi {
 	background: #280000 url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
 	padding: 1.5em 2px 0;
-	border-radius: 2px 0; 
-	-webkit-border-top-left-radius: 2px; 
-	-webkit-border-top-right-radius: 2px; 
+	border-radius: 2px 0;
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-top-right-radius: 2px;
 	-moz-border-radius: 2px 2px 0 0; }
 	.formulaire_cfcpi .formulaire_spip {
 		background-color: #fff;
@@ -1109,12 +1109,12 @@ input, select, textarea {
 			.formulaire_cfcpi fieldset { margin: 9px 0 0; }
 			.formulaire_cfcpi fieldset.previsu {
 				border-color: #990017; }
-				.formulaire_cfcpi fieldset legend, .formulaire_cfcpi fieldset.previsu legend { 
+				.formulaire_cfcpi fieldset legend, .formulaire_cfcpi fieldset.previsu legend {
 					font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 					color: #bc1e20; background-color: transparent;
 					font-weight: bold; text-transform: uppercase;
 					border-bottom: 1px solid #bc1e20; }
-					.formulaire_cfcpi li { 
+					.formulaire_cfcpi li {
 						opacity: .6;
 						margin: 0 0 18px; }
 					.formulaire_cfcpi li.obligatoire, .formulaire_cfcpi .previsu li { opacity: 1; }
@@ -1167,9 +1167,9 @@ input, select, textarea {
 	#pied .groupe { margin-bottom: 36px; }
 	#pied .groupe:last-child { margin-bottom: 0; }
 	#pied .colonne { width: 220px; }
-	#pied h3 { 
-			font-size: 14px; 
-			color: #8000cc; 
+	#pied h3 {
+			font-size: 14px;
+			color: #8000cc;
 			border-bottom: 1px solid #600099;
 			margin: 0 0 4px; padding: 0 0 5px; }
 	#pied li {
@@ -1178,7 +1178,7 @@ input, select, textarea {
 		border-bottom: 1px dotted #3e0063;
 		margin-bottom: 5px; padding-bottom: 4px; }
 	#pied a:hover { color: #fff; }
-	
+
 	#pied .pied-nav {  }
 	#pied .pied-news { }
 		#pied .pied-news li {  }
@@ -1186,7 +1186,7 @@ input, select, textarea {
 	#pied .pied-cfcpi .vcard a.url { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 	#pied .pied-cfcpi .vcard .adr { float: left; width: 140px; }
 	#pied .pied-cfcpi .vcard p { margin-bottom: 0; }
-	#pied .pied-cfcpi .apropos { 
+	#pied .pied-cfcpi .apropos {
 		border-left: 1px solid #3e0063;
 		float: left;
 		margin-left: 10px; padding-left: 10px;
@@ -1206,9 +1206,9 @@ input, select, textarea {
 			height: 30px;
 			padding-left: 30px; }
 	#pied .utile { width: 140px; }
-	#pied .logo-pied { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 22px; margin-bottom: 0; } 
+	#pied .logo-pied { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 22px; margin-bottom: 0; }
 		#pied .logo-pied img { vertical-align: top; }
-	
+
 /* ------------------------------------ */
 /*  Divers								*/
 /* ------------------------------------ */
@@ -1216,7 +1216,7 @@ input, select, textarea {
 .spip_surligne { background-color: #bde500; }
 
 /* lien "action" */
-a.action { 
+a.action {
 	font: 12px/18px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #fff; background-color: #78001a;
 	padding: 3px;
