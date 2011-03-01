@@ -638,10 +638,11 @@ p.pagination.bas { margin-bottom: 36px; }
 	width: 540px; }
 
 /* Pour la page d'accueil une zone mineur sur deux colonnes */
-.hfeed .majeur { width: 620px; }
-	.hfeed .majeur .hentry { float: left; width: 300px; }
-	.hfeed .majeur .item-0 { margin-right: 0; }
-	.hfedd .majeur .item-1 { clear: left; }
+.hfeed .mineur { width: 620px; }
+	.hfeed .groupe { margin-bottom: 1.5em; }
+	.hfeed .mineur .hentry { float: left; width: 300px; }
+	.hfeed .mineur .item-0 { margin-right: 0; }
+	.hfedd .mineur .item-1 { clear: left; }
 		.hfeed .mineur h3 { font-size: 14px; }
 		.hfeed .mineur .introduction p { font-size: 13px; }
 

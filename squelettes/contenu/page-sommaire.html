@@ -1,19 +1,19 @@
+#SET{selection}
+<BOUCLE_selection(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}>
+[(#SET_PUSH{selection,#ID_ARTICLE})]
+</BOUCLE_selection>
+
 <div class="contenu_principal surlignable">
-	<div id="news" class="hfeed section clearfix">
-		<div class="colonne principale">
-			<h2 class="section-titre"><:derniers_articles_publies:></h2>
-			<B_articles>
-			<div class="liste articles majeur">
-				#ANCRE_PAGINATION
-				[<p class="pagination haut clearfix">(#PAGINATION{page})</p>]
-				<ul class="liste-items clearfix">
-					<BOUCLE_articles(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{pagination 8}>
-					[(#INCLURE{fond=inclure/article-resume,id_article,compteur=[(#COMPTEUR_BOUCLE|modulo{2})]})]
-					</BOUCLE_articles>
-				</ul>
-				[<p class="pagination bas">(#PAGINATION{page})</p>]
-			</div>
-			</B_articles>
+	<div id="news" class="section clearfix">
+		<div class="hfeed colonne principale">
+			[(#REM) articles sélectionnés appartenant à la rubrique "France et CPI", secteur 1 ]
+
+			<INCLURE{fond=inclure/sommaire-articles,selection=#GET{selection},secteur=1,env,ajax,doublons}>
+
+			[(#REM)  articles sélectionnés appartenant à la rubrique "CPI", secteur 16]
+
+			<INCLURE{fond=inclure/sommaire-articles,selection=#GET{selection},secteur=16,env,ajax,doublons}>
+
 		</div><!-- / .principale -->
 		<div class="section secondaire colonne">
 			[(#REM) Qui sommes-nous ?]
