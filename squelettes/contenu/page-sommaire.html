@@ -28,7 +28,7 @@
 						<li><a href="[(#URL_RUBRIQUE|ancre_url{objectifs})]"><:nos_objectifs_actions:></a></li>
 						<li><a href="[(#URL_RUBRIQUE|ancre_url{rejoindre})]"><:nous_rejoindre:></a></li>
 					</ul>
-				</div>	
+				</div>
 			</div>
 			</BOUCLE_quiSommesNous>
 			</B_quiSommesNous>
@@ -76,27 +76,4 @@
 			<//B_condition_cp>
 		</div><!-- / .secondaire -->
 	</div><!-- / #news -->
-	<div id="rubriques">
-		<ul class="liste clearfix">
-			#SET{selection_rubriques,#ARRAY{1,16,2,1,3,9,4,26}}
-			<BOUCLE_rubriques_une(RUBRIQUES){id_rubrique IN #GET{selection_rubriques}}>
-			<li class="colonne [item-(#COMPTEUR_BOUCLE|modulo{4})]">
-				<h3><a href="#URL_RUBRIQUE">#TITRE</a></h3>
-				[<div class="introduction">
-					<p>(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE">&#x2192;</a></p>
-				</div>]
-				<ul>
-					<BOUCLE_sousrubriques(RUBRIQUES){id_parent}{par num titre, titre}>
-					<li>
-						<h4>#PUCE <a href="#URL_RUBRIQUE">#TITRE</a></h4>
-						[<div class="introduction">
-							<p>(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" class="suite">&#x2192;</a></p>
-						</div>]
-					</li>
-					</BOUCLE_sousrubriques>
-				</ul>
-			</li>
-			</BOUCLE_rubriques_une>
-		</ul>
-	</div>
 </div>

@@ -1180,9 +1180,10 @@ input, select, textarea {
 	#pied a:hover { color: #fff; }
 
 	#pied .pied-nav {  }
-	#pied .pied-news { }
+	#pied .pied-news { width: 460px; }
 		#pied .pied-news li {  }
 	#pied .pied-cfcpi { width: 380px; }
+	#pied .pied-cfcpi .vcard > div { margin-bottom: 1em; }
 	#pied .pied-cfcpi .vcard a.url { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 	#pied .pied-cfcpi .vcard .adr { float: left; width: 140px; }
 	#pied .pied-cfcpi .vcard p { margin-bottom: 0; }
