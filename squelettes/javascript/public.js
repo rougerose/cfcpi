@@ -39,10 +39,10 @@ $(document).ready(function() {
 				$(this)
 				.addClass("over").children("span.dropdown").addClass("over")
 					.end()
-				.children("ul:hidden").addClass("dd ombre005").stop().slideDown({duration:500,easing:"easeOutBounce"});
+				.children("ul:hidden").addClass("dd ombre005").slideDown({duration:500,easing:"easeOutBounce"});
 			},
 			function(){
-				$(this).children("ul.dd").stop().slideUp({
+				$(this).children("ul.dd").slideUp({
 					duration:100,
 					easing:"jswing",
 					complete: function(){
