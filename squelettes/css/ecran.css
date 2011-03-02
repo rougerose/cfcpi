@@ -148,7 +148,7 @@ body {
 /* sommaire */
 .page_sommaire #contenu { width: 940px; }
 	.page_sommaire #contenu .contenu_principal { float: left; width: 940px; }
-	.page_sommaire .contenu_principal #news { width: 940px; border-bottom: 4px solid #600099; margin-bottom: 36px; }
+	.page_sommaire .contenu_principal #news { width: 940px; }
 	.page_sommaire #news .principale { width: 620px; }
 	.page_sommaire #news .secondaire { width: 300px; margin-right: 0; }
 	.page_sommaire #extra { display: none; }
@@ -470,8 +470,6 @@ p.pagination.bas { margin-bottom: 36px; }
 .chapo {  }
 	.chapo p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 .texte {  }
-	.texte h2 + p, .texte h3 + p, .texte h4 + p, .texte h5 + p, .texte h6 + p { text-indent: 0; }
-	.texte p { text-indent: 1em; }
 .ps, .notes { margin: 36px 0 0 auto; width: 70%; }
 	.ps h2, .notes h2 {
 		font-size: 18px; line-height: 18px;

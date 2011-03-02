@@ -7,5 +7,5 @@ TODO passer en chaîne de langue les entrées dans pied.html
 TODO plugin socialtags
 TODO refaire icone spip-out
 TODO réduire le nombre de js importés (270 ko pour le moment, c'est beaucoup) ou voir pour compresser les fichiers dès le départ et pas seulement via spip
-TODO ajouter les pages uniques
+TODO ajouter les pages uniques ????????????
 TODO styles d'impression
