@@ -24,6 +24,13 @@
 $(document).ready(function() {
 	// grille de mise en page
 	$("body").addGrid(12, {img_path: 'plugins/960grid/img/', z_index:'99',left:'70px'});
+	
+	// fonction(s) qui... fonctionne(nt) y compris après chargement d'un page en ajax
+	// http://www.mail-archive.com/spip-zone@rezo.net/msg08173.html
+	initInlineForms();
+	onAjaxLoad(initInlineForms);
+	
+	
 
 	// navigation : menus "drop-down"
 	$("#nav").each(function(){
@@ -246,3 +253,29 @@ $.fn.jQcaroussel = function () {
 		})
 	});
 };
+
+/**
+ * Inline Forms :
+ * label dans les champs de saisie
+ * légèrement adapté à partir de http://www.zurb.com/playground/inline-form-labels
+ */
+
+var initInlineForms = function() {
+	$(".formulaire_spip .text, .formulaire_spip .password").each(function () {
+		if($(this).val() !== "") {
+			$(this).parent().find("label").addClass("has-text");
+		}
+		$(this).focus(function () {
+			$(this).parent().find("label").addClass("focus");
+		});
+		$(this).keypress(function () {
+			$(this).parent().find("label").addClass("has-text").removeClass("focus");
+		});
+		$(this).blur(function () {
+			if($(this).val() == "") {
+				$(this).parent().find("label").removeClass("has-text").removeClass("focus");
+			}
+		});
+	});
+}
+

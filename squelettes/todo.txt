@@ -9,3 +9,6 @@ TODO refaire icone spip-out
 TODO réduire le nombre de js importés (270 ko pour le moment, c'est beaucoup) ou voir pour compresser les fichiers dès le départ et pas seulement via spip
 TODO ajouter les pages uniques ????????????
 TODO styles d'impression
+
+
+TODO mise en forme du formulaire. décider si utiliser plugin ma lettre ou pas (on se contente de l'envoi de nouveautés via abomailman ?)

@@ -10,10 +10,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'_articles_lies' => 'articles li&eacute;s',
 	'articles_lies' => 'Articles li&eacute;s',
 	'_au' => 'au',
-	
+
 	// C
 	'choix_langue' => 'Choix de la langue',
-	
+
 	// D
 	'dans_l' => 'Dans l&#x27;', // pour le titre "Dans l'agenda de la CFCPI"
 	'de_la_cfcpi' => 'de la CFCPI',
@@ -24,7 +24,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// E
 	'en_savoir_plus' => 'En savoir plus',
-	
+
 	// F
 	'fichier' => 'Fichier',
 	'fonction_bureau' => 'Fonction au Bureau de la CFCPI',
@@ -41,6 +41,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'info_les_membres' => 'Les membres de la CFCPI',
 	'info_membres' => 'Membres de la CFCPI',
 	'info_texte_message' => 'Texte de votre message',
+	'inscription_lettres_legende' => 'Abonnement &agrave; notre lettre d&#x27;informations',
 	'item' => '&eacute;lement',
 	'items' => '&eacute;lements',
 
@@ -66,7 +67,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// O
 	'ou' => 'O&ugrave;&nbsp;?',
-	
+
 	// P
 	'page' => 'Page',
 	'par_motcle' => 'Par mot-cl&eacute;',
@@ -77,7 +78,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// Q
 	'quand' => 'Quand&nbsp;?',
-	
+
 	// R
 	'recherche_un_article' => '1 article disponible',
 	'recherche_deux_articles' => '@nb@ articles disponibles',
