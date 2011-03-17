@@ -1093,7 +1093,7 @@ input, select, textarea {
 
 /* habillage formulaire_cfcpi (formulaires petition, ecrire_auteur, login) */
 .formulaire_cfcpi {
-	background: #280000 url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
+	background: #280000 url('../img/background-rayures-noir_rouge-degrade.png') repeat-x left top;
 	padding: 1.5em 2px 0;
 	border-radius: 2px 0;
 	-webkit-border-top-left-radius: 2px;
@@ -1197,7 +1197,7 @@ input, select, textarea {
 
 	#formulaire_abomailman .boutons input { }
 
-				.formulaire_spip li.erreur .erreur_message {
+				#formulaire_abomailman .formulaire_spip li.erreur .erreur_message {
 					font-size: 12px; line-height: 18px;
 					padding-right: 5px ;
 					color: #c30;
