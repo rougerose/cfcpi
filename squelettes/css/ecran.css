@@ -215,7 +215,7 @@ html { font-size: 100.01%; /* pour IE */ }
 body { font: 12px/18px Georgia, "Times New Roman", Times, serif; color: #3e0000; }
 
 /* Titraille */
-h1,h2,h3,h4,h5,h6, #nav ul li, #navigation, .surtitre, .soustitre  { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; }
+h1,h2,h3,h4,h5,h6, #nav ul li, #navigation, .surtitre, .soustitre  { font-family: "MS500", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; }
 h1 { font-size: 30px; line-height: 36px; margin: 0 0 0; }
 h2 { font-size: 24px; line-height: 18px; margin: 36px 0 18px; }
 h3 { font-size: 20px; line-height: 18px; margin: 36px 0 18px; }
@@ -289,7 +289,7 @@ table.spip {
 /*  Pagination							*/
 /* ------------------------------------ */
 p.pagination {
-	font: 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right; color: ;
+	font: 12px/14px "MS500","Helvetica Neue", Helvetica, Arial, sans-serif; text-align: right; color: ;
 	margin: 0 0 18px; padding-top: 4px; }
 p.pagination.haut { margin-bottom: 18px; }
 p.pagination.bas { margin-bottom: 36px; }
@@ -407,10 +407,10 @@ p.pagination.bas { margin-bottom: 36px; }
 				#navigation li a:hover {
 					color: #80c;
 					text-decoration: none;
-					background: url(../img/navigation-locale-hover-active.png) no-repeat left center; }
+					background: url('../img/navigation-locale-hover-active.png') no-repeat left center; }
 			#navigation li.on > a {
 				color: #600099;
-				background: url(../img/navigation-locale-hover-active.png) no-repeat left center; }
+				background: url('../img/navigation-locale-hover-active.png') no-repeat left center; }
 				#navigation li.on > a span { border-bottom-color: #600099; }
 				#navigation li li > a { padding-left: 24px; }
 					#navigation li li li > a { padding-left: 28px; }
@@ -431,13 +431,13 @@ p.pagination.bas { margin-bottom: 36px; }
 	margin: 0 0 18px; padding: 6px 0; }
 
 .quiSommesNous {
-	background: #280000 url(../img/background-rayures-noir_rouge-degrade.png) repeat-x left top;
+	background: #280000 url('../img/background-rayures-noir_rouge-degrade.png') repeat-x left top;
 	margin-bottom: 36px; padding-top: 18px; }
 	.quiSommesNous > div { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #fff; margin: 0 3px; padding: 9px 5px 0 10px; }
 		.quiSommesNous h3 { margin: 0 0 18px 13px; }
 			.quiSommesNous h3 a { color: #fff; }
 		.quiSommesNous p { font-size: 12px; text-align: left; }
-	.quiSommesNous ul.liens { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; border-bottom: 1px dotted #ccc; padding-bottom: 8px; }
+	.quiSommesNous ul.liens { font-family: "MS500", "Helvetica Neue", Helvetica, Arial, sans-serif; border-bottom: 1px dotted #ccc; padding-bottom: 8px; }
 		.quiSommesNous ul.liens li {
 			background: url(../puce.gif) no-repeat left center;
 			padding-left: 14px; }
@@ -1156,7 +1156,7 @@ input, select, textarea {
 /* formulaire abomailman */
 #formulaire_abomailman legend {
 	background-color: transparent;
-	font: normal 14px "Museo Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: normal 14px "MS500","Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #8000cc;
 	border-bottom: 1px solid #600099;
 	display: block; width: 460px;
@@ -1232,7 +1232,7 @@ input, select, textarea {
 			border-bottom: 1px solid #600099;
 			margin: 0 0 4px; padding: 0 0 5px; }
 	#pied li {
-		font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: "MS500", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		line-height: 18px;
 		border-bottom: 1px dotted #3e0063;
 		margin-bottom: 5px; padding-bottom: 4px; }
@@ -1243,7 +1243,7 @@ input, select, textarea {
 		#pied .pied-news li {  }
 	#pied .pied-cfcpi { width: 380px; }
 	#pied .pied-cfcpi .vcard > div { margin-bottom: 1em; }
-	#pied .pied-cfcpi .vcard a.url { font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	#pied .pied-cfcpi .vcard a.url { font-family: "MS500", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 	#pied .pied-cfcpi .vcard .adr { float: left; width: 140px; }
 	#pied .pied-cfcpi .vcard p { margin-bottom: 0; }
 	#pied .pied-cfcpi .apropos {
@@ -1267,11 +1267,12 @@ input, select, textarea {
 			padding-left: 30px; }
 	#pied .utile { width: 140px; }
 	#pied .logo-pied {
-		font-family: "Museo Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: "MS500", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		line-height: 22px;
 		margin-bottom: 0; margin-right: 20px;
 		text-align: left; }
 	#pied .signature { font-size: 10px; margin-top: 2em; }
+		#pied .signature a { color: #fff; }
 		#pied .logo-pied img { vertical-align: top; }
 
 
