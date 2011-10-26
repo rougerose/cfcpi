@@ -4,7 +4,7 @@
 	[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
 	<h1 class="h1 #EDIT{titre}">#TITRE</h1>
 	[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
-	
+
 	<p class="info-publi">
 		<:publie_le:> <abbr class="published" title="[(#DATE|date_iso)]">[(#DATE|affdate)]</abbr>
 	</p>
@@ -17,12 +17,12 @@
 		[<div class="#EDIT{chapo} chapo">(#CHAPO|image_reduire{500,0})</div>]
 		[<div class="#EDIT{texte} texte">(#TEXTE|image_reduire{500,0})</div>]
 	</div>
-	
+
 	<BOUCLE_test_article_bureau(CONDITION){si #ID_ARTICLE|=={56}}>
 	<INCLURE{fond=inclure/article-membres_contenu,env,ajax}>
 	</BOUCLE_test_article_bureau>
 
-	<BOUCLE_test_article_membres(CONDITION){si #ID_ARTICLE|=={305}}>
+	<BOUCLE_test_article_membres(CONDITION){si #ID_ARTICLE|=={616}}>
 	<INCLURE{fond=inclure/article-membres_contenu,env,ajax}>
 	</BOUCLE_test_article_membres>
 
