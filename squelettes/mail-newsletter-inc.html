@@ -1,0 +1,25 @@
+#CACHE{0}
+<h3>Le contenu de la newsletter au format html est disponible ci-dessous, veuillez le copier, puis le coller dans le mail à envoyer</h3>
+
+<textarea name="Name" rows="30" cols="80" wrap="virtual">
+  <div class="body" style="background: #fff; color: #ccc;font-family: Helvetica, Arial, Verdana,sans-serif; font-size: 1em; text-align: center; margin:0; padding:0">
+	<div class="conteneur" style="width: 500px; background: #fff;color: #000;text-align: left;margin: 2em auto;">
+	<h1 style="font-size: 1.8em; text-align:center">[(#NOM_SITE_SPIP|entites_html)]</h1>  
+	<h2 style="font-size:1.5em; background-color: #306; color:#fff; padding: 5px;">La lettre d'informations num&eacute;ro XX</h2>
+	 
+	 <B_contenu>
+	 <div style="margin:3em 0 0;">
+	   <BOUCLE_contenu(MOTS){id_groupe=7}{par num titre, titre}>
+   	 <h2 style="font-size:1.5em; color: #7f0072; margin:1em 0; border-bottom:1px solid #ccc;">[(#TITRE|supprimer_numero|entites_html)]</h2>
+   	 <BOUCLE_articles_contenu(ARTICLES){id_mot}{id_mot=#ENV{id_mot}}{par num titre, titre}>
+   	   <h3 id="sommaire#ID_ARTICLE" style="font-size:1.2em; margin:1em 0 0;">[(#TITRE|supprimer_numero|entites_html)]</h3>
+   	   <div style="margin:0 10px 0;">
+   	     [(#INTRODUCTION|paragrapher|entites_html)]
+   	     <p style="margin:0 0 2em"><a href="[(#URL_ARTICLE|url_absolue)]">Lire l'article entier</a></p>
+   	   </div>
+   	  </BOUCLE_articles_contenu>
+   	  </BOUCLE_contenu>
+   	</div>
+   	  </B_contenu>
+	  <//B_contenu>
+</textarea>

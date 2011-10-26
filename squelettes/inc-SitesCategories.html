@@ -1,0 +1,9 @@
+<B_categories>
+<div class="articlesRubrique">
+  [<p>(#PAGINATION)</p>]
+  <BOUCLE_categories(SITES){id_mot}{par num nom_site, nom_site}{pagination}>
+  <h2><a href="[(#ID_SYNDIC|generer_url_site)]" title="consulter les informations relatives &agrave; ce site">[(#NOM_SITE|supprimer_numero)]</a></h2>
+  <p class="descriptif">[(#DESCRIPTIF|PtoBR)]&nbsp;<a href="[(#ID_SYNDIC|generer_url_site)]" title="lire la suite" class="suite">lire la suite</a></p>  
+  </BOUCLE_categories>
+</div>
+</B_categories>

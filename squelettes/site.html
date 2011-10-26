@@ -1,0 +1,137 @@
+#CACHE{24*3600}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+  <BOUCLE_principale(SITES){id_syndic}>
+	<title>[(#NOM_SITE_SPIP|textebrut)] : [(#TITRE|supprimer_numero|textebrut)]</title>
+	[<meta name="description" content="(#DESCRIPTIF|textebrut)" />]
+	<INCLURE{fond=inc-head}{lang}>
+
+</head>
+
+<body id="articleStandard">
+  <div id="enveloppe">
+    <div id="debut">
+      &nbsp;
+    </div>
+    <div id="entete">
+      <a href="." title="retour &agrave; la page d'accueil" id="logo" class="sansBordure" style="height:[(#LOGO_SITE_SPIP||hauteur)]; width:[(#LOGO_SITE_SPIP||largeur)];">[(#NOM_SITE_SPIP)]</a>
+      <div id="navigation">
+        <ul id="menuPrincipal">
+          <li class="off"><a href=".">Accueil</a></li>
+          <INCLURE{fond=inc-menu}{id_rubrique}>
+        </ul>
+      </div>
+    </div><!-- fin entete -->
+    <div id="enveloppeContenu">
+      <div id="contenu">
+        <INCLURE{fond=inc-fil-site}{id_rubrique}{id_syndic}>
+        <div id="colonnePrincipale">
+          
+          
+          <h1>[(#NOM_SITE|supprimer_numero)]</h1>                    
+          
+          
+          <div class="texte">
+            [[<div class="logo">(#LOGO_SITE||image_reduire{100,0})</div>](#DESCRIPTIF|paragrapher)]
+            [<h2 class="spip">Site web</h2>
+            <p class="spip"><a href="#URL_SITE">(#URL_SITE)</a></p>]
+            <B_syndication>
+            <h3 class="spip">Les derni&egrave;res informations publi&eacute;es sur ce site</h3>
+            <dl>
+              <BOUCLE_syndication(SYNDIC_ARTICLES){id_syndic}{par date}{inverse}{0,10}>
+              [<dt><a href="#URL_ARTICLE">(#TITRE)</a></dt>]
+              <dd>[(#DESCRIPTIF) &mdash; ][<a href="#URL_ARTICLE">(#URL_ARTICLE)</a>]</dd>
+              </BOUCLE_syndication>
+            </dl>
+            </B_syndication>
+          </div>
+          [<div class="notes">
+            <h3>Notes</h3>
+            (#NOTES)
+          </div>]
+
+          <div class="rien"></div>
+          
+        </div><!-- fin colonnePrincipale -->
+        
+        <div id="colonneLaterale">
+          
+          <div class="presentationRubrique">
+            <INCLURE{fond=inc-hierarchie}{id_rubrique}>            
+          </div>
+          
+          <B_site_utile>
+          <div class="presentation">
+            <h2>Liens utiles</h2>
+            <form action="spip.php" method="get" class="selecteur">
+              <input name='rubrique' value='27' type='hidden' />
+              <select name="id_mot" id="mots">
+                <option value="tous">Toutes les cat&eacute;gories</option>
+                <option value="">---</option>
+                <BOUCLE_site_utile(MOTS){id_groupe=2}{par num titre, titre}>
+                <option value="#ID_MOT"[(#ENV{id_mot}|=={#ID_MOT}|?{'selected',''})]>[(#TITRE|supprimer_numero)]</option>
+                </BOUCLE_site_utile>
+              </select>
+              <input type="submit" value="Afficher &rarr;" class="bouton" />
+            </form>
+          </div>
+          </B_site_utile>
+          
+          
+          
+          <B_themes>
+          <div class="presentation">
+            <h2>Th&egrave;mes &amp; mots-cl&eacute;s</h2>
+            <ul>
+              <BOUCLE_themes(MOTS){id_syndic}{id_groupe!=4}{id_groupe!=1}>
+              <li>[<a href="#URL_MOT" title="consulter la page relative au th&egrave;me [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</li>
+              </BOUCLE_themes>
+            </ul>
+          </div>
+          </B_themes>
+          
+          <div class="presentationRubrique">
+            #FORMULAIRE_RECHERCHE            
+          </div>
+          
+          <B_lettre_info> 
+          <div class="presentationRubrique">
+            <BOUCLE_lettre_info(RUBRIQUES){id_rubrique=10}{exclus}>
+            <h2>[(#TITRE|supprimer_numero)]</h2>
+            <p class="descriptif">[(#DESCRIPTIF)]&nbsp;<a href="#URL_RUBRIQUE" title="s'inscrire &agrave; la lettre" class="suite">s'inscrire &agrave; la lettre</a></p>
+            </BOUCLE_lettre_info>            
+          </div>
+          </B_lettre_info>
+          
+          <B_artActualites>
+          <div class="presentationRubrique">
+            <BOUCLE_artActualites(ARTICLES){id_rubrique}{titre_mot=sommaire}>
+            <h3>[<a href="#URL_ARTICLE" title="lire l'article">(#TITRE|supprimer_numero)</a>]</h3>
+            <p class="descriptif">#DESCRIPTIF&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></p>
+            </BOUCLE_artActualites>
+            </div>
+            </B_artActualites>
+            <div class="rien"></div>
+          </div><!-- fin colonneLaterale -->
+        
+        <div class="rien"></div>
+        
+        <INCLURE{fond=inc-piedPage}>
+          
+      </div><!-- fin contenu -->
+        
+    </div><!-- fin enveloppeContenu -->
+      
+  </div><!-- fin enveloppe -->
+  <?php  
+   define("_BBC_PAGE_NAME", "site#ID_SYNDIC");  
+   define("_BBCLONE_DIR", "bbclone/");  
+   define("COUNTER", _BBCLONE_DIR."mark_page.php");  
+   if (is_readable(COUNTER)) include_once(COUNTER);  
+   ?>
+  </BOUCLE_principale>
+</body>
+</html>

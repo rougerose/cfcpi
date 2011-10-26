@@ -1,0 +1,133 @@
+#CACHE{24*3600}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+  <BOUCLE_principale(MOTS){id_mot}>
+	<title>[(#NOM_SITE_SPIP|textebrut)] : [(#TITRE|supprimer_numero|textebrut)]</title>
+	[<meta name="description" content="(#DESCRIPTIF|textebrut)" />]
+	<INCLURE{fond=inc-head}{lang}>
+
+</head>
+
+<body id="articleStandard">
+  <div id="enveloppe">
+    <div id="debut">
+      &nbsp;
+    </div>
+    <div id="entete">
+      <a href="." title="retour &agrave; la page d'accueil" id="logo" class="sansBordure" style="height:[(#LOGO_SITE_SPIP||hauteur)]; width:[(#LOGO_SITE_SPIP||largeur)];">[(#NOM_SITE_SPIP)]</a>
+      <div id="navigation">
+        <ul id="menuPrincipal">
+          <li class="off"><a href="/">Accueil</a></li>
+          <INCLURE{fond=inc-menu}>
+        </ul>
+      </div>
+    </div><!-- fin entete -->
+    <div id="enveloppeContenu">
+      <div id="contenu">
+        <INCLURE{fond=inc-fil-mot}{id_mot}>
+        <div id="colonnePrincipale">
+          <h1>[(#TITRE|supprimer_numero)]</h1>                    
+          <div class="texte">
+            [(#DESCRIPTIF|paragrapher)]
+            <B_articles>
+            <h2 class="spip">Les articles li&eacute;s</h2>
+            [<p class="paginer">(#PAGINATION{page})</p>]
+            <dl>
+              <BOUCLE_articles(ARTICLES){id_mot}{par date}{inverse}{pagination}>
+              [<dt><a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a></dt>]
+              <dd>[(#DESCRIPTIF)&nbsp;]<a href="#URL_ARTICLE" title="lire la suite" class="suite">lire la suite</a></dd>
+              </BOUCLE_articles>
+            </dl>
+            </B_articles>
+            
+            <B_rubriques>
+            <h2 class="spip">Les rubriques li&eacute;es</h2>
+            [<p class="paginer">(#PAGINATION{page})</p>]
+            <dl>
+              <BOUCLE_rubriques(RUBRIQUES){id_mot}{par titre}{pagination}>
+              [<dt><a href="#URL_RUBRIQUE">(#TITRE|supprimer_numero)</a></dt>]
+              <dd>[(#DESCRIPTIF)&nbsp;]<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></dd>
+              </BOUCLE_rubriques>
+            </dl>
+            </B_rubriques>
+            
+            <B_sites>
+            <h2 class="spip">Les sites internet li&eacute;s</h2>
+            [<p class="paginer">(#PAGINATION{page})</p>]
+            <dl>
+              <BOUCLE_sites(SITES){id_mot}{par nom_site}{pagination}>
+              [<dt><a href="[(#ID_SYNDIC|generer_url_site)]">(#NOM_SITE|supprimer_numero)</a></dt>]
+              <dd>[(#DESCRIPTIF)&nbsp;]<a href="[(#ID_SYNDIC|generer_url_site)]" title="lire la suite" class="suite">lire la suite</a></dd>
+              </BOUCLE_sites>
+            </dl>
+            </B_sites>
+            
+          </div>
+          [<div class="notes">
+            <h3>Notes</h3>
+            (#NOTES)
+          </div>]
+
+          <div class="rien"></div>
+          
+        </div><!-- fin colonnePrincipale -->
+        
+        <div id="colonneLaterale">
+          
+          <div class="presentationRubrique">
+            <h2>Vous consultez le th&egrave;me [<em>(#TITRE|supprimer_numero)</em>]</h2>
+            <ul id="hierarchie">
+              	<li class="on"><a href="." title="accueil" class="on">Accueil</a>
+              		<ul>
+              		  <li class="on"><a href="#URL_MOT" title="[(#TITRE|supprimer_numero)]" class="on">[(#TITRE|supprimer_numero)]</a>
+              			</li>
+              		</ul>
+              	</li>
+            </ul>            
+          </div>
+          
+          <div class="presentationRubrique">
+            #FORMULAIRE_RECHERCHE            
+          </div>
+          
+          <B_lettre_info> 
+          <div class="presentationRubrique">
+            <BOUCLE_lettre_info(RUBRIQUES){id_rubrique=10}{exclus}>
+            <h2>[(#TITRE|supprimer_numero)]</h2>
+            <p class="descriptif">[(#DESCRIPTIF)]&nbsp;<a href="#URL_RUBRIQUE" title="s'inscrire &agrave; la lettre" class="suite">s'inscrire &agrave; la lettre</a></p>
+            </BOUCLE_lettre_info>            
+          </div>
+          </B_lettre_info>
+          
+          <B_artActualites>
+          <div class="presentationRubrique">
+            <BOUCLE_artActualites(ARTICLES){id_rubrique}{titre_mot=sommaire}>
+            <h3>[<a href="#URL_ARTICLE" title="lire l'article">(#TITRE|supprimer_numero)</a>]</h3>
+            <p class="descriptif">#DESCRIPTIF&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></p>
+            </BOUCLE_artActualites>
+            </div>
+            </B_artActualites>
+            <div class="rien"></div>
+          </div><!-- fin colonneLaterale -->
+        
+        <div class="rien"></div>
+        
+        <INCLURE{fond=inc-piedPage}>
+          
+      </div><!-- fin contenu -->
+        
+    </div><!-- fin enveloppeContenu -->
+      
+  </div><!-- fin enveloppe -->
+  <?php  
+   define("_BBC_PAGE_NAME", "mot-cle#ID_MOT");  
+   define("_BBCLONE_DIR", "bbclone/");  
+   define("COUNTER", _BBCLONE_DIR."mark_page.php");  
+   if (is_readable(COUNTER)) include_once(COUNTER);  
+   ?>
+  </BOUCLE_principale>
+</body>
+</html>

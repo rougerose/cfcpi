@@ -1,0 +1,34 @@
+#enveloppe {
+    height: 100%;
+}
+
+#enveloppeContenu {
+	position: absolute;
+	top: 90px;
+	top:auto;
+	left: 30px;
+	margin: 0;
+	padding-top: 15px;
+	padding-top:0;
+	z-index: 1;
+}
+
+#contenu {
+	background-image: url(../base_images/fondBlancOmbreGauche.gif);
+}
+
+#navigation ul {
+	height: 1em;
+}
+
+.adhesion div {
+	background: #8bd200 url(../base_images/degrade-adhesion.gif) repeat-x center top;
+}
+
+#hierarchie li {
+	background-image: url(../base_images/fleche-off.gif);
+}
+
+#hierarchie li.on {
+	background-image: url(../base_images/fleche-on.gif);
+}

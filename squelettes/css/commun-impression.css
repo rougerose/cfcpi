@@ -1,0 +1,36 @@
+body {
+	background-color: white;
+	font-size: 12pt;
+	color: black;
+}
+
+#enveloppeContenu, #colonnePrincipale {
+	width: auto;
+	margin: 0 5%;
+	padding: 0;
+	float: none !important;
+}
+
+/* #colonneLaterale {
+	display: none;
+}*/
+
+#entete, #navigation {
+	display: none;
+}
+
+a:link, a:visited {
+   color: #520;
+   background: transparent;
+   font-weight: bold;
+   text-decoration: underline;
+}
+
+a img {
+	border: 0;
+}
+
+#colonnePrincipale a:link:after, #colonnePrincipale a:visited:after {
+   content: " (" attr(href) ") ";
+   font-size: 90%;
+}

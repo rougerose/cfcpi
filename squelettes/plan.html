@@ -1,0 +1,107 @@
+#CACHE{72*3600}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+	<title>[(#NOM_SITE_SPIP|textebrut)] : plan du site</title>
+	<INCLURE{fond=inc-head}{lang}>
+
+</head>
+
+<body id="rubrique" class="standard">
+  <div id="enveloppe">
+    <div id="debut">
+      &nbsp;
+    </div>
+    <div id="entete">
+      <a href="." title="retour &agrave; la page d'accueil" id="logo" class="sansBordure" style="height:[(#LOGO_SITE_SPIP||hauteur)]; width:[(#LOGO_SITE_SPIP||largeur)];">[(#NOM_SITE_SPIP)]</a>
+      <div id="navigation">
+        <ul id="menuPrincipal">
+          <li class="off"><a href=".">Accueil</a></li>
+          <INCLURE{fond=inc-menu}>
+        </ul>
+      </div>
+    </div><!-- fin entete -->
+    <div id="enveloppeContenu">
+      <div id="contenu">
+        <div id="fil">
+          <p>&raquo; <a href="." title="consulter la page d'accueil">Accueil</a> &raquo; <a href="#URL_PAGE{plan}" title="vous consultez le plan du site" class="filOn">Plan</a></p>
+        </div>
+        <div id="colonnePrincipale" class="plan">
+          <h1>Plan du site</h1>
+          
+          <B_secteurs>
+          <ul>
+            <BOUCLE_secteurs(RUBRIQUES) {racine} {par num titre, titre}>
+            <li><a href="#URL_RUBRIQUE" title="consulter la rubrique [(#TITRE|supprimer_numero|textebrut)]">[(#TITRE|supprimer_numero)]</a>
+                          [<p class="descriptif">(#DESCRIPTIF|PtoBR)</p>]
+              <B_rubriques>
+              <ul>
+                <BOUCLE_rubriques(RUBRIQUES){id_parent}{par num titre, titre}>
+                <li><a href="#URL_RUBRIQUE" title="consulter la rubrique [(#TITRE|supprimer_numero|textebrut)]">[(#TITRE|supprimer_numero)]</a>
+                  [<p class="descriptif">(#DESCRIPTIF|PtoBR)</p>]
+                <BOUCLE_sous_rubriques(BOUCLE_rubriques)></BOUCLE_sous_rubriques>
+                </li>
+                </BOUCLE_rubriques>
+              </ul>
+              </B_rubriques>
+            </li>
+            </BOUCLE_secteurs>
+          </ul>
+          </B_secteurs>
+                    
+          <div class="rien"></div>
+          
+        </div><!-- fin colonnePrincipale -->
+        
+        <div id="colonneLaterale">
+          
+          <div class="presentationRubrique">
+            <h2>Vous consultez le plan du site</h2>
+            <ul id="hierarchie">
+              	<li class="on"><a href="." title="accueil" class="on">Accueil</a>
+              		<ul>
+              		  <li class="on"><a href="#URL_PAGE{plan}" title="plan du site" class="on">plan</a>
+              			</li>
+              		</ul>
+              	</li>
+            </ul>            
+          </div>
+          
+          <div class="presentationRubrique">
+            #FORMULAIRE_RECHERCHE            
+          </div>
+          
+          <B_lettre_info> 
+          <div class="presentationRubrique">
+            <BOUCLE_lettre_info(RUBRIQUES){id_rubrique=10}{exclus}>
+            <h2>[(#TITRE|supprimer_numero)]</h2>
+            <p class="descriptif">[(#DESCRIPTIF)]&nbsp;<a href="#URL_RUBRIQUE" title="s'inscrire &agrave; la lettre" class="suite">s'inscrire &agrave; la lettre</a></p>
+            </BOUCLE_lettre_info>            
+          </div>
+          </B_lettre_info> 
+
+          
+          
+          <div class="rien"></div>
+          
+        </div><!-- fin colonneLaterale -->
+
+        <div class="rien"></div>
+        
+        <INCLURE{fond=inc-piedPage}>
+          
+      </div><!-- fin contenu -->
+        
+    </div><!-- fin enveloppeContenu -->
+      
+  </div><!-- fin enveloppe -->
+  <?php  
+   define("_BBC_PAGE_NAME", "plan");  
+   define("_BBCLONE_DIR", "bbclone/");  
+   define("COUNTER", _BBCLONE_DIR."mark_page.php");  
+   if (is_readable(COUNTER)) include_once(COUNTER);  
+   ?>
+</body>
+</html>

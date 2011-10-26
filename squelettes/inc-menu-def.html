@@ -1,0 +1,15 @@
+
+          <BOUCLE_navigation(RUBRIQUES){racine}{par num titre, titre}>
+          <li[ class="(#EXPOSE{on,off})"]>[<a href="#URL_RUBRIQUE">(#TITRE|supprimer_numero)</a>]
+            <B_sous_rubriques>
+            <ul class="niveau2">
+              <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
+              <li[ class="(#EXPOSE{on,off})"]><a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a>
+              <BOUCLE_re(BOUCLE_sous_rubriques)></BOUCLE_re>
+              </li>
+              </BOUCLE_sous_rubriques>
+            </ul>
+            </B_sous_rubriques>
+          </li>
+          </BOUCLE_navigation>
+          

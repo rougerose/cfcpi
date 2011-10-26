@@ -1,0 +1,106 @@
+/* @group liens */
+
+a, a:link {
+	border-bottom: none;
+}
+
+/* @end */
+
+/* @group tailles relatives caracteres */
+
+#navigation, #contenu h4, #formulaireListeInfo legend.listeTitre {
+	font-size: 1.25em;
+}
+
+#contenu h1 {
+	font-size: 2em;
+}
+
+#contenu h2, #contenu dt {
+	font-size: 1.5em;
+}
+
+.plan ul {
+	font-size: 1.4em;
+}
+
+
+#contenu h3, #colonneLaterale1 h2, #colonneLaterale2 h2, #contenu #colonneLaterale1 dt, #contenu #colonneLaterale2 dt {
+	font-size: 1.3em;
+}
+
+dd, p.spip, p.auteur, div.texte div.spip, table.spip, p.url, .descriptif, body #contenu ul.spip, body #contenu ol.spip, #dossierSommaire ul, div.presentation ul, #contenu dl.syndication dt, caption, div.formulaire_spip, input,textarea, #formulaireListeInfo legend {
+	font-size: 1.2em;
+}
+
+#colonneLaterale1 .descriptif, #colonneLaterale2 .descriptif, #fil, #hierarchie, #hierarchie ul, dl.syndication dd, #calendar table, select, #piedPage {
+	font-size: 1.1em;
+}
+
+/* @end */
+
+/* @group corrections specifiques à IE */
+
+ul#menuPrincipal ul li {
+	border: 0;
+	margin-bottom: -1px;
+}
+
+*html .nav li li {
+	margin-bottom:-3px;
+}
+*html .nav li li li {
+	margin-bottom:-1px;
+}
+*+html .nav li li {
+	margin-bottom:-3px;
+}
+*+html .nav li li li {
+	margin-bottom:-1px;
+}
+
+#accueil #colonneLaterale #piedPage {
+	width: 210px;}
+
+hr.spip {
+	border: none;
+}
+
+.quiSommesNous {
+	background-image: none;
+}
+
+#piedPage {
+	width: 100%;
+}
+
+
+/* @end */
+
+#listeMembres dt {
+	float: left;
+	width: 50px;
+	margin: 0;
+}
+
+#listeMembres dd {
+	margin-bottom: 2em;
+}
+
+p.paginer {
+	margin-bottom: 1em;
+	font-size:1.1em;
+}
+
+#rubrique.aPropos .quiSommesNous, #articleStandard .quiSommesNous {
+	margin: 2em 0 2em 40px;
+}
+
+#rubrique.aPropos .quiSommesNous p.descriptif, #articleStandard .quiSommesNous p.descriptif {
+	width: inherit;
+	float: none;
+}
+
+.rien {
+	font-size: 0px;
+}

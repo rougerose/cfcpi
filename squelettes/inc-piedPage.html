@@ -1,0 +1,12 @@
+#CACHE{0*3600*7}
+<div id="piedPage">
+  <ul>
+    <li><a href="#URL_PAGE{plan}" title="consulter le plan du site"><img src="squelettes/base_images/icone-plan.png" width="16" height="16" alt="icone plan du site" /> plan du site</a></li>
+    <BOUCLE_contact(ARTICLES){titre_mot=contact}{0,1}>
+    <li><a href="#URL_ARTICLE" title="nous contacter"><img src="squelettes/base_images/icone-contact.png" width="16" height="16" alt="icone nous contacter" /> contact</a></li>
+    </BOUCLE_contact>
+    <li><a href="#URL_PAGE{backend}" title="<:syndiquer_site:>"><img src="squelettes/base_images/icone-rss.png" width="16" height="16" alt="icone fil RSS" /> articles r&eacute;cents &#091; RSS &#093;</a></li>
+  </ul>
+  <div class="rien"></div>
+</div>
+<div class="rien"></div>

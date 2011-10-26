@@ -1,0 +1,199 @@
+#CACHE{24*3600}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+
+<head>
+
+	<title>[(#NOM_SITE_SPIP|textebrut)]</title>
+	[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|textebrut)" />]
+	<meta name="verify-v1" content="JM5DK9vkboerNwJ4j+QrKh+sa9LhGqSw/Vh1pGZpqKA=" />
+	<INCLURE{fond=inc-head}{lang}>
+
+</head>
+
+<body id="accueil">
+  <div id="enveloppe">
+    <div id="debut">
+      &nbsp;
+    </div>
+    <div id="entete">
+      <h1 id="logo" style="height:[(#LOGO_SITE_SPIP||hauteur)]; width:[(#LOGO_SITE_SPIP||largeur)];">[(#NOM_SITE_SPIP)]</h1>
+      <div id="navigation">
+        <ul id="menuPrincipal">
+          <li class="on"><a href=".">Accueil</a></li>
+          <INCLURE{fond=inc-menu}{env}>
+        </ul>
+      </div>
+    </div><!-- fin entete -->
+    <div id="enveloppeContenu">
+      <div id="contenu">
+        <div id="fil">
+          <p>&raquo; <a href="." title="Vous consultez la page d'accueil" class="filOn">Accueil</a></p>
+        </div>
+        <div id="colonnePrincipale">
+
+          <div class="quiSommesNous">
+            <BOUCLE_quiSommesNous(RUBRIQUES){id_rubrique=8}>
+            <h2><a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">[(#TITRE|supprimer_numero)]</a></h2>
+            [<p class="descriptif">(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></p>]
+            <dl>
+              <BOUCLE_qSNsousrubriques(RUBRIQUES){id_parent}{par num titre, titre}>
+              <dt>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</dt>
+              </BOUCLE_qSNsousrubriques>
+            </dl>
+            </BOUCLE_quiSommesNous>
+            <div class="rien"></div>
+          </div><!-- fin quiSommesNous -->
+
+          <B_actu>
+          <div class="presentationRubrique">
+            <h2>Derni&egrave;res actualit&eacute;s</h2>
+            <dl>
+              <BOUCLE_actu(ARTICLES){titre_mot=sommaire}{par date}{inverse}>
+              <dt>[<a href="#URL_ARTICLE" title="consulter l'article [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</dt>
+              [<dd>(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></dd>]
+              </BOUCLE_actu>
+            </dl>
+          </div>
+          </B_actu>
+
+          <B_rubriqueFranceEtCPI>
+          <div class="presentationRubrique">
+            <BOUCLE_rubriqueFranceEtCPI(RUBRIQUES){id_rubrique=1}{titre_mot=sommaire}>
+            <h2>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</h2>
+            [<p class="descriptif">(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></p>]
+            <B_sousrubriquesFranceEtCPI>
+            <dl>
+              <BOUCLE_sousrubriquesFranceEtCPI(RUBRIQUES){id_parent}{titre_mot=sommaire}{par num titre, titre}>
+              <dt>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</dt>
+              [<dd>(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></dd>]
+              </BOUCLE_sousrubriquesFranceEtCPI>
+            </dl>
+            </B_sousrubriquesFranceEtCPI>
+            </BOUCLE_rubriqueFranceEtCPI>
+          </div>
+          </B_rubriqueFranceEtCPI>
+
+
+          <B_rubriqueCPI>
+          <div class="presentationRubrique">
+            <BOUCLE_rubriqueCPI(RUBRIQUES){id_rubrique=16}{titre_mot=sommaire}>
+            <h2>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</h2>
+            [<p class="descriptif">(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></p>]
+            <B_sousrubriquesCPI>
+            <dl>
+              <BOUCLE_sousrubriquesCPI(RUBRIQUES){id_parent}{titre_mot=sommaire}{par num titre, titre}>
+              <dt>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</dt>
+              [<dd class="descriptif">(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></dd>]
+              </BOUCLE_sousrubriquesCPI>
+            </dl>
+            </B_sousrubriquesCPI>
+            </BOUCLE_rubriqueCPI>
+          </div>
+          </B_rubriqueCPI>
+
+
+          <BOUCLE_rubriquesAutre(RUBRIQUES){titre_mot=sommaire rubrique supplementaire}{par num titre, titre}>
+          <div class="presentationRubrique">
+            <h2>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</h2>
+            [<p class="descriptif">(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></p>]
+
+          </div>
+          </BOUCLE_rubriquesAutre>
+
+          <div class="rien"></div>
+        </div> <!-- fin colonnePrincipale -->
+
+        <div id="colonneLaterale">
+
+          <BOUCLE_actualites(RUBRIQUES){id_rubrique=25}{titre_mot=sommaire}{doublons}>
+          <div class="presentationRubrique">
+            <h2>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</h2>
+            <BOUCLE_artActualites(ARTICLES){id_rubrique}{titre_mot=sommaire}>
+            <h3>[<a href="#URL_ARTICLE" title="lire l'article">(#TITRE|supprimer_numero)</a>]</h3>
+            [<p class="descriptif">(#DESCRIPTIF|PtoBR)&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></p>]
+            </BOUCLE_artActualites>
+          </div>
+          </BOUCLE_actualites>
+
+          <BOUCLE_presse(RUBRIQUES){id_rubrique=9}>
+          <div class="presentationRubrique">
+            <h2>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</h2>
+            <B_sousrubriquesPresse>
+            <dl>
+              <BOUCLE_sousrubriquesPresse(RUBRIQUES){id_parent}{par num titre, titre}{doublons}>
+              <dt>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</dt>
+              </BOUCLE_sousrubriquesPresse>
+            </dl>
+            </B_sousrubriquesPresse>
+          </div>
+          </BOUCLE_presse>
+
+
+          <BOUCLE_documentation(RUBRIQUES){id_rubrique=26}>
+          <div class="presentationRubrique">
+            <h2>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</h2>
+            <B_sousrubriquesDocumentation>
+            <dl>
+              <BOUCLE_sousrubriquesDocumentation(RUBRIQUES){id_parent}{par num titre, titre}{doublons}>
+              <dt>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</dt>
+              </BOUCLE_sousrubriquesDocumentation>
+            </dl>
+            </B_sousrubriquesDocumentation>
+          </div>
+          </BOUCLE_documentation>
+
+          <div class="presentationRubrique">
+            #FORMULAIRE_RECHERCHE
+          </div>
+
+          <B_lettre_info>
+          <div class="presentationRubrique">
+            <BOUCLE_lettre_info(RUBRIQUES){id_rubrique=10}{exclus}>
+            <h2>[(#TITRE|supprimer_numero)]</h2>
+            <p class="descriptif">[(#DESCRIPTIF)]&nbsp;<a href="#URL_RUBRIQUE" title="s'inscrire &agrave; la lettre" class="suite">s'inscrire &agrave; la lettre</a></p>
+            </BOUCLE_lettre_info>
+          </div>
+          </B_lettre_info>
+
+          <BOUCLE_liens(RUBRIQUES){id_rubrique=27}{titre_mot=sommaire}>
+          <div class="presentationRubrique">
+            <h2>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</h2>
+            <B_sites>
+            <dl>
+              <BOUCLE_sites(SITES){id_rubrique}{par num nom_site, nom_site}{titre_mot=sommaire}>
+              <dt>[<a href="#URL_SITE" title="consulter le site [&laquo;&nbsp;(#NOM_SITE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#NOM_SITE|supprimer_numero)</a>]</dt>
+              </BOUCLE_sites>
+            </dl>
+            </B_sites>
+          </div>
+          </BOUCLE_liens>
+
+          <INCLURE{fond=inc-piedPage}>
+          <div id="infosSite">
+            <p>site r&eacute;alis&eacute; avec le soutien du Barreau de Paris et du Barreau des Hauts-de-Seine</p>
+            <p>conception graphique<br />&amp; d&eacute;veloppement&nbsp;: christophe le drean</p>
+            <p>site r&eacute;alis&eacute; avec <a href ="www.spip.net">spip</a> #SPIP_VERSION</p>
+          </div>
+
+          <div class="rien"></div>
+
+        </div> <!-- fin colonneLaterale -->
+
+        <div class="rien"></div>
+
+      </div><!-- fin contenu -->
+
+    </div><!-- fin enveloppeContenu -->
+
+  </div><!-- fin enveloppe -->
+  <?php
+   define("_BBC_PAGE_NAME", "accueil");
+   define("_BBCLONE_DIR", "bbclone/");
+   define("COUNTER", _BBCLONE_DIR."mark_page.php");
+   if (is_readable(COUNTER)) include_once(COUNTER);
+   ?>
+</body>
+</html>

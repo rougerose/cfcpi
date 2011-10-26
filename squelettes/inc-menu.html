@@ -1,0 +1,13 @@
+#CACHE{24*3600}
+          <BOUCLE_navigation(RUBRIQUES){racine}{par num titre, titre}>
+          <li[ class="(#EXPOSE)"]>[<a href="#URL_RUBRIQUE">(#TITRE|supprimer_numero)</a>]
+            <B_sous_rubriques_n2>
+            <ul>
+              <BOUCLE_sous_rubriques_n2(RUBRIQUES){id_parent}{par num titre, titre}>
+              <li[ class="(#EXPOSE)"]><a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li>
+              </BOUCLE_sous_rubriques_n2>
+            </ul>
+            </B_sous_rubriques_n2>
+          </li>
+          </BOUCLE_navigation>
+          

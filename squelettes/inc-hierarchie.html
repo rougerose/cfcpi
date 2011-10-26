@@ -1,0 +1,20 @@
+#CACHE{24*3600}
+  <h2>Vous consultez la rubrique</h2>
+  <ul id="hierarchie">
+    <BOUCLE_rub(RUBRIQUES){id_rubrique}>
+    	<BOUCLE_secteurs2(RUBRIQUES){id_secteur}{0,1}>
+    	<li[ class="(#EXPOSE)"]><a href="#URL_RUBRIQUE" title="[(#TITRE|supprimer_numero)]"[ class="(#EXPOSE)"]>[(#TITRE|supprimer_numero)]</a>
+    		<B_sousrub2>
+    		<ul>
+    		  <BOUCLE_sousrub2(RUBRIQUES){id_parent}{par num titre}>
+    		  <li[ class="(#EXPOSE)"]><a href="#URL_RUBRIQUE" title="[(#TITRE|supprimer_numero)]"[ class="(#EXPOSE)"]>[(#TITRE|supprimer_numero)]</a>
+    		    <BOUCLE_sousousrub2(boucle_sousrub2)></BOUCLE_sousousrub2>
+    			</li>
+    			</BOUCLE_sousrub2>
+    		</ul>
+    		</B_sousrub2>
+    	</li>
+    	</BOUCLE_secteurs2>
+     </BOUCLE_rub>
+  </ul>
+  

@@ -1,0 +1,13 @@
+<B_tous>
+<div class="articlesRubrique">
+  [<p>(#PAGINATION)</p>]
+  <BOUCLE_tous(ARTICLES){id_groupe=3}{par num titre, titre}{pagination}>
+  <h2><a href="#URL_ARTICLE" title="consulter">[(#TITRE|supprimer_numero)]</a></h2>
+  <p class="descriptif">[(#DESCRIPTIF|PtoBR)]&nbsp;<a href="#URL_ARTICLE" title="lire la suite" class="suite">lire la suite</a></p>  
+  </BOUCLE_tous>
+</div>
+</B_tous>
+<div class="articlesRubrique">
+  <p class="descriptif">Aucune r&eacute;f&eacute;rence dans cette cat&eacute;gorie</p>
+</div>
+<//B_tous>

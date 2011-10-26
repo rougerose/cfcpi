@@ -1,0 +1,34 @@
+#CACHE{0}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>mail-newsletter</title>
+	
+</head>
+
+<body>
+  
+  <div id="name">
+    <h3>S&eacute;lectionnez la newsletter dans le menu ci-dessous</h3>
+    <form action="spip.php" method="get" class="selecteur">
+      <input name='page' value='mail-newsletter' type='hidden' />
+      <select name="id_mot" id="mots">
+        <option value=""></option>
+        <BOUCLE_mots(MOTS){id_groupe=6}{par num titre, titre}>
+        <option value="#ID_MOT"[(#ENV{id_mot}|=={#ID_MOT}|?{' selected="selected"',''})]>[(#TITRE|supprimer_numero)]</option>
+        </BOUCLE_mots>
+      </select>
+      <input type="submit" value="Afficher &rarr;" class="bouton" />
+    </form>
+  </div>
+
+  [(#ENV{id_mot}|?{' ',''})
+  test
+  <INCLURE{fond=mail-newsletter-inc}{id_mot}>
+]
+</body>
+</html>

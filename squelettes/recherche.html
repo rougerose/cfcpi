@@ -1,0 +1,165 @@
+#CACHE{3600}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+  
+	<title>[(#NOM_SITE_SPIP|textebrut)] : <:info_rechercher:></title>
+
+	<INCLURE{fond=inc-head}{lang}>
+
+</head>
+
+<body id="rubrique" class="standard">
+  <div id="enveloppe">
+    <div id="debut">
+      &nbsp;
+    </div>
+    <div id="entete">
+      <a href="." title="retour &agrave; la page d'accueil" id="logo" class="sansBordure" style="height:[(#LOGO_SITE_SPIP||hauteur)]; width:[(#LOGO_SITE_SPIP||largeur)];">[(#NOM_SITE_SPIP)]</a>
+      <div id="navigation">
+        <ul id="menuPrincipal">
+          <li class="off"><a href=".">Accueil</a></li>
+          <INCLURE{fond=inc-menu}>
+        </ul>
+      </div>
+    </div><!-- fin entete -->
+    <div id="enveloppeContenu">
+      <div id="contenu">
+        <INCLURE{fond=inc-fil-recherche}>
+        <div id="colonnePrincipale" class="recherche">
+          [(#REM) Affichage de l'entete : nombre de resultats trouves]
+        	<BOUCLE_compte_marecherche(INDEX){recherche}{type_table IN articles,rubriques,sites,documents}></BOUCLE_compte_marecherche>
+        		[(#TOTAL_BOUCLE|?{' ',''})
+        			<h1 class="titreRecherche">Votre recherche <span>&laquo;&nbsp;#RECHERCHE&nbsp;&raquo;</span>&nbsp;: #TOTAL_BOUCLE [(#TOTAL_BOUCLE|>{1}|?{r&eacute;sultats,r&eacute;sultat})]</h1>
+        			[<div class="autreRecherche">
+        			  <p class="spip">Vous pouvez essayer &eacute;galement <a href='[(#SELF|parametre_url{'recherche',[(#RECHERCHE|RechercheEtendue_recherche_semblable)]})]'>(#RECHERCHE|RechercheEtendue_recherche_semblable)</a></p>
+        			</div>]
+        		]
+        		[(#TOTAL_BOUCLE|?{'',' '})
+        			<h1 class="titreRecherche">Votre recherche <span>&laquo;&nbsp;#RECHERCHE&nbsp;&raquo;</span>&nbsp;: #TOTAL_BOUCLE <:resultat:></h1>
+        			[<div class="autreRecherche">
+        				<p class="spip">Vous pouvez essayer &eacute;galement <a href='[(#SELF|parametre_url{'recherche',[(#RECHERCHE|RechercheEtendue_recherche_semblable)]})]'>(#RECHERCHE|RechercheEtendue_recherche_semblable)</a></p>
+        			</div>]
+        		]
+        	<//B_compte_marecherche>
+        	
+        	
+        	
+        	[(#REM) Resultats de la recherche pour la page concernee]
+        	<B_marecherche>
+        	[(#ANCRE_PAGINATION)]
+          [<p class="paginer">(#PAGINATION)</p>]
+        	<BOUCLE_marecherche(INDEX){recherche}{!par points}{type_table IN articles,rubriques,sites,documents}{pagination}>
+        	
+        	<BOUCLE_articles(ARTICLES){id_article}>
+        	<h2 class="titreResultat">[(#_marecherche:COMPTEUR_BOUCLE|plus{#ENV{debut}})] - <a href="[(#URL_ARTICLE|parametre_url{'var_recherche',[(#RECHERCHE)]})]">[(#TITRE|supprimer_numero)]</a></h2>
+        	<p class="descriptif">
+        	  [(#REM) concatenation du texte complet, pour creer le resume type google]
+  					[(#REM|RechercheEtendue_google_like_string_raz)]
+  					[(#TITRE|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#SOUSTITRE|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#DESCRIPTIF|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#TEXTE|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#REM) affichage, avec chapeau en alternative si rien de trouve]
+  					[(#RECHERCHE|RechercheEtendue_google_like{[(#CHAPO|attribut_html)]})]
+  				</p>
+  				<p class="url"><a href="[(#URL_ARTICLE|parametre_url{'var_recherche',[(#RECHERCHE)]})]">[(#URL_ARTICLE|url_absolue)]</a></p>
+          </BOUCLE_articles>
+          
+          <BOUCLE_rubriques(RUBRIQUES){id_rubrique}>
+        	<h2 class="titreResultat">[(#_marecherche:COMPTEUR_BOUCLE|plus{#ENV{debut}})] - <a href="[(#URL_RUBRIQUE|parametre_url{'var_recherche',[(#RECHERCHE)]})]">[(#TITRE|supprimer_numero)]</a></h2>
+        	<p class="descriptif">
+        	  [(#REM) concatenation du texte complet, pour creer le resume type google]
+  					[(#REM|RechercheEtendue_google_like_string_raz)]
+  					[(#TITRE|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#DESCRIPTIF|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#TEXTE|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#REM) affichage, avec chapeau en alternative si rien de trouve]
+  				</p>
+  				<p class="url"><a href="[(#URL_RUBRIQUE|parametre_url{'var_recherche',[(#RECHERCHE)]})]">[(#URL_RUBRIQUE|url_absolue)]</a></p>
+          </BOUCLE_rubriques>
+          
+          <BOUCLE_documents(DOCUMENTS){id_document}>
+        	<h2 class="titreResultat">[(#_marecherche:COMPTEUR_BOUCLE|plus{#ENV{debut}})] - <a href="[(#URL_DOCUMENT|parametre_url{'var_recherche',[(#RECHERCHE)]})]">[(#TITRE|supprimer_numero)]</a></h2>
+        	<p class="descriptif">
+        	  [(#REM) concatenation du texte complet, pour creer le resume type google]
+  					[(#TITRE|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#DESCRIPTIF|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#REM) affichage, avec chapeau en alternative si rien de trouve]
+  					[(#RECHERCHE|RechercheEtendue_google_like)]
+  				</p>
+  				<p class="url"><a href="[(#URL_DOCUMENT|parametre_url{'var_recherche',[(#RECHERCHE)]})]">[(#TITRE|supprimer_numero)]</a></p>
+          </BOUCLE_documents>
+          
+          <BOUCLE_sites(SITES){id_syndic}>
+        	<h2 class="titreResultat">[(#_marecherche:COMPTEUR_BOUCLE|plus{#ENV{debut}})] - <a href="[(#ID_SYNDIC|generer_url_site|parametre_url{'var_recherche',[(#RECHERCHE)]})])]">[(#NOM_SITE|supprimer_numero)]</a></h2>
+        	<p class="descriptif">
+        	  [(#REM) concatenation du texte complet, pour creer le resume type google]
+  					[(#NOM_SITE|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#DESCRIPTIF|supprimer_numero|RechercheEtendue_google_like_string)]
+  					[(#REM) affichage, avec chapeau en alternative si rien de trouve]
+  					[(#RECHERCHE|RechercheEtendue_google_like)]
+  				</p>
+  				<p class="url"><a href="[(#ID_SYNDIC|generer_url_site|parametre_url{'var_recherche',[(#RECHERCHE)]})])]">[(#NOM_SITE|supprimer_numero)]</a></p>
+          </BOUCLE_sites>
+          
+          </BOUCLE_marecherche>
+          
+          <div class="rien"></div>
+          
+        </div><!-- fin colonnePrincipale -->
+        
+        <div id="colonneLaterale">
+
+          <div class="presentationRubrique">
+            <h2>Vous consultez la recherche</h2>
+            <ul id="hierarchie">
+              	<li class="on"><a href="." title="accueil" class="on">Accueil</a>
+              		<ul>
+              		  <li class="on"><a href="#URL_PAGE{recherche}" title="recherche" class="on">Recherche</a>
+              			</li>
+              		</ul>
+              	</li>
+            </ul>            
+          </div>
+          
+          <div class="presentationRubrique">
+            #FORMULAIRE_RECHERCHE            
+          </div>
+
+          
+          <B_lettre_info> 
+          <div class="presentationRubrique">
+            <BOUCLE_lettre_info(RUBRIQUES){id_rubrique=10}{exclus}>
+            <h2>[(#TITRE|supprimer_numero)]</h2>
+            <p class="descriptif">[(#DESCRIPTIF)]&nbsp;<a href="#URL_RUBRIQUE" title="s'inscrire &agrave; la lettre" class="suite">s'inscrire &agrave; la lettre</a></p>
+            </BOUCLE_lettre_info>            
+          </div>
+          </B_lettre_info> 
+
+          
+          
+          <div class="rien"></div>
+          
+        </div><!-- fin colonneLaterale -->
+
+        <div class="rien"></div>
+        
+        <INCLURE{fond=inc-piedPage}>
+          
+      </div><!-- fin contenu -->
+        
+    </div><!-- fin enveloppeContenu -->
+      
+  </div><!-- fin enveloppe -->
+  <?php  
+   define("_BBC_PAGE_NAME", "recherche");  
+   define("_BBCLONE_DIR", "bbclone/");  
+   define("COUNTER", _BBCLONE_DIR."mark_page.php");  
+   if (is_readable(COUNTER)) include_once(COUNTER);  
+   ?>
+
+</body>
+</html>

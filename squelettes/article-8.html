@@ -1,0 +1,194 @@
+#CACHE{24*3600}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+  <BOUCLE_principale(ARTICLES){id_article}>
+	<title>[(#NOM_SITE_SPIP|textebrut)] : [(#TITRE|supprimer_numero|textebrut)]</title>
+	[<meta name="description" content="(#DESCRIPTIF|textebrut)" />]
+	<INCLURE{fond=inc-head}{lang}>
+
+</head>
+
+<body id="articleStandard">
+  <div id="enveloppe">
+    <div id="debut">
+      &nbsp;
+    </div>
+    <div id="entete">
+      <a href="." title="retour &agrave; la page d'accueil" id="logo" class="sansBordure" style="height:[(#LOGO_SITE_SPIP||hauteur)]; width:[(#LOGO_SITE_SPIP||largeur)];">[(#NOM_SITE_SPIP)]</a>
+      <div id="navigation">
+        <ul id="menuPrincipal">
+          <li class="off"><a href=".">Accueil</a></li>
+          <INCLURE{fond=inc-menu}{id_rubrique}>
+        </ul>
+      </div>
+    </div><!-- fin entete -->
+    <div id="enveloppeContenu">
+      <div id="contenu">
+        <INCLURE{fond=inc-fil}{id_rubrique}{id_article}>
+        <div id="colonnePrincipale">
+          [<div class="surtitre">(#SURTITRE)</div>]
+          <h1>[(#TITRE|supprimer_numero)]</h1>
+          [<div class="soustitre">(#SOUSTITRE)</div>]
+
+          [<p class="auteur">par (#LESAUTEURS)</p>]
+          
+          [<div class="chapo">
+            (#CHAPO|paragrapher)
+          </div>]
+          
+          [<div class="texte">
+            (#TEXTE|paragrapher|image_reduire{440,0})
+          </div>]
+          
+          [<div class="postscriptum">
+            (#PS|paragrapher)
+          </div>]
+          
+          [<div class="notes">
+            <h3>Notes</h3>
+            (#NOTES)
+          </div>]
+
+          <div class="rien"></div>
+          
+        </div><!-- fin colonnePrincipale -->
+        
+        <div id="colonneLaterale">
+          
+          <div class="presentationRubrique">
+            <INCLURE{fond=inc-hierarchie}{id_rubrique}>            
+          </div>
+          
+          <B_mot_dossier>
+          <div id="dossierSommaire">
+            <BOUCLE_mot_dossier(MOTS){id_article}{type=@dossiers}{0,1}>
+            <h2>Dossier&nbsp;:[ (#TITRE|supprimer_numero)]</h2>
+            <ul>
+              <BOUCLE_articles_dossier(ARTICLES){id_mot}{par num titre, titre}>
+              <li>[<a href="#URL_ARTICLE" title="lire l'article [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</li>
+              </BOUCLE_articles_dossier>
+            </ul>
+            </BOUCLE_mot_dossier>
+          </div>
+          </B_mot_dossier>
+          
+          <B_newsletter>
+          <div id="newsletterSommaire">
+            <BOUCLE_newsletter(MOTS){id_article}{id_groupe=6}{0,1}>
+            <h2>[(#TITRE|supprimer_numero)]</h2>
+            <dl>
+              <BOUCLE_articles_newsletter(ARTICLES){id_mot}{id_groupe=7}>
+              <BOUCLE_rubriques_newsletter(MOTS){id_article}{id_groupe=7}>
+              [<dt>(#TITRE|supprimer_numero|unique)</dt>]
+              </BOUCLE_rubriques_newsletter>
+              [<dd><#EXPOSE{span,a href="#URL_ARTICLE" title="lire l'article"}>(#TITRE|supprimer_numero)</#EXPOSE{span,a}></dd>]
+              </BOUCLE_articles_newsletter>
+            </dl>
+            </BOUCLE_newsletter>
+          </div>
+          </B_newsletter>
+          
+          <B_themes>
+          <div class="presentation">
+            <h2>Th&egrave;mes &amp; mots-cl&eacute;s</h2>
+            <ul>
+              <BOUCLE_themes(MOTS){id_article}{id_groupe!=4}{id_groupe!=1}>
+              <li>[<a href="#URL_MOT" title="consulter la page relative au th&egrave;me [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</li>
+              </BOUCLE_themes>
+            </ul>
+          </div>
+          </B_themes>
+          
+          <B_doc_lies>
+          <div id="documents" class="presentation">
+            <h2>Documents &agrave; t&eacute;l&eacute;charger</h2>
+            <dl><BOUCLE_doc_lies(DOCUMENTS){id_article}{mode=document}{extension!==jpg|png|gif}>
+              <dt>[<a href="#URL_DOCUMENT">(#TITRE|supprimer_numero)</a>]</dt>
+              <dd>[<a href="#URL_DOCUMENT">(#LOGO_DOCUMENT||reduire_image{24,0}|inserer_attribut{alt,[(#TITRE|supprimer_numero)]})</a>][(#DESCRIPTIF)][ ((#TYPE_DOCUMENT)][&nbsp;; (#TAILLE|taille_en_octets))]</dd>
+              <dd class="rien"> </dd></BOUCLE_doc_lies>
+              </dl>
+          </div>
+          </B_doc_lies>
+          
+          <B_articles_adhesion>
+          <div class="adhesion">
+            <BOUCLE_articles_adhesion(ARTICLES){id_rubrique=19}{par num titre, titre}{exclus}>
+            <div>
+              <BOUCLE_devenir_membres(RUBRIQUES){id_rubrique=19}>
+              <h2>[<a href="#URL_RUBRIQUE" title="consulter la rubrique [&laquo;&nbsp;(#TITRE|supprimer_numero|textebrut)&nbsp;&raquo;]">(#TITRE|supprimer_numero)</a>]</h2>
+              </BOUCLE_devenir_membres>
+              <h3>[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</h3>
+              [<p class="descriptif">(#DESCRIPTIF)&nbsp;<a href="#URL_ARTICLE" title="lire la suite" class="suite">lire la suite</a></p>]
+            </div>
+            </BOUCLE_articles_adhesion>
+            
+          </div>
+          </B_articles_adhesion>
+          
+          
+          <B_article_Bureau>
+          <div class="quiSommesNous">
+            <BOUCLE_article_Bureau(ARTICLES){id_secteur}{titre_mot=bureau}{0,1}>
+            <h2><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h2>
+            <p class="descriptif">[(#DESCRIPTIF)]&nbsp;<a href="#URL_ARTICLE" title="lire la suite" class="suite">lire la suite</a></p>
+            </BOUCLE_article_Bureau>
+            <div class="rien"></div>
+          </div>
+          </B_article_Bureau>
+          
+          <B_rubrique_membres>
+          <div class="quiSommesNous">
+            <BOUCLE_rubrique_membres(RUBRIQUES){id_rubrique=30}>
+            <h2>[<a href="#URL_RUBRIQUE">(#TITRE|supprimer_numero)</a>]</h2>
+            [<p class="descriptif">(#DESCRIPTIF)&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></p>]
+            <div class="rien"></div>
+            </BOUCLE_rubrique_membres> 
+          </div>
+          </B_rubrique_membres>
+          
+          
+          <div class="presentationRubrique">
+            #FORMULAIRE_RECHERCHE            
+          </div>
+          
+          <B_lettre_info> 
+          <div class="presentationRubrique">
+            <BOUCLE_lettre_info(RUBRIQUES){id_rubrique=10}{exclus}>
+            <h2>[(#TITRE|supprimer_numero)]</h2>
+            <p class="descriptif">[(#DESCRIPTIF)]&nbsp;<a href="#URL_RUBRIQUE" title="s'inscrire &agrave; la lettre" class="suite">s'inscrire &agrave; la lettre</a></p>
+            </BOUCLE_lettre_info>            
+          </div>
+          </B_lettre_info>
+          
+          <B_artActualites>
+          <div class="presentationRubrique">
+            <BOUCLE_artActualites(ARTICLES){id_rubrique}{titre_mot=sommaire}>
+            <h3>[<a href="#URL_ARTICLE" title="lire l'article">(#TITRE|supprimer_numero)</a>]</h3>
+            <p class="descriptif">#DESCRIPTIF&nbsp;<a href="#URL_RUBRIQUE" title="lire la suite" class="suite">lire la suite</a></p>
+            </BOUCLE_artActualites>
+            </div>
+            </B_artActualites>
+            <div class="rien"></div>
+          </div><!-- fin colonneLaterale -->
+        
+        <div class="rien"></div>
+        
+        <INCLURE{fond=inc-piedPage}>
+          
+      </div><!-- fin contenu -->
+        
+    </div><!-- fin enveloppeContenu -->
+      
+  </div><!-- fin enveloppe -->
+  <?php  
+   define("_BBC_PAGE_NAME", "article#ID_ARTICLE");  
+   define("_BBCLONE_DIR", "bbclone/");  
+   define("COUNTER", _BBCLONE_DIR."mark_page.php");  
+   if (is_readable(COUNTER)) include_once(COUNTER);  
+   ?>
+  </BOUCLE_principale>
+</body>
+</html>
