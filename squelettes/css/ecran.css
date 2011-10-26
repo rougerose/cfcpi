@@ -345,6 +345,8 @@ p.pagination.bas { margin-bottom: 36px; }
 		position: relative; z-index: 999;
 		margin-right: 4px; padding: 0 4px 0; }
 
+	#nav li.item { margin-bottom: 0; border-bottom: 0; }
+
 	#nav li.on > a { background: url('../img/navigation-hover-active-blanc.png') no-repeat center bottom; }
 
 	#nav li.over {
