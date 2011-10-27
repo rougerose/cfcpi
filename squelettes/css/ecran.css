@@ -493,8 +493,8 @@ p.pagination.bas { margin-bottom: 36px; }
 /* Caroussel des membres et Bureau (rubrique Qui sommes-nous ?) */
 	/* pour le squelette de la rubrique */
 .caroussel {
-	background-color: #f7f4f4;
-	border: 1px solid #ccc; border-color: #ddd #eee #eee #ddd;
+	background-color: #eee;
+	border: 1px solid #ccc; border-color: #ddd #e9e9e9 #e9e9e9 #ddd;
 	position: relative;
 	margin-bottom: 18px;
 	width: 540px; }
