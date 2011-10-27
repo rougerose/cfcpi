@@ -494,7 +494,7 @@ p.pagination.bas { margin-bottom: 36px; }
 	/* pour le squelette de la rubrique */
 .caroussel {
 	background-color: #f7f4f4;
-	border: 1px solid #ccc; border-color: #dedcdf #fff #fff #dedcdf;
+	border: 1px solid #ccc; border-color: #ddd #eee #eee #ddd;
 	position: relative;
 	margin-bottom: 18px;
 	width: 540px; }
@@ -733,7 +733,7 @@ p.pagination.bas { margin-bottom: 36px; }
 	.introduction, .description {  }
 		.introduction p, .description p {
 			text-align: left; }
-			.description p span { color: #bababa; }
+			.description p span { color: #aaa; }
 
 	.meta-publi {  }
 		.meta-publi p {
@@ -1003,7 +1003,7 @@ p.info {
 					border-color: #80c; }
 
 			.ui-tabs-panel dl.document dd {
-				color: #bababa;
+				color: #aaa;
 				float: right;
 				width: 134px; }
 
