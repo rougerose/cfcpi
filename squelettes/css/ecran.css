@@ -399,7 +399,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		#navigation li {  }
 		#navigation li.on { font-weight: normal; }
 			#navigation li a {
-				color: #bababa;
+				color: #888;
 				display: block;
 				margin: 0 0 2px; padding-left: 20px; }
 				#navigation li a span {
@@ -466,7 +466,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		margin-top: 9px; margin-bottom: 9px; xmargin-left: 30px; }
 	.titre .spip_logos { float: left; margin: 4px 20px 20px 0; }
 	.titre .info-publi {
-		color: #ccc;
+		color: #888;
 		margin: 18px 0 0 560px; }
 	.titre .info-publi abbr { color: #600099; border-bottom: none; }
 .chapo {  }
@@ -614,7 +614,7 @@ p.pagination.bas { margin-bottom: 36px; }
 	.meta-publi {  }
 		.meta-publi p {
 			font: 11px/12px "Helvetica Neue", Helvetica, Arial, sans-serif; text-align: left;
-			color: #999;
+			color: #888;
 			float: left;
 			border-right: 1px solid #ccc;
 			margin-bottom: 9px; margin-right: 10px; padding-right: 10px; }
@@ -733,7 +733,7 @@ p.pagination.bas { margin-bottom: 36px; }
 	.introduction, .description {  }
 		.introduction p, .description p {
 			text-align: left; }
-			.description p span { color: #aaa; }
+			.description p span { color: #888; }
 
 	.meta-publi {  }
 		.meta-publi p {
@@ -760,7 +760,7 @@ p.pagination.bas { margin-bottom: 36px; }
 		#navigation .index.etat-actif {
 			border-bottom-color: #600099; }
 			#navigation .alphabet {
-				color: #ccc;
+				color: #888;
 				font-size: 18px;
 				margin-left: 2px; padding: 2px 0 2px 8px;
 				position: relative; }
@@ -792,7 +792,7 @@ p.pagination.bas { margin-bottom: 36px; }
 	.contenu_principal .index.item1 { clear: left; }
 		.contenu_principal .index .alphabet {
 			font-size: 20px; line-height: 31px;
-			color: #ccc;
+			color: #888;
 			border-bottom: 1px solid #eee;
 			margin-bottom: 4px; }
 		.contenu_principal .index .alphabet.contenu {
@@ -1003,7 +1003,7 @@ p.info {
 					border-color: #80c; }
 
 			.ui-tabs-panel dl.document dd {
-				color: #aaa;
+				color: #888;
 				float: right;
 				width: 134px; }
 
