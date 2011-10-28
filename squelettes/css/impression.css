@@ -160,12 +160,12 @@ a img {
 
 /* pied de page */
 #pied { margin-top: 3em; }
-.logo-pied {
+#pied .logo-pied {
 	text-align: center;
 	background-color: #000;
 	padding: .5em 0; }
 	.logo-pied a.hdp { display: none; }
-.signature {
+#pied .signature {
 	font-size: 10px;
 	text-align: right;
 	background-color: white; }
