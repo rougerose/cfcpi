@@ -1283,6 +1283,9 @@ input, select, textarea {
 /*  Divers								*/
 /* ------------------------------------ */
 
+/* socialtags */
+.page_article .titre .socialtags { margin: 18px 0 0 560px; }
+
 .spip_surligne { background-color: #bde500; }
 
 /* lien "action" */
