@@ -3,6 +3,7 @@
 
 # projet spip : tous les fichiers et dossiers sont ignores
 /*
+*~
 
 # excepte
 !.gitignore
