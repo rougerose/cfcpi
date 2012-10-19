@@ -23,14 +23,14 @@
 */
 $(document).ready(function() {
 	// grille de mise en page
-	$("body").addGrid(12, {img_path: 'plugins/960grid/img/', z_index:'99',left:'70px'});
-	
+//	$("body").addGrid(12, {img_path: 'plugins/960grid/img/', z_index:'99',left:'70px'});
+
 	// fonction(s) qui... fonctionne(nt) y compris après chargement d'un page en ajax
 	// http://www.mail-archive.com/spip-zone@rezo.net/msg08173.html
 	initInlineForms();
 	onAjaxLoad(initInlineForms);
-	
-	
+
+
 
 	// navigation : menus "drop-down"
 	$("#nav").each(function(){

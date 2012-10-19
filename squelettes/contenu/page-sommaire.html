@@ -42,11 +42,9 @@
 			[(#SET{tableau_cp,#ARRAY})]
 			[(#SET{tableau_agenda,#ARRAY})]
 
-
 			<BOUCLE_test_articles_cp(ARTICLES){id_mot=91}{par date}{inverse}{0,6}>
 			[(#SET_PUSH{tableau_cp,#ID_ARTICLE})][(#SET{cp,1})]
 			</BOUCLE_test_articles_cp>
-
 
 			<B_test_agenda>
 			<BOUCLE_test_agenda(EVENEMENTS){statut=publie}{date_debut>=#ENV{date}}>
