@@ -1,0 +1,171 @@
+/* ------------------------------------ */
+/*  Site : CFCPI                        */
+/*  URL : www.cfcpi.fr                  */
+/*  Auteur : christophe le drean        */
+/*  Date :                              */
+/*  Version : 2                         */
+/* ------------------------------------ */
+
+
+html {
+
+}
+
+body {
+	background: white;
+	color: #000;
+	font: 13px/18px Georgia, "Times New Roman", Times, serif;
+}
+
+h1,h2,h3,h4,h5,h6,
+.surtitre, .soustitre,
+#hierarchie,
+#pied { font-family: "MS500", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; }
+
+/* éléments masqués */
+
+#raccourcis,
+#nav,
+#formulaire_recherche,
+.socialtags,
+#navigation,
+.pied-news, .pied-cfcpi, .pied-newsletter, .pied-social { display: none; }
+
+
+/* structure */
+
+#page {
+	margin: 0 5%;
+	text-align: left;
+	width: auto;
+}
+
+#entete {
+	margin: 40px 0 0 0;
+}
+
+#contenu, #hierarchie {
+	margin: 40px 5% 0 10%;
+}
+
+#corps #texte p, #corp #texte li {
+	text-align: justify;
+}
+
+#corps p.datePublication {
+	margin: 10px 0;
+}
+
+/* logo */
+#logo h1, #logo h2, #logo a {
+	background-image: none !important;
+	font-size: 36px; line-height: normal;
+	margin-bottom: 54px; }
+
+#logo a { text-decoration: none; }
+
+/* div titre */
+.titre { margin-bottom: 36px; }
+	.titre h1 {
+		font-size: 28px; line-height: normal; }
+	.titre .surtitre, .titre .soustitre { font-size: 16px; }
+	.titre .info-publi { margin-bottom: 36px; margin-top: 36px; }
+
+/* titraille */
+.texte h2, .texte h3, .texte h4, .texte h5, .texte h6 { line-height: normal; }
+.texte h2 { font-size: 26px; }
+.texte h3 { font-size: 22px; }
+.texte h4 { font-size: 19px; }
+.texte h5 { font-size: 16px; }
+.texte h6 { font-size: 13px; }
+
+.chapo { font-size: 16px; line-height: normal; }
+
+hr.spip {
+	background-color: #000;
+	border: none;
+	height: 1px; width: 60%;
+	margin: 3em auto; }
+
+/*  tableaux */
+
+table.spip {
+	border: 1px solid #ddd;
+	margin: 0 auto 2em;
+	text-align: center;
+	width: 99%; }
+
+table.spip td { text-align: center; }
+
+table.spip th {
+	font-weight: bold;
+	background-color: #ddd;
+	text-align: center; }
+
+table.spip .row_odd td { background-color: #efefef; }
+table.spip .row_even td { background-color: white; }
+
+table.spip th, table.spip td, table.spip caption {
+	font-size: 1.2em;
+	padding: .3em; }
+
+table.spip caption {
+	text-align: center;
+	font-style: italic; }
+
+/* citations */
+blockquote { border-left: .3em solid #000; padding-left: 1em; margin: 2em 0; }
+
+.contenu_principal p { overflow:hidden; }
+
+
+/* liens */
+
+a:link, a:visited {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/*#corps a:link:after, #corps a:visited:after {
+  content: " [" attr(href) "] ";
+  font-size: 90%;
+  color: #666;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: normal;
+}
+
+#corps a[href^="spip.php"]:after {
+  content: " [http://www.cns.sante.fr/" attr(href) "] ";
+}*/
+
+/* images */
+
+a img {
+	border: none;
+}
+
+/* documents */
+.ps .spip_documents { float: none !important; }
+
+/* ps */
+.ps {
+	background-color: #eee;
+	padding: 1em; }
+
+/* tabs */
+#tabs div.ui-tabs-panel {
+	margin-left: 3em; border-bottom: 1px solid #000; }
+
+/* pied de page */
+#pied { margin-top: 3em; }
+#pied .logo-pied {
+	text-align: center;
+	background-color: #000;
+	padding: .5em 0; }
+	.logo-pied a.hdp { display: none; }
+#pied .signature {
+	font-size: 10px;
+	text-align: right;
+	background-color: white; }

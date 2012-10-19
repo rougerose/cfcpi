@@ -8,8 +8,8 @@
 	<B_organisation>
 	<div class="liste articles">
 		<h2 id="organisation" class="section-titre"><:notre_organisation:></h2>
-		<ul class="liste-items">
-			<BOUCLE_organisation(ARTICLES){id_rubrique}{id_article IN 56,616}>
+		<ul class="liste-items">[(#REM) articles bureau et membres ]
+			<BOUCLE_organisation(ARTICLES){id_rubrique}{id_article IN 56,646}>
 			#INCLURE{fond=inclure/rubrique_contenu-quiSommesNous,id_article,env,ajax}
 			</BOUCLE_organisation>
 		</ul>
@@ -20,13 +20,13 @@
 	<div class="liste articles">
 		<h2 id="objectifs" class="section-titre"><:nos_objectifs_actions:></h2>
 		<ul class="liste-items">
-			<BOUCLE_objectifs(ARTICLES){id_rubrique}{id_article IN 4,617}>
+			<BOUCLE_objectifs(ARTICLES){id_rubrique}{id_article IN 4,647}>
 			#INCLURE{fond=inclure/rubrique_contenu-quiSommesNous,id_article,env,ajax}
 			</BOUCLE_objectifs>
 		</ul>
 	</div>
 	</B_objectifs>
-	
+
 	<B_rejoindre>
 	<div class="liste articles">
 		<h2 id"rejoindre" class="section-titre"><:nous_rejoindre:></h2>
