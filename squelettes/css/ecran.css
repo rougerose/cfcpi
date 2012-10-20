@@ -1059,9 +1059,6 @@ input, select, textarea {
 	.formulaire_spip li.erreur input.text, .formulaire_spip li.erreur textarea, .formulaire_spip li.erreur input.password { background-color: #f99; border-style: solid; border-color: #f99; }
 	.formulaire_spip .boutons {  }
 
-
-
-
 /* recherche */
 #formulaire_recherche { position: absolute; top: -30px; right: 0; }
 	#formulaire_recherche * { display: inline; }
@@ -1119,7 +1116,7 @@ input, select, textarea {
 					font-weight: bold; text-transform: uppercase;
 					border-bottom: 1px solid #bc1e20; }
 					.formulaire_cfcpi li {
-						opacity: .6;
+						opacity: .8;
 						margin: 0 0 18px; }
 					.formulaire_cfcpi li.obligatoire, .formulaire_cfcpi .previsu li { opacity: 1; }
 						.formulaire_cfcpi li label {
@@ -1135,6 +1132,54 @@ input, select, textarea {
 						.formulaire_cfcpi input.text, .formulaire_cfcpi textarea, .formulaire_cfcpi input.password { border: 2px solid #eaeaea; }
 						.formulaire_cfcpi input:focus, .formulaire_cfcpi textarea:focus { border: 2px solid #990017; }
 		.formulaire_cfcpi div.info { margin-top: 18px; margin-bottom: 18px; }
+
+/*formulaires via plugin Formidable */
+.formulaire_formidable {}
+   .formulaire_formidable fieldset legend, .formulaire_formidable fieldset .legend {
+		font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #bc1e20; background-color: transparent;
+		font-weight: bold; text-transform: uppercase;
+		border-bottom: 1px solid #bc1e20;
+   }
+   .formulaire_formidable li {
+		xopacity: .8;
+		margin: 0 0 18px;
+      overflow: hidden;
+   }
+   .formulaire_formidable li.obligatoire, .formulaire_formidable .previsu li { opacity: 1; }
+   .formulaire_formidable li > label {
+		display: inline; float: left;
+		width: 200px;
+   }
+	.formulaire_formidable li label {
+		font: 14px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #000; }
+	.formulaire_formidable input.text,
+   .formulaire_formidable textarea,
+   .formulaire_formidable input.password,
+   .formulaire_formidable select { float: left; width: 330px; }
+   .formulaire_formidable select {width: 340px;}
+   .formulaire_formidable input.text.date {width: 315px;}
+   .formulaire_formidable .choix {float: right; width: 340px;}
+	.formulaire_formidable li .erreur_message  {
+		font: 11px "Lucida Grande","Helvetica Neue", Helvetica, Arial, sans-serif; float: left; }
+	.formulaire_formidable li .pass_securise {  }
+	.formulaire_formidable input.text,
+   .formulaire_formidable textarea,
+   .formulaire_formidable input.password,
+   .formulaire_formidable select { border: 2px solid #eaeaea; }
+	.formulaire_formidable input:focus, .formulaire_formidable textarea:focus { border: 2px solid #990017; }
+.formulaire_formidable div.info { margin-top: 18px; margin-bottom: 18px; }
+
+
+.reponse_formulaire {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   background-color: #eaeaea;
+   background-color: rgba(234,234,234,0.5);
+   border: 1px solid #999; border-color: #ccc #fff #fff #ccc;
+   padding: 1em;
+}
+
 
 /* formulaire signature pétition */
 .petition {  }
